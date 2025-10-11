@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAH Advisory | Executive Coaching & Strategic Consulting for C-Suite Leaders</title>
+    <meta name="description" content="Strategic advisory and executive coaching for senior leaders navigating complexity, building organizations, and making high-stakes decisions.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --navy: #1a2332;
+            --gold: #c9a96e;
+            --gold-light: #d4b883;
+            --gold-dark: #b89555;
+            --cream: #faf8f5;
+            --grey-light: #e8e6e3;
+            --grey-mid: #6b6b6b;
+            --grey-dark: #2d2d2d;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--navy);
+            line-height: 1.7;
+            background-color: var(--white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: transparent;
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav .logo,
+        .nav .nav-links a {
+            color: var(--cream);
+        }
+        
+        .nav .logo-accent {
+            color: var(--gold);
+        }
+        
+        .nav.scrolled {
+            padding: 1.25rem 0;
+            background: rgba(26, 35, 50, 0.97);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+        }
+        
+        .nav-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--navy);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+        }
+        
+        .logo-accent {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 750px;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+        }
+        
+        .hero-image-wrapper {
+            position: relative;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            border-radius: 4px;
+            z-index: 0;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1.25rem 1.75rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(201, 169, 110, 0.4);
+            z-index: 2;
+        }
+        
+        .hero-badge-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hero-badge-text {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.75rem;
+            color: var(--cream);
+            letter-spacing: -0.03em;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--gold);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-intro {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 3rem;
+            max-width: 650px;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+        }
+        
+        .hero-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hero-meta-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-meta-label {
+            font-size: 0.9rem;
+            color: rgba(250, 248, 245, 0.6);
+            font-weight: 400;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.25);
+            border: 1px solid var(--gold);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(201, 169, 110, 0.35);
+            background: var(--gold-dark);
+            border-color: var(--gold-dark);
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: transparent;
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(250, 248, 245, 0.3);
+        }
+        
+        .cta-button-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+        
+        .section-alternate {
+            background: var(--navy);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-alternate::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .section-alternate .section-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-alternate h2 {
+            color: var(--cream);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-alternate h3 {
+            color: var(--gold);
+        }
+        
+        .section-alternate p {
+            color: rgba(250, 248, 245, 0.85);
+        }
+        
+        .nature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .nature-card {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .nature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+        
+        .nature-card:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .nature-card:hover::before {
+            height: 100%;
+        }
+        
+        .nature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+        }
+        
+        .nature-card h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .nature-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        
+        .nature-divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            margin: 1.25rem 0;
+        }
+        
+        .who-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .who-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .who-intro p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        
+        .who-profiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .who-profile {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .who-profile::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+        
+        .who-profile:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .who-profile:hover::after {
+            width: 80%;
+        }
+        
+        .who-profile-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--gold);
+            font-size: 1.8rem;
+            border: 2px solid rgba(201, 169, 110, 0.25);
+        }
+        
+        .who-profile h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .who-profile p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 0;
+        }
+        
+        .who-context {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            text-align: center;
+        }
+        
+        .who-context p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.75);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Challenge Section */
+        .challenge-section {
+            background: var(--white);
+            padding: 7rem 0;
+        }
+        
+        .challenge-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .challenge-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .challenge-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+        }
+        
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .challenge-item {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .challenge-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+        }
+        
+        .challenge-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-item p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--grey-dark);
+            margin-bottom: 0;
+        }
+        
+        /* Stakes Section */
+        .stakes-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            padding: 7rem 0;
+            position: relative;
+        }
+        
+        .stakes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+        }
+        
+        .stakes-content {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        
+        .stakes-content h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .stakes-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-style: italic;
+            position: relative;
+            padding: 0 3rem;
+        }
+        
+        .stakes-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+        
+        .stakes-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stakes-point {
+            display: flex;
+            gap: 1.25rem;
+            align-items: start;
+        }
+        
+        .stakes-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .stakes-text {
+            flex: 1;
+        }
+        
+        .stakes-text h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stakes-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--cream);
+            padding: 5rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+        
+        .stat-label {
+            font-size: 1.05rem;
+            color: var(--grey-dark);
+            font-weight: 400;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        
+        h2 .accent {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 1.75rem;
+            font-weight: 400;
+        }
+        
+        .intro {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--grey-mid);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+        
+        /* Partnership Section */
+        .bring-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+        
+        .bring-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+        }
+        
+        .bring-section h2 {
+            text-align: center;
+        }
+        
+        .partnership-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .partnership-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 0;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .expertise-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--grey-light);
+            border-radius: 4px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+        
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .expertise-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: rgba(201, 169, 110, 0.2);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .expertise-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .expertise-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0;
+        }
+        
+        .credentials-banner {
+            background: var(--navy);
+            padding: 3rem;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .credential-item {
+            padding: 1.5rem 1rem;
+            border-right: 1px solid rgba(250, 248, 245, 0.1);
+        }
+        
+        .credential-item:last-child {
+            border-right: none;
+        }
+        
+        .credential-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.3rem;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            margin: 0 auto 1rem;
+        }
+        
+        .credential-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .credential-value {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.8);
+            line-height: 1.5;
+        }
+        
+        /* Services Section */
+        .work-section {
+            background: var(--cream);
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+        
+        .work-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 2px;
+            border: 1px solid var(--grey-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .work-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(26, 35, 50, 0.12);
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+        
+        .work-card:hover::before {
+            height: 100%;
+        }
+        
+        .work-card-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 1.75rem;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .work-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            color: var(--navy);
+        }
+        
+        .work-card p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+            color: var(--grey-dark);
+        }
+        
+        /* Profile Section */
+        .profile-section {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+            position: relative;
+        }
+        
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+        }
+        
+        .profile-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .profile-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-intro p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .experience-timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold) 0%, rgba(201, 169, 110, 0.2) 100%);
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content-left {
+            text-align: right;
+        }
+        
+        .timeline-content-right {
+            text-align: left;
+        }
+        
+        .timeline-marker {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.2);
+        }
+        
+        .timeline-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--grey-light);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-card:hover {
+            border-color: rgba(201, 169, 110, 0.4);
+            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+            transform: translateY(-3px);
+        }
+        
+        .timeline-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .timeline-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--navy);
+            text-align: center;
+            padding: 8rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+        
+        .contact-section h2 {
+            color: var(--cream);
+            font-weight: 500;
+            font-size: 3rem;
+            margin-bottom: 1.75rem;
+        }
+        
+        .contact-section p {
+            color: rgba(250, 248, 245, 0.85);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        
+        .cta-button-outline {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: transparent;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--gold);
+        }
+        
+        .cta-button-outline:hover {
+            transform: translateY(-2px);
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #151b26;
+            color: rgba(250, 248, 245, 0.7);
+            padding: 5rem 4rem 2.5rem;
+        }
+        
+        .footer-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 3.5rem;
+        }
+        
+        .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cream);
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+        
+        .footer-about p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.65);
+        }
+        
+        .footer-links h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(250, 248, 245, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+        }
+        
+        .footer-contact h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: rgba(250, 248, 245, 0.7);
+        }
+        
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-contact a:hover {
+            color: var(--gold-light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            color: rgba(250, 248, 245, 0.45);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .hero-image-wrapper {
+                order: -1;
+                display: flex;
+                justify-content: center;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .hero-label {
+                display: inline-block;
+            }
+            
+            .hero-intro {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-meta {
+                justify-content: center;
+            }
+            
+            .hero-cta-group {
+                justify-content: center;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .nature-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .challenge-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stakes-list {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .who-profiles {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .experience-timeline {
+                padding-left: 2rem;
+            }
+            
+            .timeline-line {
+                left: 0;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .timeline-content-left,
+            .timeline-content-right {
+                text-align: left;
+            }
+            
+            .timeline-content-left .timeline-card {
+                margin-left: 3rem;
+            }
+            
+            .timeline-content-right .timeline-card {
+                margin-left: 3rem;
+            }
+            
+            .timeline-marker {
+                position: absolute;
+                left: -2rem;
+                justify-content: flex-start;
+            }
+            
+            .credentials-banner {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .credential-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+                padding: 1.5rem 1rem;
+            }
+            
+            .credential-item:nth-child(2n) {
+                border-right: 1px solid rgba(250, 248, 245, 0.1);
+            }
+            
+            .credential-item:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-about {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+            
+            .nav-container,
+            .hero-container,
+            .section-container {
+                padding: 0 2rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 6rem 0 5rem;
+            }
+            
+            .hero-grid {
+                gap: 3rem;
+            }
+            
+            .hero-label {
+                font-size: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-intro {
+                font-size: 1.05rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-image-wrapper {
+                max-width: 300px;
+            }
+            
+            .hero-badge {
+                bottom: -15px;
+                right: -15px;
+                padding: 1rem 1.25rem;
+            }
+            
+            .hero-badge-number {
+                font-size: 1.75rem;
+            }
+            
+            .hero-badge-text {
+                font-size: 0.7rem;
+            }
+            
+            .hero-meta {
+                gap: 2rem;
+                padding-top: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-meta-number {
+                font-size: 1.5rem;
+            }
+            
+            .hero-meta-label {
+                font-size: 0.8rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cta-button,
+            .cta-button-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 2rem;
+            }
+            
+            .partnership-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .expertise-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .expertise-number {
+                font-size: 2.5rem;
+            }
+            
+            .expertise-title {
+                font-size: 1.3rem;
+            }
+            
+            .nature-grid {
+                gap: 1.5rem;
+            }
+            
+            .nature-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .nature-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .nature-card p {
+                font-size: 1rem;
+            }
+            
+            .who-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .who-profile {
+                padding: 2rem 1.5rem;
+            }
+            
+            .who-profile h3 {
+                font-size: 1.3rem;
+            }
+            
+            .who-profile p {
+                font-size: 0.95rem;
+            }
+            
+            .who-context p {
+                font-size: 1.05rem;
+            }
+            
+            .challenge-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .challenge-item {
+                padding: 2rem 1.5rem;
+            }
+            
+            .challenge-item h3 {
+                font-size: 1.3rem;
+            }
+            
+            .stakes-quote {
+                font-size: 1.3rem;
+                padding: 0 1rem;
+            }
+            
+            .stakes-quote::before {
+                font-size: 3rem;
+            }
+            
+            .stakes-text h3 {
+                font-size: 1.1rem;
+            }
+            
+            .stakes-text p {
+                font-size: 0.95rem;
+            }
+            
+            .profile-intro p {
+                font-size: 1.05rem;
+            }
+            
+            .experience-timeline {
+                padding-left: 1.5rem;
+            }
+            
+            .timeline-card {
+                padding: 1.5rem;
+            }
+            
+            .timeline-title {
+                font-size: 1.3rem;
+            }
+            
+            .timeline-description {
+                font-size: 0.95rem;
+            }
+            
+            .credentials-banner {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+                gap: 0;
+            }
+            
+            .credential-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+                padding: 1.5rem 1rem;
+            }
+            
+            .credential-item:last-child {
+                border-bottom: none;
+            }
+            
+            .credential-item:nth-child(2n) {
+                border-right: none;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .challenge-section,
+            .stakes-section {
+                padding: 5rem 0;
+            }
+            
+            .stats-section {
+                padding: 3.5rem 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.25rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-section {
+                padding: 4.5rem 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            footer {
+                padding: 4rem 2rem 2rem;
+            }
+        }
+        
+        /* Smooth Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="logo"><span class="logo-accent">CAH</span> Advisory</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Experience</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-label fade-in">Executive Coaching & Strategic Advisory</div>
+                    <h1 class="fade-in fade-in-delay-1">The questions change when you reach <span class="highlight">the top</span>.</h1>
+                    <p class="hero-intro fade-in fade-in-delay-2">Most executives reach senior leadership by mastering execution. The work at this level asks for something different: pattern recognition across complexity, building organizations that outlast individual tenure, making consequential decisions when the full picture remains uncertain.</p>
+                    
+                    <div class="hero-meta fade-in fade-in-delay-3">
+                        <div class="hero-meta-item">
+                            <div class="hero-meta-number">20</div>
+                            <div class="hero-meta-label">Years at BCG</div>
+                        </div>
+                        <div class="hero-meta-item">
+                            <div class="hero-meta-number">C-Suite</div>
+                            <div class="hero-meta-label">Exclusive Focus</div>
+                        </div>
+                        <div class="hero-meta-item">
+                            <div class="hero-meta-number">NYC</div>
+                            <div class="hero-meta-label">Based</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-cta-group fade-in fade-in-delay-3">
+                        <a href="#contact" class="cta-button">Begin a Conversation</a>
+                        <a href="#about" class="cta-button-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper fade-in fade-in-delay-2">
+                    <div class="hero-image">
+                        <img src="Howe-Chris.webp" alt="Chris Howe - Executive Coach and Strategic Advisor">
+                        <div class="hero-badge">
+                            <div class="hero-badge-number">14+</div>
+                            <div class="hero-badge-text">Years Board Service</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="challenge-section reveal">
+        <div class="section-container">
+            <h2>The Questions <span class="accent">You're Holding</span></h2>
+            
+            <div class="challenge-intro">
+                <p>The challenges at senior leadership levels have a different character than those that brought you here. They're less about execution—you and your teams understand how to execute—and more about pattern recognition across complexity, about making decisions when multiple valid paths exist, each with consequences that unfold over years.</p>
+            </div>
+            
+            <div class="challenge-grid">
+                <div class="challenge-item">
+                    <h3>Fewer Thinking Partners</h3>
+                    <p>As you move up, the number of people who can genuinely engage with what you're navigating naturally decreases. Your team needs you to provide direction. Your board expects decisive confidence. The space to simply think through complexity—without the pressure to have immediate answers—becomes scarce.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <h3>Decisions Beyond Frameworks</h3>
+                    <p>The situations you're working through often resist standard approaches. The acquisition where the strategic logic is compelling but integration risks substantial. The executive team restructuring where personal relationships with board members create invisible constraints. These require judgment, not just analysis.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <h3>Seeing System Dynamics</h3>
+                    <p>You recognize patterns others don't yet see—how organizational changes will interact with informal power dynamics, how strategic shifts will encounter cultural resistance in predictable but hard-to-articulate ways. This pattern recognition is valuable but can be isolating.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <h3>The Extended Time Horizon</h3>
+                    <p>Your decisions shape organizational reality over years, not quarters. Developing the leadership bench for challenges that don't exist yet. Shifting culture in ways that enable strategies not yet imagined. Knowing when to invest in capabilities before the market signals become obvious to everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakes Section -->
+    <section class="stakes-section reveal">
+        <div class="section-container">
+            <div class="stakes-content">
+                <h2>Why This <span class="accent">Matters</span></h2>
+                
+                <p class="stakes-quote">The decisions you're making now have consequences that compound over time. Not just in financial results, but in organizational capability, in the leaders you develop, in the strategic options that remain available years from now.</p>
+                
+                <div class="stakes-list">
+                    <div class="stakes-point">
+                        <div class="stakes-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stakes-text">
+                            <h3>What You're Building</h3>
+                            <p>The organizations you shape, the leaders you develop, the decision-making cultures you establish—these outlast individual tenures. They become part of how the organization understands itself and what it believes is possible.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stakes-point">
+                        <div class="stakes-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stakes-text">
+                            <h3>Future Possibilities</h3>
+                            <p>Today's choices about capabilities, partnerships, and market positioning create the set of scenarios your organization can pursue tomorrow. Some strategic paths remain open. Others quietly foreclose.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stakes-point">
+                        <div class="stakes-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="stakes-text">
+                            <h3>The Compounding Effect</h3>
+                            <p>At senior levels, the difference between good and slightly better judgment—repeated across dozens of consequential decisions—creates divergent organizational trajectories over time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stakes-point">
+                        <div class="stakes-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="stakes-text">
+                            <h3>Sustaining Clarity</h3>
+                            <p>Leading effectively at this level over years requires maintaining the capacity for clear thinking under sustained complexity. This isn't about resilience—it's about creating conditions where thoughtful judgment remains possible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="bring-section reveal" id="about">
+        <div class="section-container">
+            <h2>Working <span class="accent">Together</span></h2>
+            
+            <div class="partnership-intro">
+                <p>I work with senior leaders who understand that sustained effectiveness at this level benefits from thinking partners who have navigated similar terrain—who can engage with both the strategic complexities and the human dynamics that shape how decisions actually unfold in organizations.</p>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-number">01</div>
+                    <h3 class="expertise-title">Business Building</h3>
+                    <p class="expertise-description">Twenty years creating and scaling business units with full P&L accountability. The experience of making investment decisions, building teams, and being responsible for outcomes teaches what frameworks alone cannot.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-number">02</div>
+                    <h3 class="expertise-title">Organizational Transformation</h3>
+                    <p class="expertise-description">Leading global change across 25,000+ professionals taught me that transformation is as much about understanding human systems as it is about organizational design.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-number">03</div>
+                    <h3 class="expertise-title">Building New Capabilities</h3>
+                    <p class="expertise-description">Launching BCG's analytics practice meant creating something that didn't exist—hiring for roles we'd never defined, building capabilities across countries, integrating new ways of working into established culture.</p>
+                </div>
+            </div>
+            
+            <div class="credentials-banner">
+                <div class="credential-item">
+                    <div class="credential-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="credential-label">Experience</div>
+                    <div class="credential-value">20 Years BCG</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="credential-label">P&L Leadership</div>
+                    <div class="credential-value">Senior Director</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="credential-label">HR Transform</div>
+                    <div class="credential-value">Executive Director</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="credential-label">Certified Coach</div>
+                    <div class="credential-value">ICF ACC, CEC</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="credential-label">Board Service</div>
+                    <div class="credential-value">14+ Years</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Matters Section -->
+    <section class="section-alternate reveal">
+        <div class="section-container">
+            <h2>The Nature of <span class="accent">This Work</span></h2>
+            
+            <div class="nature-grid">
+                <div class="nature-card">
+                    <div class="nature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>The Substance of It</h3>
+                    <div class="nature-divider"></div>
+                    <p>The work focuses on the challenges in front of you—organizational moves that resist standard approaches, team dynamics that shape outcomes in subtle but powerful ways, career decisions that require judgment rather than frameworks. It's less about developing skills you don't have and more about thinking clearly through complexity.</p>
+                </div>
+                
+                <div class="nature-card">
+                    <div class="nature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Holding Both</h3>
+                    <div class="nature-divider"></div>
+                    <p>Effective partnership at this level requires holding both strategic and human dimensions simultaneously. The analytical rigor to think through implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact in specific situations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="work-section reveal" id="services">
+        <div class="section-container">
+            <h2>Areas of <span class="accent">Focus</span></h2>
+            
+            <div class="work-grid">
+                <div class="work-card">
+                    <div class="work-card-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h3>Complex Decisions</h3>
+                    <p>Working through decisions where the analytical answer is clear but the organizational reality requires careful navigation.</p>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Organizational Design</h3>
+                    <p>Thinking through how to scale, integrate, or restructure while maintaining both strategic coherence and human sustainability.</p>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-icon">
+                        <i class="fas fa-arrow-up-right-dots"></i>
+                    </div>
+                    <h3>Leadership Transitions</h3>
+                    <p>New role, new organization, new stakeholder expectations. Understanding what this position truly requires and how to be effective from the outset.</p>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Transformation</h3>
+                    <p>Beyond communication plans. Creating genuine conditions for change while understanding and working with the inevitable resistance.</p>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Board Engagement</h3>
+                    <p>Preparing for or navigating board service. Understanding governance, board dynamics, and what distinguishes truly effective boards.</p>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Strategic Planning</h3>
+                    <p>Market assessment, competitive positioning, and scenario development that remains grounded in implementation reality throughout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section reveal" id="profile">
+        <div class="section-container">
+            <h2>Background & <span class="accent">Perspective</span></h2>
+            
+            <div class="profile-intro">
+                <p>I spent twenty years at Boston Consulting Group—building businesses, leading transformations, working with organizations on challenges that resisted straightforward solutions. In 2024, I stepped away to work more directly with leaders, without the structure and methodology of a large firm mediating those relationships.</p>
+                <p>My path has given me perspective on both the strategic and human dimensions of leadership work.</p>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content-left">
+                        <div class="timeline-card">
+                            <div class="timeline-label">2004 - 2024</div>
+                            <h3 class="timeline-title">Boston Consulting Group</h3>
+                            <p class="timeline-description">Twenty years building businesses, leading transformations, and launching new capabilities. Roles included Global Product Business Senior Director with P&L responsibility, Executive Director of Global HR Transformation, and launching BCG's analytics solutions practice.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content-right"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content-left"></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content-right">
+                        <div class="timeline-card">
+                            <div class="timeline-label">Board Service</div>
+                            <h3 class="timeline-title">DreamYard Project</h3>
+                            <p class="timeline-description">Board member since 2011, currently serving on Executive Committee and leading the People & Culture Committee. New York City's largest arts education provider, working with thousands of K-12 students annually.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content-left">
+                        <div class="timeline-card">
+                            <div class="timeline-label">Credentials</div>
+                            <h3 class="timeline-title">Education & Coaching</h3>
+                            <p class="timeline-description">MBA from UVA Darden School of Business. B.S. in Commerce from University of Virginia. Certified executive coach through ICF (ACC) and Center for Executive Coaching (CEC).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content-right"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content-left"></div>
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content-right">
+                        <div class="timeline-card">
+                            <div class="timeline-label">Foundation</div>
+                            <h3 class="timeline-title">A.T. Kearney</h3>
+                            <p class="timeline-description">Three years as an associate in New York and Washington, D.C., establishing foundation in strategic consulting and client work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For Section -->
+    <section class="section-alternate reveal">
+        <div class="section-container">
+            <h2>Who I <span class="accent">Work With</span></h2>
+            
+            <div class="who-content">
+                <div class="who-intro">
+                    <p>My practice focuses on senior executives navigating the specific challenges that come with leading at the highest organizational levels. The common thread isn't title—it's the nature of the questions you're holding.</p>
+                </div>
+                
+                <div class="who-profiles">
+                    <div class="who-profile">
+                        <div class="who-profile-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>C-Suite Leaders</h3>
+                        <p>CEOs, COOs, CFOs, and other C-level executives managing enterprise-wide complexity and making decisions that shape organizational trajectory.</p>
+                    </div>
+                    
+                    <div class="who-profile">
+                        <div class="who-profile-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Senior Executives</h3>
+                        <p>Leaders one or two levels from the top, running divisions or functions with significant autonomy and preparing for broader enterprise roles.</p>
+                    </div>
+                    
+                    <div class="who-profile">
+                        <div class="who-profile-icon">
+                            <i class="fas fa-chess-king"></i>
+                        </div>
+                        <h3>Board Members</h3>
+                        <p>Directors navigating governance challenges, board dynamics, and the unique demands of providing strategic counsel at the highest level.</p>
+                    </div>
+                </div>
+                
+                <div class="who-context">
+                    <p>What brings people to this work is less about their position and more about what they're navigating: decisions without clear precedents, complexity that remains largely invisible, consequences that unfold over years. You value perspective from someone who understands both the strategic logic and the human realities that determine what's actually possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section reveal" id="contact">
+        <h2>Begin a <span class="accent">Conversation</span></h2>
+        <p>Most engagements begin with a straightforward conversation about what you're navigating and whether working together makes sense. No formal intake process—simply a thoughtful discussion to understand your situation and explore whether this partnership might be valuable at this point in your work.</p>
+        <a href="mailto:cahowe1@gmail.com" class="cta-button-outline">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>CAH Advisory</h3>
+                <p>Working with senior executives who are building organizations, navigating complexity, and making consequential decisions. Bringing two decades of experience in business building, transformation leadership, and strategic advising to leaders facing challenges that require both analytical rigor and human insight.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:cahowe1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Experience</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <p><strong>Email</strong><br><a href="mailto:cahowe1@gmail.com">cahowe1@gmail.com</a></p>
+                <p><strong>Location</strong><br>New York City</p>
+                <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank">chris-howe-ny</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 CAH Advisory Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
