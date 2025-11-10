@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -39,14 +39,14 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--navy);
             line-height: 1.7;
             background-color: var(--white);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            padding-top: 80px;
+            padding-top: 0;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -61,12 +61,28 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 35, 50, 0.97);
+            background: transparent;
             backdrop-filter: blur(12px);
             z-index: 1000;
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav .logo,
+        .nav .nav-links a {
+            color: var(--cream);
+        }
+
+        .nav .logo-accent {
+            color: var(--gold);
+        }
+
+        .nav.scrolled {
             padding: 1.25rem 0;
-            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+            background: rgba(26, 35, 50, 0.97);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
         }
 
         .nav-container {
@@ -176,18 +192,259 @@
             overflow: hidden;
         }
 
-        /* Main Content */
-        .main-content {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 4rem;
-            min-height: calc(100vh - 200px);
+        /* Hero Section */
+        .hero {
+            margin-top: 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 {
-            font-size: 3rem;
-            color: var(--navy);
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 4rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
             margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1.75rem;
+            color: var(--cream);
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .accent {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .hero-intro {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 0;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-intro {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 3rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.2rem;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+
+        .contact-text h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0;
+        }
+
+        .contact-text p {
+            font-size: 1.05rem;
+            color: var(--grey-mid);
+            margin: 0;
+        }
+
+        .contact-text a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--gold-dark);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.25);
+            border: 1px solid var(--gold);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(201, 169, 110, 0.35);
+            background: var(--gold-dark);
+            border-color: var(--gold-dark);
+        }
+
+        .availability-card {
+            background: var(--cream);
+            padding: 3rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--gold);
+        }
+
+        .availability-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+        }
+
+        .availability-card p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--grey-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .availability-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--cream);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-section .cta-button {
+            margin: 0 auto;
+        }
+
+        /* Response Section */
+        .response-section {
+            background: var(--navy);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .response-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+
+        .response-section h2 {
+            text-align: center;
+            color: var(--cream);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .response-intro {
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
         }
 
         .accent {
@@ -198,27 +455,120 @@
         footer {
             background: #151b26;
             color: rgba(250, 248, 245, 0.7);
-            padding: 3rem 4rem 2rem;
-            margin-top: 4rem;
+            padding: 5rem 4rem 2.5rem;
         }
 
         .footer-container {
             max-width: 1320px;
             margin: 0 auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 3.5rem;
         }
 
-        .footer-container p {
-            margin: 0;
+        .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cream);
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-about p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.65);
+        }
+
+        .footer-links h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(250, 248, 245, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+        }
+
+        .footer-contact h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: rgba(250, 248, 245, 0.7);
+        }
+
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold-light);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            color: rgba(250, 248, 245, 0.45);
             font-size: 0.9rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-
             .hamburger {
                 display: flex;
             }
@@ -286,20 +636,67 @@
                 text-align: center;
             }
 
-            .nav-container {
+            .nav-container,
+            .hero-container,
+            .section-container {
                 padding: 0 2rem;
             }
 
-            .main-content {
-                padding: 2rem;
+            .hero {
+                min-height: 60vh;
             }
 
-            h1 {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-intro {
+                font-size: 1.1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info h2 {
                 font-size: 2rem;
             }
 
+            .contact-section {
+                padding: 4rem 0;
+            }
+
+            .response-section {
+                padding: 4rem 0;
+            }
+
+            .response-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                padding: 3rem 0;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
             footer {
-                padding: 2rem;
+                padding: 4rem 2rem 2rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+
+            .footer-about {
+                grid-column: 1 / -1;
             }
         }
     </style>
@@ -327,15 +724,113 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1>Get in <span class="accent">Touch</span></h1>
-        <p>Content coming soon...</p>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-label">Get in Touch</div>
+            <h1>Begin a <span class="accent">Conversation</span></h1>
+            <p class="hero-intro">If you're navigating complexity that benefits from sustained partnership with someone who has walked similar terrain—where challenges resist standard frameworks and consequences unfold over years—a conversation might be valuable.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="section-container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Connect <span class="accent">Directly</span></h2>
+                    <p class="contact-intro">Reach out directly. We'll discuss what you're holding and explore whether working together makes sense at this point in your journey.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p><a href="mailto:cahowe1@gmail.com">cahowe1@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>LinkedIn</h3>
+                                <p><a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank">chris-howe-ny</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Location</h3>
+                                <p>New York City</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="availability-card">
+                    <h3>How Engagements Begin</h3>
+                    <p>Most partnerships begin with a straightforward conversation about what you're navigating and whether working together makes sense.</p>
+                    <p>No formal intake process—simply a thoughtful discussion to understand your situation and explore whether this partnership might be valuable at this point in your work.</p>
+                    <p>The focus is on the nature of what you're holding: decisions where the path isn't clear, organizational dynamics that shape outcomes, challenges that resist reduction to frameworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <a href="mailto:cahowe1@gmail.com" class="cta-button">Send a Message</a>
+        </div>
+    </section>
+
+    <!-- Response Section -->
+    <section class="response-section">
+        <div class="section-container">
+            <h2>What to <span class="accent">Expect</span></h2>
+            <p class="response-intro">When you reach out, expect a response within 48 hours. The initial conversation is exploratory—understanding the complexity you're navigating, determining whether sustained partnership makes sense, exploring how engagement might take shape given your specific situation and the organizational dynamics at play.</p>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
+            <div class="footer-about">
+                <h3>CAH Advisory</h3>
+                <p>Working with senior executives who are building organizations, navigating complexity, and making consequential decisions. Bringing two decades of experience in business building, transformation leadership, and strategic advising to leaders facing challenges that require both analytical rigor and human insight.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:cahowe1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <p><strong>Email</strong><br><a href="mailto:cahowe1@gmail.com">cahowe1@gmail.com</a></p>
+                <p><strong>Location</strong><br>New York City</p>
+                <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank">chris-howe-ny</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>&copy; 2024 CAH Advisory Services. All rights reserved.</p>
         </div>
     </footer>
@@ -367,6 +862,16 @@
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('mobile-menu-open');
                 body.classList.remove('menu-open');
+            }
+        });
+
+        // Navigation scroll effect
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
         });
     </script>

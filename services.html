@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | CAH Advisory</title>
-    <meta name="description" content="Executive coaching and strategic advisory services for C-suite leaders.">
-
+    <title>CAH Advisory | Executive Coaching & Strategic Consulting for C-Suite Leaders</title>
+    <meta name="description" content="Strategic advisory and executive coaching for senior leaders navigating complexity, building organizations, and making high-stakes decisions.">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    
     <style>
         :root {
             --navy: #1a2332;
@@ -26,49 +26,64 @@
             --grey-dark: #2d2d2d;
             --white: #ffffff;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         html {
             scroll-behavior: smooth;
             font-size: 16px;
         }
-
+        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--navy);
             line-height: 1.7;
             background-color: var(--white);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            padding-top: 80px;
         }
-
+        
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
             letter-spacing: -0.02em;
         }
-
+        
         /* Navigation */
         .nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 35, 50, 0.97);
+            background: transparent;
             backdrop-filter: blur(12px);
             z-index: 1000;
-            padding: 1.25rem 0;
-            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            padding: 1.75rem 0;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
+        
+        .nav .logo,
+        .nav .nav-links a {
+            color: var(--cream);
+        }
+        
+        .nav .logo-accent {
+            color: var(--gold);
+        }
+        
+        .nav.scrolled {
+            padding: 1.25rem 0;
+            background: rgba(26, 35, 50, 0.97);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+        }
+        
         .nav-container {
             max-width: 1320px;
             margin: 0 auto;
@@ -77,31 +92,31 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
             font-weight: 500;
-            color: var(--cream);
+            color: var(--navy);
             text-decoration: none;
             letter-spacing: 0.5px;
             transition: all 0.4s ease;
         }
-
+        
         .logo-accent {
             color: var(--gold);
             font-weight: 600;
         }
-
+        
         .nav-links {
             display: flex;
             gap: 3.5rem;
             list-style: none;
             align-items: center;
         }
-
+        
         .nav-links a {
-            color: var(--cream);
+            color: var(--navy);
             text-decoration: none;
             font-weight: 400;
             font-size: 0.95rem;
@@ -110,7 +125,7 @@
             position: relative;
             padding: 0.5rem 0;
         }
-
+        
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -121,11 +136,11 @@
             background: var(--gold);
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
+        
         .nav-links a:hover::after {
             width: 100%;
         }
-
+        
         .nav-links a:hover {
             color: var(--gold);
         }
@@ -154,6 +169,11 @@
             transform-origin: center;
         }
 
+        .nav.scrolled .hamburger-line {
+            background: var(--cream);
+        }
+
+        /* Hamburger Animation */
         .hamburger.active .hamburger-line:nth-child(1) {
             transform: translateY(10px) rotate(45deg);
         }
@@ -167,62 +187,1381 @@
             transform: translateY(-10px) rotate(-45deg);
         }
 
+        /* Mobile Menu Overlay */
         .nav-links.mobile-menu-open {
             transform: translateX(0) !important;
             visibility: visible !important;
         }
 
+        /* Prevent body scroll when menu is open */
         body.menu-open {
             overflow: hidden;
         }
 
-        /* Main Content */
-        .main-content {
+        /* Hero Section */
+        .hero {
+            margin-top: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+            opacity: 0.3;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .hero-container {
             max-width: 1320px;
             margin: 0 auto;
-            padding: 4rem;
-            min-height: calc(100vh - 200px);
+            padding: 0 4rem;
+            position: relative;
+            z-index: 1;
         }
-
-        h1 {
-            font-size: 3rem;
-            color: var(--navy);
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 750px;
+        }
+        
+        .hero-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
             margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.3);
         }
-
-        .accent {
+        
+        .hero-image-wrapper {
+            position: relative;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            border-radius: 4px;
+            z-index: 0;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1.25rem 1.75rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(201, 169, 110, 0.4);
+            z-index: 2;
+        }
+        
+        .hero-badge-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hero-badge-text {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 1.75rem;
+            color: var(--cream);
+            letter-spacing: -0.03em;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--gold);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-intro {
+            font-size: 1.25rem;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 3rem;
+            max-width: 650px;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+        }
+        
+        .hero-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hero-meta-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-meta-label {
+            font-size: 0.9rem;
+            color: rgba(250, 248, 245, 0.6);
+            font-weight: 400;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: var(--gold);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.25);
+            border: 1px solid var(--gold);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(201, 169, 110, 0.35);
+            background: var(--gold-dark);
+            border-color: var(--gold-dark);
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            padding: 1.1rem 2.8rem;
+            background: transparent;
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(250, 248, 245, 0.3);
+        }
+        
+        .cta-button-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--gold);
             color: var(--gold);
         }
-
+        
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 4rem;
+        }
+        
+        .section-alternate {
+            background: var(--navy);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-alternate::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .section-alternate .section-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-alternate h2 {
+            color: var(--cream);
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-alternate h3 {
+            color: var(--gold);
+        }
+        
+        .section-alternate p {
+            color: rgba(250, 248, 245, 0.85);
+        }
+        
+        .nature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .nature-card {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .nature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+        
+        .nature-card:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .nature-card:hover::before {
+            height: 100%;
+        }
+        
+        .nature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+        }
+        
+        .nature-card h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .nature-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        
+        .nature-divider {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            margin: 1.25rem 0;
+        }
+        
+        
+        .who-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .who-intro p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        
+        .who-profiles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .who-profile {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .who-profile::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+        
+        .who-profile:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .who-profile:hover::after {
+            width: 80%;
+        }
+        
+        .who-profile-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--gold);
+            font-size: 1.8rem;
+            border: 2px solid rgba(201, 169, 110, 0.25);
+        }
+        
+        .who-profile h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .who-profile p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 0;
+        }
+        
+        .who-context {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            text-align: center;
+        }
+        
+        .who-context p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.75);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Challenge Section */
+        .challenge-section {
+            background: var(--white);
+            padding: 7rem 0;
+        }
+        
+        .challenge-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .challenge-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .challenge-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+        }
+        
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .challenge-item {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .challenge-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+        }
+        
+        .challenge-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        
+        .challenge-item p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--grey-dark);
+            margin-bottom: 0;
+        }
+        
+        /* Stakes Section */
+        .stakes-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            padding: 7rem 0;
+            position: relative;
+        }
+        
+        .stakes-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+        }
+        
+        
+        .stakes-content h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .stakes-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-style: italic;
+            position: relative;
+            padding: 0 3rem;
+        }
+        
+        .stakes-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+        
+        .stakes-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stakes-point {
+            display: flex;
+            gap: 1.25rem;
+            align-items: start;
+        }
+        
+        .stakes-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+        
+        .stakes-text {
+            flex: 1;
+        }
+        
+        .stakes-text h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stakes-text p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--cream);
+            padding: 5rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+        
+        .stat-label {
+            font-size: 1.05rem;
+            color: var(--grey-dark);
+            font-weight: 400;
+        }
+        
+        h2 {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+        
+        h2 .accent {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 1.75rem;
+            font-weight: 400;
+        }
+        
+        .intro {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--grey-mid);
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+        
+        /* Partnership Section */
+        .bring-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+        
+        .bring-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+        }
+        
+        .bring-section h2 {
+            text-align: center;
+        }
+        
+        .partnership-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .partnership-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 0;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .expertise-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border: 1px solid var(--grey-light);
+            border-radius: 4px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+        
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .expertise-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: rgba(201, 169, 110, 0.2);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .expertise-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .expertise-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0;
+        }
+        
+        .credentials-banner {
+            background: var(--navy);
+            padding: 3rem;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .credential-item {
+            padding: 1.5rem 1rem;
+            border-right: 1px solid rgba(250, 248, 245, 0.1);
+        }
+        
+        .credential-item:last-child {
+            border-right: none;
+        }
+        
+        .credential-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.3rem;
+            border: 1px solid rgba(201, 169, 110, 0.25);
+            margin: 0 auto 1rem;
+        }
+        
+        .credential-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .credential-value {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(250, 248, 245, 0.8);
+            line-height: 1.5;
+        }
+        
+        /* Services Section */
+        .work-section {
+            background: var(--cream);
+        }
+        
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+        
+        .work-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 2px;
+            border: 1px solid var(--grey-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .work-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(26, 35, 50, 0.12);
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+        
+        .work-card:hover::before {
+            height: 100%;
+        }
+        
+        .work-card-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.6rem;
+            margin-bottom: 1.75rem;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .work-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            color: var(--navy);
+        }
+        
+        .work-card p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+            color: var(--grey-dark);
+        }
+        
+        /* Profile Section */
+        .profile-section {
+            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+            position: relative;
+        }
+        
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+        }
+        
+        .profile-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .profile-intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-intro p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .experience-timeline {
+            position: relative;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold) 0%, rgba(201, 169, 110, 0.2) 100%);
+        }
+        
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-content-left {
+            text-align: right;
+        }
+        
+        .timeline-content-right {
+            text-align: left;
+        }
+        
+        .timeline-marker {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.2);
+        }
+        
+        .timeline-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--grey-light);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-card:hover {
+            border-color: rgba(201, 169, 110, 0.4);
+            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+            transform: translateY(-3px);
+        }
+        
+        .timeline-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .timeline-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: var(--navy);
+            text-align: center;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section > * {
+            max-width: 1320px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+        }
+        
+        .contact-section h2 {
+            color: var(--cream);
+            font-weight: 500;
+            font-size: 3rem;
+            margin-bottom: 1.75rem;
+        }
+        
+        .contact-section p {
+            color: rgba(250, 248, 245, 0.85);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        
+        .cta-button-outline {
+            display: inline-block;
+            padding: 1.2rem 3.5rem;
+            background: transparent;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            border-radius: 2px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--gold);
+        }
+        
+        .cta-button-outline:hover {
+            transform: translateY(-2px);
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+        }
+        
         /* Footer */
         footer {
             background: #151b26;
             color: rgba(250, 248, 245, 0.7);
-            padding: 3rem 4rem 2rem;
-            margin-top: 4rem;
+            padding: 5rem 0 2.5rem;
         }
-
+        
         .footer-container {
             max-width: 1320px;
             margin: 0 auto;
-            text-align: center;
+            padding: 0 4rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 5rem;
+            margin-bottom: 3.5rem;
         }
-
-        .footer-container p {
-            margin: 0;
+        
+        .footer-about h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--cream);
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+        }
+        
+        .footer-about p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.65);
+        }
+        
+        .footer-links h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(250, 248, 245, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+        }
+        
+        .footer-contact h4 {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-contact p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: rgba(250, 248, 245, 0.7);
+        }
+        
+        .footer-contact a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-contact a:hover {
+            color: var(--gold-light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+        
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--navy);
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            color: rgba(250, 248, 245, 0.45);
             font-size: 0.9rem;
         }
-
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-in-delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .fade-in-delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .fade-in-delay-3 {
+            animation-delay: 0.6s;
+        }
+        
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .hero-image-wrapper {
+                order: -1;
+                display: flex;
+                justify-content: center;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+            }
+            
+            .hero-label {
+                display: inline-block;
+            }
+            
+            .hero-intro {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-meta {
+                justify-content: center;
+            }
+            
+            .hero-cta-group {
+                justify-content: center;
+            }
+            
+            .expertise-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .nature-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .challenge-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stakes-list {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .who-profiles {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .experience-timeline {
+                padding-left: 2rem;
+            }
+            
+            .timeline-line {
+                left: 0;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .timeline-content-left,
+            .timeline-content-right {
+                text-align: left;
+            }
+            
+            .timeline-content-left .timeline-card {
+                margin-left: 3rem;
+            }
+            
+            .timeline-content-right .timeline-card {
+                margin-left: 3rem;
+            }
+            
+            .timeline-marker {
+                position: absolute;
+                left: -2rem;
+                justify-content: flex-start;
+            }
+            
+            .credentials-banner {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .credential-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+                padding: 1.5rem 1rem;
+            }
+            
+            .credential-item:nth-child(2n) {
+                border-right: 1px solid rgba(250, 248, 245, 0.1);
+            }
+            
+            .credential-item:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-about {
+                grid-column: 1 / -1;
+            }
+        }
+        
         @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
+            html {
+                font-size: 15px;
             }
 
+            .nav-container,
+            .hero-container,
+            .section-container,
+            .footer-container,
+            .contact-section > * {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            /* Show Hamburger Menu */
             .hamburger {
                 display: flex;
             }
 
+            /* Hide and Transform Nav Links for Mobile */
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -286,29 +1625,977 @@
                 text-align: center;
             }
 
-            .nav-container {
-                padding: 0 2rem;
+            .nav-links a::after {
+                bottom: 0.5rem;
             }
-
-            .main-content {
-                padding: 2rem;
+            
+            .hero {
+                min-height: auto;
+                padding: 6rem 0 5rem;
             }
-
-            h1 {
-                font-size: 2rem;
+            
+            .hero-grid {
+                gap: 3rem;
             }
-
+            
+            .hero-label {
+                font-size: 0.75rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-intro {
+                font-size: 1.05rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-image-wrapper {
+                max-width: 300px;
+            }
+            
+            .hero-badge {
+                bottom: -15px;
+                right: -15px;
+                padding: 1rem 1.25rem;
+            }
+            
+            .hero-badge-number {
+                font-size: 1.75rem;
+            }
+            
+            .hero-badge-text {
+                font-size: 0.7rem;
+            }
+            
+            .hero-meta {
+                gap: 2rem;
+                padding-top: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-meta-number {
+                font-size: 1.5rem;
+            }
+            
+            .hero-meta-label {
+                font-size: 0.8rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cta-button,
+            .cta-button-secondary {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 2rem;
+            }
+            
+            .partnership-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .expertise-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .expertise-number {
+                font-size: 2.5rem;
+            }
+            
+            .expertise-title {
+                font-size: 1.3rem;
+            }
+            
+            .nature-grid {
+                gap: 1.5rem;
+            }
+            
+            .nature-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .nature-card h3 {
+                font-size: 1.5rem;
+            }
+            
+            .nature-card p {
+                font-size: 1rem;
+            }
+            
+            .who-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .who-profile {
+                padding: 2rem 1.5rem;
+            }
+            
+            .who-profile h3 {
+                font-size: 1.3rem;
+            }
+            
+            .who-profile p {
+                font-size: 0.95rem;
+            }
+            
+            .who-context p {
+                font-size: 1.05rem;
+            }
+            
+            .challenge-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .challenge-item {
+                padding: 2rem 1.5rem;
+            }
+            
+            .challenge-item h3 {
+                font-size: 1.3rem;
+            }
+            
+            .stakes-quote {
+                font-size: 1.3rem;
+                padding: 0 1rem;
+            }
+            
+            .stakes-quote::before {
+                font-size: 3rem;
+            }
+            
+            .stakes-text h3 {
+                font-size: 1.1rem;
+            }
+            
+            .stakes-text p {
+                font-size: 0.95rem;
+            }
+            
+            .profile-intro p {
+                font-size: 1.05rem;
+            }
+            
+            .experience-timeline {
+                padding-left: 1.5rem;
+            }
+            
+            .timeline-card {
+                padding: 1.5rem;
+            }
+            
+            .timeline-title {
+                font-size: 1.3rem;
+            }
+            
+            .timeline-description {
+                font-size: 0.95rem;
+            }
+            
+            .credentials-banner {
+                grid-template-columns: 1fr;
+                padding: 2rem 1.5rem;
+                gap: 0;
+            }
+            
+            .credential-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+                padding: 1.5rem 1rem;
+            }
+            
+            .credential-item:last-child {
+                border-bottom: none;
+            }
+            
+            .credential-item:nth-child(2n) {
+                border-right: none;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .challenge-section,
+            .stakes-section {
+                padding: 5rem 0;
+            }
+            
+            .stats-section {
+                padding: 3.5rem 0;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.25rem;
+                margin-bottom: 2.5rem;
+            }
+            
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-section {
+                padding: 4.5rem 2rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
             footer {
-                padding: 2rem;
+                padding: 4rem 2rem 2rem;
+            }
+        }
+        
+        /* Smooth Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Services Page Specific Styles */
+        .services-hero {
+            min-height: 65vh;
+            padding: 8rem 0 6rem;
+        }
+
+        .services-hero .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 4rem;
+            max-width: 800px;
+            margin: 0 auto 1.75rem;
+        }
+
+        .services-hero .hero-intro {
+            margin: 0 auto 3rem;
+        }
+
+        .services-hero .hero-cta-group {
+            justify-content: center;
+        }
+
+        /* Core Services Grid Enhancement */
+        .core-services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .core-service-card {
+            background: var(--cream);
+            padding: 3rem 2.5rem;
+            border-radius: 4px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .core-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -4px;
+            width: 4px;
+            height: 0;
+            background: var(--navy);
+            transition: height 0.4s ease;
+        }
+
+        .core-service-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.1);
+        }
+
+        .core-service-card:hover::before {
+            height: 100%;
+        }
+
+        .core-service-card h3 {
+            font-size: 1.75rem;
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .core-service-card h3 i {
+            color: var(--gold);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .core-service-card > p:first-of-type {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--grey-dark);
+            margin-bottom: 0;
+        }
+
+        .service-bullets {
+            margin-top: 1.25rem;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .service-bullets li {
+            font-size: 0.975rem;
+            line-height: 1.7;
+            color: var(--grey-mid);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-bullets li::before {
+            content: '\f0a4';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.85rem;
+            top: 0.25rem;
+        }
+
+        /* Specialized Areas Enhancement - Complete Rework */
+        .specialized-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .specialized-card {
+            background: rgba(250, 248, 245, 0.03);
+            padding: 0;
+            border-radius: 6px;
+            border: 1px solid rgba(250, 248, 245, 0.12);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .specialized-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .specialized-card:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.35);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .specialized-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .specialized-header {
+            background: rgba(201, 169, 110, 0.08);
+            padding: 2rem 2.5rem 1.5rem;
+            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .specialized-icon-large {
+            width: 65px;
+            height: 65px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.8rem;
+            border: 2px solid rgba(201, 169, 110, 0.3);
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .specialized-card:hover .specialized-icon-large {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .specialized-title-area h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.25rem;
+            color: var(--grey-dark);
+            line-height: 1.3;
+        }
+
+        .specialized-subtitle {
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .specialized-content {
+            padding: 1.75rem 2rem 2rem;
+        }
+
+        .specialized-content > p:first-child {
+            font-size: 0.975rem;
+            line-height: 1.65;
+            color: var(--grey-dark);
+            margin-bottom: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .specialized-bullets {
+            padding-left: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .specialized-bullets li {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: var(--grey-dark);
+            opacity: 0.85;
+            padding-left: 1.75rem;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .specialized-bullets li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.8rem;
+            top: 0.2rem;
+        }
+
+        /* How We Work Enhancement */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .process-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--grey-light);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .process-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 4px 4px 0 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .process-card:hover {
+            border-color: rgba(201, 169, 110, 0.4);
+            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .process-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .process-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: rgba(201, 169, 110, 0.25);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .process-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-card > p:first-of-type {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .process-bullets {
+            margin-top: 1rem;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .process-bullets li {
+            font-size: 0.925rem;
+            line-height: 1.6;
+            color: var(--grey-mid);
+            margin-bottom: 0.45rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .process-bullets li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.85rem;
+            top: 0.15rem;
+        }
+
+        /* Common Situations Enhancement */
+        .situations-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3.5rem;
+        }
+
+        .situation-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--grey-light);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .situation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+
+        .situation-card:hover {
+            border-color: rgba(201, 169, 110, 0.35);
+            box-shadow: 0 12px 35px rgba(26, 35, 50, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .situation-card:hover::before {
+            height: 100%;
+        }
+
+        .situation-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+        }
+
+        .situation-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .situation-card > p:first-of-type {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .situation-bullets {
+            margin-top: 1rem;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .situation-bullets li {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--grey-dark);
+            margin-bottom: 0.4rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .situation-bullets li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.75rem;
+            top: 0.3rem;
+        }
+
+        /* Engagement Types Enhancement */
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .engagement-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 4px;
+            border: 2px solid var(--grey-light);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .engagement-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .engagement-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 20px 50px rgba(26, 35, 50, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .engagement-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .engagement-card h3 {
+            font-size: 1.65rem;
+            margin-bottom: 1.25rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .engagement-card h3 i {
+            color: var(--gold);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .engagement-card > p:first-of-type {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        .engagement-bullets {
+            margin-top: 1.25rem;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .engagement-bullets li {
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: var(--grey-dark);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .engagement-bullets li::before {
+            content: '\f138';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.8rem;
+            top: 0.25rem;
+        }
+
+        /* Investment Section Styling */
+        .investment-intro {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .investment-intro p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
+        }
+
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .investment-card {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .investment-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.4s ease;
+        }
+
+        .investment-card:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .investment-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .investment-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(201, 169, 110, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .investment-card:hover .investment-icon {
+            background: var(--gold);
+            color: var(--navy);
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .investment-card h3 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .investment-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 0;
+        }
+
+        .investment-philosophy {
+            background: rgba(201, 169, 110, 0.08);
+            padding: 3rem;
+            border-radius: 4px;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .philosophy-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 1.8rem;
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+        }
+
+        .philosophy-content h3 {
+            font-size: 1.75rem;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .philosophy-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
+            margin-bottom: 1.25rem;
+        }
+
+        .philosophy-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .core-services-grid,
+            .specialized-grid,
+            .engagement-grid,
+            .investment-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .situations-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .investment-philosophy {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-hero {
+                min-height: auto;
+                padding: 5rem 0 4rem;
+            }
+
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .core-service-card,
+            .engagement-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .specialized-card {
+                padding: 0;
+            }
+
+            .specialized-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .specialized-icon-large {
+                margin: 0 auto;
+            }
+
+            .specialized-content {
+                padding: 1.5rem;
+            }
+
+            .process-card,
+            .situation-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .investment-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .investment-philosophy {
+                padding: 2rem 1.5rem;
+            }
+
+            .philosophy-icon {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                font-size: 1.5rem;
+            }
+
+            .philosophy-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .philosophy-content p {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="index.html" class="logo"><span class="logo-accent">CAH</span> Advisory</a>
+            <a href="#" class="logo"><span class="logo-accent">CAH</span> Advisory</a>
 
             <!-- Hamburger Menu Button -->
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
@@ -327,15 +2614,525 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <h1>Our <span class="accent">Services</span></h1>
-        <p>Content coming soon...</p>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero services-hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-label fade-in">Services & Approach</div>
+                <h1 class="fade-in fade-in-delay-1">Partnership for the <span class="highlight">long game</span>.</h1>
+                <p class="hero-intro fade-in fade-in-delay-2">The work we do together focuses on the challenges that don't fit established frameworks—organizational decisions with human complexity, strategic choices that unfold over years, leadership transitions that reshape what's possible. This is thinking partnership for executives navigating consequential terrain.</p>
+
+                <div class="hero-cta-group fade-in fade-in-delay-3">
+                    <a href="contact.html" class="cta-button">Begin a Conversation</a>
+                    <a href="index.html" class="cta-button-secondary">About</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="challenge-section reveal">
+        <div class="section-container">
+            <h2>Core <span class="accent">Services</span></h2>
+
+            <div class="challenge-intro">
+                <p>The work takes different forms depending on what you're navigating. Some leaders engage for specific high-stakes decisions. Others find value in ongoing partnership as they build organizations, develop teams, and make choices that shape trajectory over time.</p>
+            </div>
+
+            <div class="core-services-grid">
+                <div class="core-service-card">
+                    <h3><i class="fas fa-user-tie"></i> Executive Coaching</h3>
+                    <p>One-on-one partnership focused on the challenges in front of you right now. We work through what matters, without preset methodology determining the conversation.</p>
+                    <ul class="service-bullets">
+                        <li>Navigating restructuring that carries political complexity</li>
+                        <li>Working through team dynamics affecting execution</li>
+                        <li>Thinking through career decisions across multiple timeframes</li>
+                        <li>Examining patterns you're seeing but haven't fully articulated</li>
+                    </ul>
+                </div>
+
+                <div class="core-service-card">
+                    <h3><i class="fas fa-chess-knight"></i> Strategic Advisory</h3>
+                    <p>Thinking through organizational and business challenges that require both analytical rigor and understanding of human systems.</p>
+                    <ul class="service-bullets">
+                        <li>Assessing market entry where timing and approach determine outcomes</li>
+                        <li>Designing organizations that enable strategy while remaining sustainable</li>
+                        <li>Integrating acquisitions where culture shapes financial performance</li>
+                        <li>Building capabilities that create competitive advantage over time</li>
+                    </ul>
+                </div>
+
+                <div class="core-service-card">
+                    <h3><i class="fas fa-rocket"></i> Leadership Transition Support</h3>
+                    <p>The first 90 days in a senior role often determine what becomes possible over the following years. We work through what this specific position requires and how to be effective from the outset.</p>
+                    <ul class="service-bullets">
+                        <li>Establishing credibility while learning organizational dynamics</li>
+                        <li>Making early decisions that shape future possibilities</li>
+                        <li>Building relationships that enable execution</li>
+                        <li>Reading signals that reveal what this role truly demands</li>
+                    </ul>
+                </div>
+
+                <div class="core-service-card">
+                    <h3><i class="fas fa-landmark"></i> Board Preparation & Development</h3>
+                    <p>Preparing for board service or navigating the unique demands of effective board membership. Understanding what distinguishes governance from executive leadership.</p>
+                    <ul class="service-bullets">
+                        <li>Providing strategic counsel without executive authority</li>
+                        <li>Influencing across different backgrounds and mental models</li>
+                        <li>Navigating board dynamics that shape decision quality</li>
+                        <li>Developing judgment about when to push and when to listen</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialized Areas Section -->
+    <section class="stakes-section reveal">
+        <div class="section-container">
+            <div class="stakes-content">
+                <h2>Specialized <span class="accent">Areas</span></h2>
+
+                <p class="stakes-quote">Beyond the core services, certain types of challenges benefit from specific expertise—situations where having navigated similar terrain yourself changes what you can see and how you can help.</p>
+
+                <div class="specialized-grid">
+                    <div class="specialized-card">
+                        <div class="specialized-header">
+                            <div class="specialized-icon-large">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="specialized-title-area">
+                                <h3>Organizational Transformation</h3>
+                                <div class="specialized-subtitle">Change Leadership</div>
+                            </div>
+                        </div>
+                        <div class="specialized-content">
+                            <p>Leading change across organizations means understanding that the rational case rarely determines outcomes. Twenty years leading global transformation taught me where resistance emerges and how to create genuine conditions for change.</p>
+                            <ul class="specialized-bullets">
+                                <li>Reading where resistance will emerge and why</li>
+                                <li>Creating conditions for genuine change rather than compliance</li>
+                                <li>Timing interventions based on organizational readiness</li>
+                                <li>Working with informal networks that shape what's feasible</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="specialized-card">
+                        <div class="specialized-header">
+                            <div class="specialized-icon-large">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="specialized-title-area">
+                                <h3>Building New Capabilities</h3>
+                                <div class="specialized-subtitle">Innovation & Scale</div>
+                            </div>
+                        </div>
+                        <div class="specialized-content">
+                            <p>Launching what doesn't yet exist requires managing the tension between speed and sustainability. The experience of creating BCG's analytics practice from concept to scaled global capability provides specific insight.</p>
+                            <ul class="specialized-bullets">
+                                <li>Hiring for roles you've never defined</li>
+                                <li>Building credibility in markets where you're unproven</li>
+                                <li>Scaling capabilities across geographies and cultures</li>
+                                <li>Integrating new ways of working into established organizations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="specialized-card">
+                        <div class="specialized-header">
+                            <div class="specialized-icon-large">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="specialized-title-area">
+                                <h3>P&L Leadership</h3>
+                                <div class="specialized-subtitle">Business Building</div>
+                            </div>
+                        </div>
+                        <div class="specialized-content">
+                            <p>Full accountability changes how you see decisions. Twenty years building businesses with P&L responsibility means understanding not just strategy but the operational realities that determine whether strategy translates to results.</p>
+                            <ul class="specialized-bullets">
+                                <li>Allocating resources when investment cases compete</li>
+                                <li>Building teams when talent is scarce and expensive</li>
+                                <li>Balancing short-term performance with long-term capability</li>
+                                <li>Making decisions when you bear full accountability for outcomes</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="specialized-card">
+                        <div class="specialized-header">
+                            <div class="specialized-icon-large">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div class="specialized-title-area">
+                                <h3>Executive Team Dynamics</h3>
+                                <div class="specialized-subtitle">Leadership Teams</div>
+                            </div>
+                        </div>
+                        <div class="specialized-content">
+                            <p>Senior teams rarely fail for lack of individual capability. Having led and participated in numerous executive teams provides perspective on what distinguishes the exceptional from the adequate.</p>
+                            <ul class="specialized-bullets">
+                                <li>Deciding when members have legitimate competing priorities</li>
+                                <li>Managing tension between functional excellence and enterprise optimization</li>
+                                <li>Building trust when performance pressure is high</li>
+                                <li>Navigating power dynamics that shape what gets discussed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section class="bring-section reveal" id="about">
+        <div class="section-container">
+            <h2>How We <span class="accent">Work Together</span></h2>
+
+            <div class="partnership-intro">
+                <p>The engagement structure varies based on what you're navigating and what type of partnership proves most valuable. Some situations call for intensive focus over defined periods. Others benefit from sustained partnership as challenges evolve over time.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <h3>Initial Conversation</h3>
+                    <p>We begin with a straightforward discussion about what you're navigating and whether working together makes sense. No formal intake process—simply a thoughtful conversation.</p>
+                    <ul class="process-bullets">
+                        <li>Understanding the challenges you're facing</li>
+                        <li>Exploring whether my experience matches your needs</li>
+                        <li>Assessing whether the working relationship feels right</li>
+                        <li>Determining if this partnership serves what you're trying to accomplish</li>
+                    </ul>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <h3>Engagement Design</h3>
+                    <p>If we decide to work together, we design an approach that fits your situation. The structure serves the work, not the other way around.</p>
+                    <ul class="process-bullets">
+                        <li>Regular coaching sessions (typically bi-weekly or monthly)</li>
+                        <li>Intensive advisory on specific decisions or challenges</li>
+                        <li>Structured transition support for new roles</li>
+                        <li>Flexible arrangements that adapt as your needs evolve</li>
+                    </ul>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <h3>The Work Itself</h3>
+                    <p>Sessions focus on what matters right now. We think through implications, examine assumptions, and consider approaches with both analytical rigor and understanding of human systems.</p>
+                    <ul class="process-bullets">
+                        <li>Working through the decision in front of you</li>
+                        <li>Examining team dynamics affecting execution</li>
+                        <li>Articulating patterns you're seeing but haven't named</li>
+                        <li>Stress-testing your thinking on consequential choices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes This Different Section -->
+    <section class="section-alternate reveal">
+        <div class="section-container">
+            <h2>What Makes This <span class="accent">Different</span></h2>
+
+            <div class="nature-grid">
+                <div class="nature-card">
+                    <div class="nature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Experience-Informed Perspective</h3>
+                    <div class="nature-divider"></div>
+                    <p>Having built businesses, led transformations, launched new capabilities, and served on boards for over a decade provides specific insight into the challenges you're navigating. This isn't coaching from theory or frameworks—it's partnership informed by having been responsible for outcomes in similar terrain.</p>
+                    <div style="margin-top: 1.5rem; display: grid; gap: 0.75rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
+                            <i class="fas fa-briefcase" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
+                            <span>20 years building and scaling businesses</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
+                            <i class="fas fa-landmark" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
+                            <span>14+ years active board service</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
+                            <i class="fas fa-globe" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
+                            <span>Global transformation leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nature-card">
+                    <div class="nature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Both Strategic and Human</h3>
+                    <div class="nature-divider"></div>
+                    <p>Effective work at senior levels requires holding both dimensions simultaneously. The analytical rigor to think through strategic implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact in specific situations. Most advisors bring one. Sustained effectiveness requires both.</p>
+                    <div style="margin-top: 1.5rem; display: grid; gap: 0.75rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
+                            <i class="fas fa-chart-bar" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
+                            <span>Strategic and analytical depth</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
+                            <i class="fas fa-users" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
+                            <span>Understanding of human systems</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
+                            <i class="fas fa-link" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
+                            <span>Integration of both dimensions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Situations Section -->
+    <section class="work-section reveal" id="services">
+        <div class="section-container">
+            <h2>Common <span class="accent">Situations</span></h2>
+
+            <div class="situations-grid">
+                <div class="situation-card">
+                    <div class="situation-icon">
+                        <i class="fas fa-chess-knight"></i>
+                    </div>
+                    <h3>High-Stakes Decisions</h3>
+                    <p>Decisions where the analytical answer seems clear but organizational reality requires navigation you haven't encountered before. We think through implications, stress-test assumptions, and examine what successful execution actually requires.</p>
+                    <ul class="situation-bullets">
+                        <li>Acquisitions with compelling logic but substantial integration risk</li>
+                        <li>Restructuring that carries political complexity</li>
+                        <li>Strategic pivots where timing determines outcomes</li>
+                        <li>Investment choices with multi-year implications</li>
+                    </ul>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Effectiveness</h3>
+                    <p>These situations resist simple interventions. We work through the human dynamics and organizational factors that determine whether teams perform or underperform their potential.</p>
+                    <ul class="situation-bullets">
+                        <li>Executive teams with strong individuals but misaligned priorities</li>
+                        <li>Talented direct reports who can't translate capability into results</li>
+                        <li>Succession planning when the obvious choice has limitations</li>
+                        <li>Building trust and candor in high-pressure environments</li>
+                    </ul>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Organizational Design</h3>
+                    <p>Design choices that account for both strategic logic and human realities of how work actually gets done.</p>
+                    <ul class="situation-bullets">
+                        <li>Restructuring to enable growth without losing effectiveness</li>
+                        <li>Integrating acquisitions where culture shapes performance</li>
+                        <li>Building matrix structures that work in practice</li>
+                        <li>Designing organizations that scale sustainably</li>
+                    </ul>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Leading Change</h3>
+                    <p>Transformation that requires more than communication plans and project management. Creating conditions where change becomes possible rather than mandating compliance that looks like commitment.</p>
+                    <ul class="situation-bullets">
+                        <li>Understanding where resistance will emerge and why</li>
+                        <li>Timing interventions based on organizational readiness</li>
+                        <li>Reading signals that determine pacing and approach</li>
+                        <li>Building coalitions that enable sustained change</li>
+                    </ul>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>Career Navigation</h3>
+                    <p>Career decisions at senior levels have long time horizons and limited room for course correction.</p>
+                    <ul class="situation-bullets">
+                        <li>Choosing between operational roles that build capability versus strategic roles that position differently</li>
+                        <li>Assessing CEO readiness and what development you still need</li>
+                        <li>Managing transitions from division to enterprise leadership</li>
+                        <li>Evaluating external opportunities against internal trajectory</li>
+                    </ul>
+                </div>
+
+                <div class="situation-card">
+                    <div class="situation-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Strategy Development</h3>
+                    <p>Strategy work that remains grounded in implementation reality throughout. Moving beyond planning cycles that produce documents no one references three months later.</p>
+                    <ul class="situation-bullets">
+                        <li>Assessing markets for opportunities and organizational capacity to execute</li>
+                        <li>Developing scenarios that prepare for uncertainty</li>
+                        <li>Testing strategic options against implementation constraints</li>
+                        <li>Building strategies that survive contact with reality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engagement Types Section -->
+    <section class="profile-section reveal">
+        <div class="section-container">
+            <h2>Engagement <span class="accent">Types</span></h2>
+
+            <div class="profile-intro">
+                <p>The structure we create depends on what you're navigating and what type of partnership proves most valuable. Each approach brings different benefits and serves different situations.</p>
+            </div>
+
+            <div class="engagement-grid">
+                <div class="engagement-card">
+                    <h3><i class="fas fa-handshake"></i> Ongoing Coaching Partnership</h3>
+                    <p>Regular sessions—typically bi-weekly or monthly—provide sustained thinking partnership as you navigate evolving challenges. The relationship deepens over time as we develop shared language and understanding.</p>
+                    <ul class="engagement-bullets">
+                        <li>Maintaining consistent space to think through complexity</li>
+                        <li>Navigating demanding roles where situations emerge regularly</li>
+                        <li>Leading transformation over extended periods</li>
+                        <li>Building judgment capacity through repeated engagement</li>
+                    </ul>
+                </div>
+
+                <div class="engagement-card">
+                    <h3><i class="fas fa-bolt"></i> Intensive Advisory</h3>
+                    <p>Focused engagement around a specific decision or challenge. The intensity and duration vary based on the situation.</p>
+                    <ul class="engagement-bullets">
+                        <li>Working through major decisions over concentrated periods</li>
+                        <li>Thinking through organizational design or strategic planning</li>
+                        <li>Addressing specific challenges requiring deep focus</li>
+                        <li>Returning for additional intensive work as new challenges emerge</li>
+                    </ul>
+                </div>
+
+                <div class="engagement-card">
+                    <h3><i class="fas fa-arrow-up"></i> Leadership Transition Support</h3>
+                    <p>The first 90-120 days in a new senior role benefit from structured support. This typically involves more frequent initial sessions that taper as you gain traction.</p>
+                    <ul class="engagement-bullets">
+                        <li>Understanding what the role truly requires</li>
+                        <li>Building key relationships effectively</li>
+                        <li>Making early decisions that shape future possibilities</li>
+                        <li>Establishing patterns that serve you over the longer term</li>
+                    </ul>
+                </div>
+
+                <div class="engagement-card">
+                    <h3><i class="fas fa-balance-scale"></i> Board Advisory</h3>
+                    <p>Support for leaders preparing for or navigating board service. This work takes different forms depending on where you are in your board journey.</p>
+                    <ul class="engagement-bullets">
+                        <li>Preparing for your first board role</li>
+                        <li>Understanding governance and what distinguishes effective directors</li>
+                        <li>Working through board dynamics that aren't functioning</li>
+                        <li>Developing as a board member over time</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="section-alternate reveal">
+        <div class="section-container">
+            <h2>Working <span class="accent">Together</span></h2>
+
+            <div class="investment-intro">
+                <p>Effective partnership at senior levels requires genuine commitment from both sides. The structure we create—and the investment it represents—should match the complexity you're navigating and the outcomes that matter.</p>
+            </div>
+
+            <div class="investment-grid">
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Start with Conversation</h3>
+                    <p>No formal intake process or standardized assessment. We begin with a direct conversation about what you're navigating, whether my experience matches your needs, and if partnership makes sense at this point.</p>
+                </div>
+
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Structure That Fits</h3>
+                    <p>Engagement design varies—ongoing coaching retainers, project-based advisory, intensive transition support. What matters is creating a structure that serves the work, not fitting your challenges into predetermined packages.</p>
+                </div>
+
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Investment Framework</h3>
+                    <p>Executive coaching typically involves monthly retainers for sustained partnership. Strategic advisory is usually project-scoped. Transition support combines intensive initial engagement with tapering frequency as you gain traction.</p>
+                </div>
+
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Organizational or Individual</h3>
+                    <p>Some engagements are organization-sponsored as part of leadership development or transition support. Others represent individual investment in your own effectiveness and career trajectory. Both models work.</p>
+                </div>
+            </div>
+
+            <div class="investment-philosophy">
+                <div class="philosophy-icon">
+                    <i class="fas fa-compass"></i>
+                </div>
+                <div class="philosophy-content">
+                    <h3>What Actually Matters</h3>
+                    <p>Fee structure matters less than whether this partnership will genuinely serve what you're trying to accomplish. The initial conversation helps us both assess fit—whether my experience matches what you need, whether the working relationship feels right, whether the time and financial investment makes sense given the complexity you're navigating and the stakes involved.</p>
+                    <p>I work with a limited number of leaders at any given time. This allows depth of engagement rather than surface-level advice. If we decide to work together, you have my sustained attention on the challenges that matter to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section reveal" id="contact">
+        <h2>Ready to <span class="accent">Explore</span></h2>
+        <p>If what you've read here resonates with challenges you're navigating, let's have a conversation. We'll discuss what you're working through, explore whether partnership makes sense, and if so, design an approach that serves your situation. No pressure, no formal process—simply a thoughtful discussion about whether working together might be valuable at this point in your leadership.</p>
+        <a href="contact.html" class="cta-button-outline">Start a Conversation</a>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-container">
+            <div class="footer-about">
+                <h3>CAH Advisory</h3>
+                <p>Working with senior executives who are building organizations, navigating complexity, and making consequential decisions. Bringing two decades of experience in business building, transformation leadership, and strategic advising to leaders facing challenges that require both analytical rigor and human insight.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:cahowe1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Connect</h4>
+                <p><strong>Email</strong><br><a href="mailto:cahowe1@gmail.com">cahowe1@gmail.com</a></p>
+                <p><strong>Location</strong><br>New York City</p>
+                <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank">chris-howe-ny</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
             <p>&copy; 2024 CAH Advisory Services. All rights reserved.</p>
         </div>
     </footer>
@@ -368,6 +3165,47 @@
                 navLinks.classList.remove('mobile-menu-open');
                 body.classList.remove('menu-open');
             }
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
