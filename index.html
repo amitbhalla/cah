@@ -473,112 +473,111 @@
         .nature-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1100px;
+            gap: 8rem;
+            max-width: 1200px;
             margin: 0 auto;
+            align-items: center;
         }
-        
+
         .nature-card {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 3rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
             position: relative;
             transition: all 0.4s ease;
         }
-        
+
         .nature-card::before {
             content: '';
             position: absolute;
+            left: -4rem;
             top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, transparent 0%, var(--gold) 20%, var(--gold) 80%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
-        
-        .nature-card:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
-        }
-        
+
         .nature-card:hover::before {
-            height: 100%;
+            opacity: 1;
         }
-        
+
         .nature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 3.5rem;
             color: var(--gold);
-            font-size: 1.5rem;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(201, 169, 110, 0.25);
+            display: block;
+            opacity: 0.7;
         }
-        
+
+        .nature-large-icon {
+            position: absolute;
+            top: 50%;
+            left: -50px;
+            transform: translateY(-50%);
+            font-size: 12rem;
+            color: rgba(201, 169, 110, 0.05);
+            z-index: 0;
+        }
+
         .nature-card h3 {
-            font-size: 1.75rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
             font-weight: 500;
-            margin-bottom: 1rem;
-            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
         }
-        
+
         .nature-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.9;
             margin-bottom: 0;
+            color: rgba(250, 248, 245, 0.85);
         }
-        
+
         .nature-divider {
-            width: 80px;
-            height: 1px;
-            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
-            margin: 1.25rem 0;
+            display: none;
         }
         
         .who-content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        
+
         .who-intro {
             max-width: 850px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5rem;
             text-align: center;
         }
-        
+
         .who-intro p {
             font-size: 1.25rem;
             line-height: 1.8;
             margin-bottom: 0;
         }
-        
+
         .who-profiles {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 4rem 3rem;
+            margin-bottom: 4rem;
         }
-        
+
         .who-profile {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            border: none;
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
         }
-        
+
         .who-profile::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -2rem;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
@@ -586,58 +585,73 @@
             background: var(--gold);
             transition: width 0.4s ease;
         }
-        
-        .who-profile:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
-        }
-        
+
         .who-profile:hover::after {
-            width: 80%;
+            width: 100px;
         }
-        
+
         .who-profile-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
+            font-size: 4rem;
             color: var(--gold);
-            font-size: 1.8rem;
-            border: 2px solid rgba(201, 169, 110, 0.25);
+            margin-bottom: 2rem;
+            opacity: 0.6;
+            transition: all 0.4s ease;
         }
-        
+
+        .who-profile:hover .who-profile-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
         .who-profile h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 500;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
-        
+
+        .who-profile h3::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: rgba(201, 169, 110, 0.3);
+        }
+
+        .who-background-icon {
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(201, 169, 110, 0.04);
+            z-index: -1;
+        }
+
         .who-profile p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: rgba(250, 248, 245, 0.8);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
             margin-bottom: 0;
         }
-        
+
         .who-context {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(250, 248, 245, 0.1);
+            margin-top: 5rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(250, 248, 245, 0.15);
             text-align: center;
         }
-        
+
         .who-context p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.75);
-            max-width: 800px;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: rgba(250, 248, 245, 0.85);
+            max-width: 900px;
             margin: 0 auto;
         }
         
@@ -645,59 +659,129 @@
         .challenge-section {
             background: var(--white);
             padding: 7rem 0;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .challenge-section::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
         .challenge-section h2 {
             text-align: center;
             margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .challenge-intro {
             max-width: 850px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 6rem;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .challenge-intro p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--grey-dark);
         }
-        
+
         .challenge-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
+            gap: 4rem 5rem;
+            position: relative;
+            z-index: 1;
         }
-        
+
         .challenge-item {
-            background: var(--cream);
+            position: relative;
             padding: 2.5rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--gold);
-            transition: all 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        .challenge-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+
+        .challenge-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(250, 248, 245, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+            transform: skewY(-1deg);
         }
-        
+
+        .challenge-item:hover::before {
+            opacity: 1;
+        }
+
+        .challenge-item:nth-child(even) {
+            margin-top: 3rem;
+        }
+
+        .challenge-icon {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 5rem;
+            color: rgba(201, 169, 110, 0.08);
+            transition: all 0.5s ease;
+            z-index: 0;
+        }
+
+        .challenge-item:hover .challenge-icon {
+            color: rgba(201, 169, 110, 0.15);
+            transform: rotate(10deg) scale(1.1);
+        }
+
         .challenge-item h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.85rem;
             font-weight: 500;
             color: var(--navy);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
-        
+
+        .challenge-number {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.3);
+        }
+
         .challenge-item p {
-            font-size: 1.05rem;
-            line-height: 1.75;
+            font-size: 1.1rem;
+            line-height: 1.85;
             color: var(--grey-dark);
             margin-bottom: 0;
+            position: relative;
+            z-index: 1;
         }
         
         /* Stakes Section */
@@ -706,7 +790,7 @@
             padding: 7rem 0;
             position: relative;
         }
-        
+
         .stakes-section::before {
             content: '';
             position: absolute;
@@ -718,17 +802,17 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
         }
-        
+
         .stakes-content {
-            max-width: 950px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-        
+
         .stakes-content h2 {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .stakes-quote {
             font-family: 'Playfair Display', serif;
             font-size: 1.75rem;
@@ -736,12 +820,12 @@
             line-height: 1.6;
             color: var(--navy);
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
             font-style: italic;
             position: relative;
             padding: 0 3rem;
         }
-        
+
         .stakes-quote::before {
             content: '"';
             position: absolute;
@@ -752,50 +836,110 @@
             opacity: 0.3;
             font-family: Georgia, serif;
         }
-        
+
         .stakes-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
             margin-top: 3rem;
         }
-        
+
         .stakes-point {
-            display: flex;
-            gap: 1.25rem;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 3rem;
             align-items: start;
+            position: relative;
         }
-        
+
+        .stakes-point:nth-child(even) {
+            grid-template-columns: 1fr 250px;
+        }
+
+        .stakes-point:nth-child(even) .stakes-text {
+            order: -1;
+            text-align: right;
+        }
+
         .stakes-icon {
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-top: 0.25rem;
+            display: none;
         }
-        
+
         .stakes-text {
             flex: 1;
         }
-        
+
         .stakes-text h3 {
-            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.75rem;
         }
-        
+
+        .stakes-text h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .stakes-point:nth-child(even) .stakes-text h3::after {
+            left: auto;
+            right: 0;
+        }
+
         .stakes-text p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--grey-mid);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
             margin-bottom: 0;
+        }
+
+        .stakes-point-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 600;
+            color: rgba(201, 169, 110, 0.12);
+            line-height: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .stakes-decorative-icon {
+            position: absolute;
+            font-size: 2.5rem;
+            color: var(--gold);
+            opacity: 0.2;
+        }
+
+        .stakes-point:nth-child(1) .stakes-decorative-icon {
+            top: -40px;
+            left: -30px;
+            font-size: 3rem;
+        }
+
+        .stakes-point:nth-child(2) .stakes-decorative-icon {
+            bottom: -30px;
+            right: -40px;
+            font-size: 2rem;
+        }
+
+        .stakes-point:nth-child(3) .stakes-decorative-icon {
+            top: -35px;
+            left: -40px;
+            font-size: 3.5rem;
+        }
+
+        .stakes-point:nth-child(4) .stakes-decorative-icon {
+            bottom: -40px;
+            right: -30px;
+            font-size: 2.8rem;
         }
         
         /* Stats Section */
@@ -876,7 +1020,7 @@
             background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
             position: relative;
         }
-        
+
         .bring-section::before {
             content: '';
             position: absolute;
@@ -888,86 +1032,105 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
         }
-        
+
         .bring-section h2 {
             text-align: center;
         }
-        
+
         .partnership-intro {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5rem;
         }
-        
+
         .partnership-intro p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--grey-dark);
             margin-bottom: 0;
         }
-        
+
         .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
+            max-width: 950px;
+            margin: 0 auto 5rem;
         }
-        
+
         .expertise-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--grey-light);
-            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 3rem;
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.12);
             transition: all 0.4s ease;
             position: relative;
-            overflow: hidden;
         }
-        
+
+        .expertise-card:first-child {
+            border-top: 1px solid rgba(201, 169, 110, 0.12);
+        }
+
         .expertise-card::before {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
+            bottom: -1px;
+            width: 0;
+            height: 2px;
             background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: width 0.5s ease;
         }
-        
-        .expertise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-        }
-        
+
         .expertise-card:hover::before {
-            transform: scaleX(1);
+            width: 200px;
         }
-        
+
         .expertise-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 600;
-            color: rgba(201, 169, 110, 0.2);
+            color: var(--gold);
             line-height: 1;
-            margin-bottom: 1rem;
+            opacity: 0.4;
+            position: relative;
         }
-        
+
+        .expertise-icon-large {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        .expertise-content {
+            padding-top: 0.5rem;
+            position: relative;
+        }
+
+        .expertise-decorative-icon {
+            position: absolute;
+            right: -30px;
+            top: -20px;
+            font-size: 6rem;
+            color: rgba(201, 169, 110, 0.06);
+            z-index: 0;
+        }
+
         .expertise-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 500;
             color: var(--navy);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.01em;
         }
-        
+
         .expertise-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--grey-mid);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
             margin-bottom: 0;
         }
         
@@ -1025,66 +1188,95 @@
         .work-section {
             background: var(--cream);
         }
-        
+
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
             margin-top: 3.5rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
+
         .work-card {
-            background: var(--white);
+            background: transparent;
             padding: 3rem;
-            border-radius: 2px;
-            border: 1px solid var(--grey-light);
+            border-right: 1px solid rgba(201, 169, 110, 0.15);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
-        
+
+        .work-card:nth-child(2n) {
+            border-right: none;
+        }
+
+        .work-card:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
         .work-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
         }
-        
-        .work-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(26, 35, 50, 0.12);
-            border-color: rgba(201, 169, 110, 0.3);
-        }
-        
+
         .work-card:hover::before {
-            height: 100%;
+            opacity: 1;
         }
-        
+
+        .work-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .work-card-icon {
-            width: 65px;
-            height: 65px;
-            background: rgba(201, 169, 110, 0.1);
-            border-radius: 4px;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--gold);
-            font-size: 1.6rem;
-            margin-bottom: 1.75rem;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-        }
-        
-        .work-card h3 {
             font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.25rem;
-            color: var(--navy);
+            margin-bottom: 1.5rem;
+            border: none;
+            position: relative;
+            z-index: 1;
         }
-        
+
+        .work-card-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .work-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+
         .work-card p {
             font-size: 1.05rem;
             line-height: 1.75;
@@ -1462,28 +1654,52 @@
             }
             
             .expertise-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .nature-grid {
-                grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
+            .expertise-card {
+                grid-template-columns: 100px 1fr;
+                gap: 2rem;
+            }
+
+            .nature-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
             .challenge-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 3rem;
             }
-            
+
+            .challenge-item:nth-child(even) {
+                margin-top: 0;
+            }
+
+            .challenge-icon {
+                font-size: 4rem;
+            }
+
             .stakes-list {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 3rem;
             }
-            
+
+            .stakes-point {
+                grid-template-columns: 200px 1fr;
+                gap: 2rem;
+            }
+
+            .stakes-point:nth-child(even) {
+                grid-template-columns: 1fr 200px;
+            }
+
+            .stakes-point-number {
+                font-size: 6rem;
+            }
+
             .who-profiles {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 3rem;
             }
             
             .experience-timeline {
@@ -1718,68 +1934,139 @@
             }
             
             .nature-grid {
-                gap: 1.5rem;
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
-            
-            .nature-card {
-                padding: 2rem 1.5rem;
+
+            .nature-card::before {
+                display: none;
             }
-            
+
+            .nature-large-icon {
+                display: none;
+            }
+
+            .nature-icon {
+                font-size: 3rem;
+                margin-bottom: 1.25rem;
+            }
+
             .nature-card h3 {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
             }
-            
+
             .nature-card p {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
-            
+
+            .who-background-icon {
+                font-size: 5rem;
+                top: -20px;
+                right: -10px;
+            }
+
+            .who-profile-icon {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .stakes-decorative-icon {
+                display: none;
+            }
+
+            .expertise-decorative-icon {
+                display: none;
+            }
+
             .who-intro p {
                 font-size: 1.1rem;
             }
-            
-            .who-profile {
-                padding: 2rem 1.5rem;
-            }
-            
+
             .who-profile h3 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
-            
+
             .who-profile p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
-            
+
             .who-context p {
                 font-size: 1.05rem;
             }
-            
+
             .challenge-intro p {
                 font-size: 1.1rem;
             }
-            
+
+            .challenge-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
             .challenge-item {
                 padding: 2rem 1.5rem;
             }
-            
-            .challenge-item h3 {
-                font-size: 1.3rem;
+
+            .challenge-item:nth-child(even) {
+                margin-top: 0;
             }
-            
+
+            .challenge-icon {
+                font-size: 3.5rem;
+                top: -10px;
+                right: 10px;
+            }
+
+            .challenge-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .challenge-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .challenge-item p {
+                font-size: 1rem;
+            }
+
             .stakes-quote {
                 font-size: 1.3rem;
                 padding: 0 1rem;
             }
-            
+
             .stakes-quote::before {
                 font-size: 3rem;
             }
-            
-            .stakes-text h3 {
-                font-size: 1.1rem;
+
+            .stakes-point {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+                text-align: left !important;
             }
-            
+
+            .stakes-point:nth-child(even) .stakes-text {
+                order: 0;
+                text-align: left !important;
+            }
+
+            .stakes-point-number {
+                font-size: 4rem;
+                text-align: left;
+            }
+
+            .stakes-text h3 {
+                font-size: 1.3rem;
+            }
+
+            .stakes-text h3::after {
+                left: 0 !important;
+                right: auto !important;
+            }
+
             .stakes-text p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
             
             .profile-intro p {
@@ -1851,6 +2138,14 @@
             
             .work-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .work-card {
+                border-right: none !important;
+            }
+
+            .work-card:nth-last-child(-n+1) {
+                border-bottom: none !important;
             }
             
             .contact-section {
@@ -1956,21 +2251,29 @@
             
             <div class="challenge-grid">
                 <div class="challenge-item">
+                    <i class="fas fa-users-slash challenge-icon"></i>
+                    <div class="challenge-number">01</div>
                     <h3>Fewer Thinking Partners</h3>
                     <p>As you move up, the number of people who can genuinely engage with what you're navigating naturally decreases. Your team needs you to provide direction. Your board expects decisive confidence. The space to simply think through complexity—without the pressure to have immediate answers—becomes scarce.</p>
                 </div>
-                
+
                 <div class="challenge-item">
+                    <i class="fas fa-route challenge-icon"></i>
+                    <div class="challenge-number">02</div>
                     <h3>Decisions Beyond Frameworks</h3>
                     <p>The situations you're working through often resist standard approaches. The acquisition where the strategic logic is compelling but integration risks substantial. The executive team restructuring where personal relationships with board members create invisible constraints. These require judgment, not just analysis.</p>
                 </div>
-                
+
                 <div class="challenge-item">
+                    <i class="fas fa-project-diagram challenge-icon"></i>
+                    <div class="challenge-number">03</div>
                     <h3>Seeing System Dynamics</h3>
                     <p>You recognize patterns others don't yet see—how organizational changes will interact with informal power dynamics, how strategic shifts will encounter cultural resistance in predictable but hard-to-articulate ways. This pattern recognition is valuable but can be isolating.</p>
                 </div>
-                
+
                 <div class="challenge-item">
+                    <i class="far fa-clock challenge-icon"></i>
+                    <div class="challenge-number">04</div>
                     <h3>The Extended Time Horizon</h3>
                     <p>Your decisions shape organizational reality over years, not quarters. Developing the leadership bench for challenges that don't exist yet. Shifting culture in ways that enable strategies not yet imagined. Knowing when to invest in capabilities before the market signals become obvious to everyone.</p>
                 </div>
@@ -1988,38 +2291,42 @@
                 
                 <div class="stakes-list">
                     <div class="stakes-point">
-                        <div class="stakes-icon">
-                            <i class="fas fa-users"></i>
+                        <div class="stakes-point-number">
+                            01
+                            <i class="fas fa-building stakes-decorative-icon"></i>
                         </div>
                         <div class="stakes-text">
                             <h3>What You're Building</h3>
                             <p>The organizations you shape, the leaders you develop, the decision-making cultures you establish—these outlast individual tenures. They become part of how the organization understands itself and what it believes is possible.</p>
                         </div>
                     </div>
-                    
+
                     <div class="stakes-point">
-                        <div class="stakes-icon">
-                            <i class="fas fa-chart-line"></i>
+                        <div class="stakes-point-number">
+                            02
+                            <i class="fas fa-road stakes-decorative-icon"></i>
                         </div>
                         <div class="stakes-text">
                             <h3>Future Possibilities</h3>
                             <p>Today's choices about capabilities, partnerships, and market positioning create the set of scenarios your organization can pursue tomorrow. Some strategic paths remain open. Others quietly foreclose.</p>
                         </div>
                     </div>
-                    
+
                     <div class="stakes-point">
-                        <div class="stakes-icon">
-                            <i class="fas fa-brain"></i>
+                        <div class="stakes-point-number">
+                            03
+                            <i class="fas fa-chart-line stakes-decorative-icon"></i>
                         </div>
                         <div class="stakes-text">
                             <h3>The Compounding Effect</h3>
                             <p>At senior levels, the difference between good and slightly better judgment—repeated across dozens of consequential decisions—creates divergent organizational trajectories over time.</p>
                         </div>
                     </div>
-                    
+
                     <div class="stakes-point">
-                        <div class="stakes-icon">
-                            <i class="fas fa-balance-scale"></i>
+                        <div class="stakes-point-number">
+                            04
+                            <i class="fas fa-lightbulb stakes-decorative-icon"></i>
                         </div>
                         <div class="stakes-text">
                             <h3>Sustaining Clarity</h3>
@@ -2042,21 +2349,39 @@
             
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <div class="expertise-number">01</div>
-                    <h3 class="expertise-title">Business Building</h3>
-                    <p class="expertise-description">Twenty years creating and scaling business units with full P&L accountability. The experience of making investment decisions, building teams, and being responsible for outcomes teaches what frameworks alone cannot.</p>
+                    <div class="expertise-number">
+                        01
+                        <i class="fas fa-rocket expertise-icon-large"></i>
+                    </div>
+                    <div class="expertise-content">
+                        <i class="fas fa-chart-line expertise-decorative-icon"></i>
+                        <h3 class="expertise-title">Business Building</h3>
+                        <p class="expertise-description">Twenty years creating and scaling business units with full P&L accountability. The experience of making investment decisions, building teams, and being responsible for outcomes teaches what frameworks alone cannot.</p>
+                    </div>
                 </div>
-                
+
                 <div class="expertise-card">
-                    <div class="expertise-number">02</div>
-                    <h3 class="expertise-title">Organizational Transformation</h3>
-                    <p class="expertise-description">Leading global change across 25,000+ professionals taught me that transformation is as much about understanding human systems as it is about organizational design.</p>
+                    <div class="expertise-number">
+                        02
+                        <i class="fas fa-sync-alt expertise-icon-large"></i>
+                    </div>
+                    <div class="expertise-content">
+                        <i class="fas fa-sitemap expertise-decorative-icon"></i>
+                        <h3 class="expertise-title">Organizational Transformation</h3>
+                        <p class="expertise-description">Leading global change across 25,000+ professionals taught me that transformation is as much about understanding human systems as it is about organizational design.</p>
+                    </div>
                 </div>
-                
+
                 <div class="expertise-card">
-                    <div class="expertise-number">03</div>
-                    <h3 class="expertise-title">Building New Capabilities</h3>
-                    <p class="expertise-description">Launching BCG's analytics practice meant creating something that didn't exist—hiring for roles we'd never defined, building capabilities across countries, integrating new ways of working into established culture.</p>
+                    <div class="expertise-number">
+                        03
+                        <i class="fas fa-cubes expertise-icon-large"></i>
+                    </div>
+                    <div class="expertise-content">
+                        <i class="fas fa-cogs expertise-decorative-icon"></i>
+                        <h3 class="expertise-title">Building New Capabilities</h3>
+                        <p class="expertise-description">Launching BCG's analytics practice meant creating something that didn't exist—hiring for roles we'd never defined, building capabilities across countries, integrating new ways of working into established culture.</p>
+                    </div>
                 </div>
             </div>
             
@@ -2107,18 +2432,16 @@
             
             <div class="nature-grid">
                 <div class="nature-card">
-                    <div class="nature-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
+                    <i class="fas fa-microscope nature-large-icon"></i>
+                    <i class="fas fa-lightbulb nature-icon"></i>
                     <h3>The Substance of It</h3>
                     <div class="nature-divider"></div>
                     <p>The work focuses on the challenges in front of you—organizational moves that resist standard approaches, team dynamics that shape outcomes in subtle but powerful ways, career decisions that require judgment rather than frameworks. It's less about developing skills you don't have and more about thinking clearly through complexity.</p>
                 </div>
-                
+
                 <div class="nature-card">
-                    <div class="nature-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
+                    <i class="fas fa-atom nature-large-icon"></i>
+                    <i class="fas fa-balance-scale nature-icon"></i>
                     <h3>Holding Both</h3>
                     <div class="nature-divider"></div>
                     <p>Effective partnership at this level requires holding both strategic and human dimensions simultaneously. The analytical rigor to think through implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact in specific situations.</p>
@@ -2268,25 +2591,22 @@
                 
                 <div class="who-profiles">
                     <div class="who-profile">
-                        <div class="who-profile-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
+                        <i class="fas fa-crown who-background-icon"></i>
+                        <i class="fas fa-user-tie who-profile-icon"></i>
                         <h3>C-Suite Leaders</h3>
                         <p>CEOs, COOs, CFOs, and other C-level executives managing enterprise-wide complexity and making decisions that shape organizational trajectory.</p>
                     </div>
-                    
+
                     <div class="who-profile">
-                        <div class="who-profile-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </div>
+                        <i class="fas fa-mountain who-background-icon"></i>
+                        <i class="fas fa-layer-group who-profile-icon"></i>
                         <h3>Senior Executives</h3>
                         <p>Leaders one or two levels from the top, running divisions or functions with significant autonomy and preparing for broader enterprise roles.</p>
                     </div>
-                    
+
                     <div class="who-profile">
-                        <div class="who-profile-icon">
-                            <i class="fas fa-chess-king"></i>
-                        </div>
+                        <i class="fas fa-landmark who-background-icon"></i>
+                        <i class="fas fa-chess-king who-profile-icon"></i>
                         <h3>Board Members</h3>
                         <p>Directors navigating governance challenges, board dynamics, and the unique demands of providing strategic counsel at the highest level.</p>
                     </div>

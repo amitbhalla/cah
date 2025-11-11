@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAH Advisory | Executive Coaching & Strategic Consulting for C-Suite Leaders</title>
     <meta name="description" content="Strategic advisory and executive coaching for senior leaders navigating complexity, building organizations, and making high-stakes decisions.">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
+
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         :root {
             --navy: #1a2332;
@@ -26,18 +26,18 @@
             --grey-dark: #2d2d2d;
             --white: #ffffff;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
             font-size: 16px;
         }
-        
+
         body {
             font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--navy);
@@ -47,13 +47,13 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
+
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
             font-weight: 500;
             letter-spacing: -0.02em;
         }
-        
+
         /* Navigation */
         .nav {
             position: fixed;
@@ -67,23 +67,23 @@
             border-bottom: 1px solid rgba(250, 248, 245, 0.1);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .nav .logo,
         .nav .nav-links a {
             color: var(--cream);
         }
-        
+
         .nav .logo-accent {
             color: var(--gold);
         }
-        
+
         .nav.scrolled {
             padding: 1.25rem 0;
             background: rgba(26, 35, 50, 0.97);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
             border-bottom: 1px solid rgba(201, 169, 110, 0.15);
         }
-        
+
         .nav-container {
             max-width: 1320px;
             margin: 0 auto;
@@ -92,7 +92,7 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.6rem;
@@ -102,19 +102,19 @@
             letter-spacing: 0.5px;
             transition: all 0.4s ease;
         }
-        
+
         .logo-accent {
             color: var(--gold);
             font-weight: 600;
         }
-        
+
         .nav-links {
             display: flex;
             gap: 3.5rem;
             list-style: none;
             align-items: center;
         }
-        
+
         .nav-links a {
             color: var(--navy);
             text-decoration: none;
@@ -125,7 +125,7 @@
             position: relative;
             padding: 0.5rem 0;
         }
-        
+
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -136,11 +136,11 @@
             background: var(--gold);
             transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .nav-links a:hover::after {
             width: 100%;
         }
-        
+
         .nav-links a:hover {
             color: var(--gold);
         }
@@ -173,7 +173,6 @@
             background: var(--cream);
         }
 
-        /* Hamburger Animation */
         .hamburger.active .hamburger-line:nth-child(1) {
             transform: translateY(10px) rotate(45deg);
         }
@@ -187,13 +186,11 @@
             transform: translateY(-10px) rotate(-45deg);
         }
 
-        /* Mobile Menu Overlay */
         .nav-links.mobile-menu-open {
             transform: translateX(0) !important;
             visibility: visible !important;
         }
 
-        /* Prevent body scroll when menu is open */
         body.menu-open {
             overflow: hidden;
         }
@@ -201,15 +198,16 @@
         /* Hero Section */
         .hero {
             margin-top: 0;
-            min-height: 100vh;
+            min-height: 65vh;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--navy);
             position: relative;
             overflow: hidden;
+            padding: 8rem 0 6rem;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -220,7 +218,7 @@
             background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
             opacity: 0.3;
         }
-        
+
         .hero::after {
             content: '';
             position: absolute;
@@ -231,7 +229,7 @@
             background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
             border-radius: 50%;
         }
-        
+
         .hero-container {
             max-width: 1320px;
             margin: 0 auto;
@@ -239,18 +237,13 @@
             position: relative;
             z-index: 1;
         }
-        
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 6rem;
-            align-items: center;
-        }
-        
+
         .hero-content {
-            max-width: 750px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
         }
-        
+
         .hero-label {
             display: inline-block;
             font-size: 0.85rem;
@@ -262,124 +255,40 @@
             padding-bottom: 0.75rem;
             border-bottom: 1px solid rgba(201, 169, 110, 0.3);
         }
-        
-        .hero-image-wrapper {
-            position: relative;
-        }
-        
-        .hero-image {
-            position: relative;
-        }
-        
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid rgba(201, 169, 110, 0.25);
-            border-radius: 4px;
-            z-index: 0;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(201, 169, 110, 0.2);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-badge {
-            position: absolute;
-            bottom: -20px;
-            right: -20px;
-            background: var(--gold);
-            color: var(--navy);
-            padding: 1.25rem 1.75rem;
-            border-radius: 4px;
-            box-shadow: 0 10px 40px rgba(201, 169, 110, 0.4);
-            z-index: 2;
-        }
-        
-        .hero-badge-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.25rem;
-            font-weight: 600;
-            line-height: 1;
-            margin-bottom: 0.25rem;
-        }
-        
-        .hero-badge-text {
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            opacity: 0.9;
-        }
-        
+
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 500;
             line-height: 1.1;
-            margin-bottom: 1.75rem;
+            margin: 0 auto 1.75rem;
             color: var(--cream);
             letter-spacing: -0.03em;
+            max-width: 800px;
         }
-        
+
         .hero h1 .highlight {
             color: var(--gold);
             font-weight: 600;
             position: relative;
             display: inline-block;
         }
-        
+
         .hero-intro {
             font-size: 1.25rem;
             font-weight: 300;
             line-height: 1.7;
             color: rgba(250, 248, 245, 0.8);
-            margin-bottom: 3rem;
+            margin: 0 auto 3rem;
             max-width: 650px;
         }
-        
-        .hero-meta {
-            display: flex;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(250, 248, 245, 0.1);
-        }
-        
-        .hero-meta-item {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .hero-meta-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        
-        .hero-meta-label {
-            font-size: 0.9rem;
-            color: rgba(250, 248, 245, 0.6);
-            font-weight: 400;
-        }
-        
+
         .hero-cta-group {
             display: flex;
             gap: 1.5rem;
             align-items: center;
+            justify-content: center;
         }
-        
+
         .cta-button {
             display: inline-block;
             padding: 1.1rem 2.8rem;
@@ -394,14 +303,14 @@
             box-shadow: 0 6px 20px rgba(201, 169, 110, 0.25);
             border: 1px solid var(--gold);
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 35px rgba(201, 169, 110, 0.35);
             background: var(--gold-dark);
             border-color: var(--gold-dark);
         }
-        
+
         .cta-button-secondary {
             display: inline-block;
             padding: 1.1rem 2.8rem;
@@ -415,291 +324,178 @@
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(250, 248, 245, 0.3);
         }
-        
+
         .cta-button-secondary:hover {
             transform: translateY(-2px);
             border-color: var(--gold);
             color: var(--gold);
         }
-        
+
         /* Section Styling */
         section {
-            padding: 6rem 0;
+            padding: 7rem 0;
         }
-        
+
         .section-container {
             max-width: 1320px;
             margin: 0 auto;
             padding: 0 4rem;
         }
-        
-        .section-alternate {
-            background: var(--navy);
-            color: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section-alternate::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -15%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-        
-        .section-alternate .section-container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .section-alternate h2 {
-            color: var(--cream);
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .section-alternate h3 {
-            color: var(--gold);
-        }
-        
-        .section-alternate p {
-            color: rgba(250, 248, 245, 0.85);
-        }
-        
-        .nature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .nature-card {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 3rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        
-        .nature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
-        }
-        
-        .nature-card:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
-        }
-        
-        .nature-card:hover::before {
-            height: 100%;
-        }
-        
-        .nature-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(201, 169, 110, 0.25);
-        }
-        
-        .nature-card h3 {
-            font-size: 1.75rem;
+
+        h2 {
+            font-size: 3rem;
             font-weight: 500;
-            margin-bottom: 1rem;
-            letter-spacing: -0.01em;
-        }
-        
-        .nature-card p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 0;
-        }
-        
-        .nature-divider {
-            width: 80px;
-            height: 1px;
-            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
-            margin: 1.25rem 0;
-        }
-        
-        
-        .who-intro {
-            max-width: 850px;
-            margin: 0 auto 4rem;
-            text-align: center;
-        }
-        
-        .who-intro p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            margin-bottom: 0;
-        }
-        
-        .who-profiles {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        
-        .who-profile {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .who-profile::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.4s ease;
-        }
-        
-        .who-profile:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
-        }
-        
-        .who-profile:hover::after {
-            width: 80%;
-        }
-        
-        .who-profile-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: var(--gold);
-            font-size: 1.8rem;
-            border: 2px solid rgba(201, 169, 110, 0.25);
-        }
-        
-        .who-profile h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-        
-        .who-profile p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: rgba(250, 248, 245, 0.8);
-            margin-bottom: 0;
-        }
-        
-        .who-context {
-            margin-top: 4rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(250, 248, 245, 0.1);
-            text-align: center;
-        }
-        
-        .who-context p {
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.75);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Challenge Section */
-        .challenge-section {
-            background: var(--white);
-            padding: 7rem 0;
-        }
-        
-        .challenge-section h2 {
-            text-align: center;
             margin-bottom: 3rem;
-        }
-        
-        .challenge-intro {
-            max-width: 850px;
-            margin: 0 auto 4rem;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
             text-align: center;
         }
-        
-        .challenge-intro p {
+
+        h2 .accent {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Core Services Section - Alternating Asymmetric Layout */
+        .core-services-section {
+            background: var(--white);
+        }
+
+        .core-intro {
+            max-width: 850px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .core-intro p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--grey-dark);
         }
-        
-        .challenge-grid {
+
+        .core-services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .core-service-item {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: 180px 1fr;
+            gap: 0;
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+            position: relative;
+            transition: all 0.4s ease;
         }
-        
-        .challenge-item {
-            background: var(--cream);
-            padding: 2.5rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--gold);
-            transition: all 0.3s ease;
+
+        .core-service-item:hover {
+            padding-left: 2rem;
         }
-        
-        .challenge-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+
+        .core-service-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 60%;
+            background: linear-gradient(180deg, transparent 0%, rgba(201, 169, 110, 0.1) 50%, transparent 100%);
+            transition: width 0.4s ease;
         }
-        
-        .challenge-item h3 {
+
+        .core-service-item:hover::before {
+            width: 100%;
+        }
+
+        .core-service-number-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .core-service-number {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 6rem;
+            font-weight: 600;
+            color: rgba(201, 169, 110, 0.12);
+            line-height: 1;
+            position: relative;
+        }
+
+        .core-service-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: var(--gold);
+            transition: all 0.4s ease;
+        }
+
+        .core-service-item:hover .core-service-icon {
+            transform: translate(-50%, -50%) scale(1.15) rotate(10deg);
+        }
+
+        .core-service-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 4rem;
+        }
+
+        .core-service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
             font-weight: 500;
             color: var(--navy);
             margin-bottom: 1rem;
         }
-        
-        .challenge-item p {
-            font-size: 1.05rem;
-            line-height: 1.75;
+
+        .core-service-content > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: var(--grey-dark);
-            margin-bottom: 0;
+            margin-bottom: 1.25rem;
         }
-        
-        /* Stakes Section */
-        .stakes-section {
-            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
-            padding: 7rem 0;
+
+        .core-service-bullets {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem 2rem;
+        }
+
+        .core-service-bullets li {
+            font-size: 0.975rem;
+            line-height: 1.6;
+            color: var(--grey-mid);
+            padding-left: 1.5rem;
             position: relative;
         }
-        
-        .stakes-section::before {
+
+        .core-service-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* Specialized Areas - Horizontal Timeline Pattern */
+        .specialized-section {
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+            position: relative;
+        }
+
+        .specialized-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -710,27 +506,24 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
         }
-        
-        
-        .stakes-content h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .stakes-quote {
+
+        .specialized-intro {
             font-family: 'Playfair Display', serif;
             font-size: 1.75rem;
             font-weight: 400;
             line-height: 1.6;
             color: var(--navy);
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             font-style: italic;
             position: relative;
             padding: 0 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .stakes-quote::before {
+
+        .specialized-intro::before {
             content: '"';
             position: absolute;
             left: 0;
@@ -740,351 +533,437 @@
             opacity: 0.3;
             font-family: Georgia, serif;
         }
-        
-        .stakes-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+
+        .specialized-timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            margin-top: 3rem;
         }
-        
-        .stakes-point {
-            display: flex;
-            gap: 1.25rem;
-            align-items: start;
-        }
-        
-        .stakes-icon {
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-top: 0.25rem;
-        }
-        
-        .stakes-text {
-            flex: 1;
-        }
-        
-        .stakes-text h3 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 0.5rem;
-        }
-        
-        .stakes-text p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: var(--grey-mid);
-            margin-bottom: 0;
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            background: var(--cream);
-            padding: 5rem 0;
-        }
-        
-        .stats-grid {
+
+        .specialized-item {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
-            text-align: center;
+            grid-template-columns: 120px 1fr;
+            gap: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+            position: relative;
+            transition: all 0.4s ease;
         }
-        
-        .stat-item {
-            padding: 2rem;
+
+        .specialized-item:last-child {
+            border-bottom: none;
         }
-        
-        .stat-number {
+
+        .specialized-item:hover {
+            transform: translateX(10px);
+        }
+
+        .specialized-number-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 0.5rem;
+        }
+
+        .specialized-number {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
             font-weight: 600;
             color: var(--gold);
             line-height: 1;
             margin-bottom: 0.75rem;
-        }
-        
-        .stat-label {
-            font-size: 1.05rem;
-            color: var(--grey-dark);
-            font-weight: 400;
-        }
-        
-        h2 {
-            font-size: 3rem;
-            font-weight: 500;
-            margin-bottom: 3rem;
-            color: var(--navy);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-        
-        h2 .accent {
-            color: var(--gold);
-            font-weight: 600;
-        }
-        
-        h3 {
-            font-size: 1.75rem;
-            font-weight: 500;
-            margin-bottom: 1.25rem;
-            color: var(--navy);
-            letter-spacing: -0.01em;
-        }
-        
-        p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--grey-dark);
-            margin-bottom: 1.75rem;
-            font-weight: 400;
-        }
-        
-        .intro {
-            font-size: 1.2rem;
-            font-weight: 300;
-            line-height: 1.75;
-            color: var(--grey-mid);
-            margin-bottom: 1.5rem;
-            max-width: 900px;
-        }
-        
-        /* Partnership Section */
-        .bring-section {
-            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
             position: relative;
         }
-        
-        .bring-section::before {
-            content: '';
+
+        .specialized-icon-inline {
+            font-size: 1.5rem;
+            color: rgba(201, 169, 110, 0.4);
+        }
+
+        .specialized-underline {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .specialized-item:hover .specialized-underline {
+            width: 80px;
+        }
+
+        .specialized-content-area {
+            padding-top: 0.5rem;
+        }
+
+        .specialized-header-inline {
+            margin-bottom: 1rem;
+        }
+
+        .specialized-header-inline h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .specialized-subtitle {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .specialized-content-area > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--grey-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .specialized-bullets {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .specialized-bullets li {
+            font-size: 0.975rem;
+            line-height: 1.6;
+            color: var(--grey-mid);
+            padding-left: 1.75rem;
+            position: relative;
+        }
+
+        .specialized-bullets li::before {
+            content: '\f105';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
             position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
+            left: 0;
+            color: var(--gold);
+            font-size: 1rem;
         }
-        
-        .bring-section h2 {
-            text-align: center;
+
+        /* How We Work - Staggered Grid */
+        .process-section {
+            background: var(--white);
         }
-        
-        .partnership-intro {
+
+        .process-intro {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 4rem;
         }
-        
-        .partnership-intro p {
+
+        .process-intro p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--grey-dark);
-            margin-bottom: 0;
         }
-        
-        .expertise-grid {
+
+        .process-staggered {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: 3rem;
         }
-        
-        .expertise-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--grey-light);
+
+        .process-card {
+            background: var(--cream);
+            padding: 3rem 2.5rem;
             border-radius: 4px;
-            transition: all 0.4s ease;
             position: relative;
+            transition: all 0.4s ease;
             overflow: hidden;
         }
-        
-        .expertise-card::before {
+
+        .process-card:nth-child(2) {
+            margin-top: 3rem;
+        }
+
+        .process-card::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: -100%;
             left: 0;
             width: 100%;
-            height: 3px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, rgba(26, 35, 50, 0.05) 100%);
+            transform: skewY(-5deg);
+            transition: top 0.5s ease;
         }
-        
-        .expertise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
+
+        .process-card:hover::before {
+            top: 0;
         }
-        
-        .expertise-card:hover::before {
-            transform: scaleX(1);
+
+        .process-card > * {
+            position: relative;
+            z-index: 1;
         }
-        
-        .expertise-number {
+
+        .process-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 4.5rem;
             font-weight: 600;
-            color: rgba(201, 169, 110, 0.2);
+            color: rgba(201, 169, 110, 0.15);
             line-height: 1;
             margin-bottom: 1rem;
         }
-        
-        .expertise-title {
+
+        .process-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .process-card > p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--grey-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .process-bullets {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .process-bullets li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--grey-mid);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .process-bullets li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.75rem;
+        }
+
+        /* What Makes This Different - Navy Section */
+        .difference-section {
+            background: var(--navy);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .difference-section::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .difference-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .difference-section h2 {
+            color: var(--cream);
+        }
+
+        .difference-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8rem;
+        }
+
+        .difference-item {
+            position: relative;
+        }
+
+        .difference-icon-bg {
+            position: absolute;
+            top: -2rem;
+            right: 0;
+            font-size: 12rem;
+            color: rgba(201, 169, 110, 0.05);
+            z-index: 0;
+        }
+
+        .difference-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .difference-icon-primary {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(201, 169, 110, 0.25);
+        }
+
+        .difference-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .difference-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+            margin: 1.25rem 0 1.5rem;
+        }
+
+        .difference-content > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
+            margin-bottom: 2rem;
+        }
+
+        .difference-features {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .difference-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(250, 248, 245, 0.75);
+            font-size: 0.975rem;
+        }
+
+        .difference-feature i {
+            color: var(--gold);
+            font-size: 1rem;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Common Situations - Vertical Clean List */
+        .situations-section {
+            background: var(--cream);
+        }
+
+        .situations-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .situation-item {
+            background: transparent;
+            padding: 0;
+            border: none;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .situation-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .situation-item:hover::after {
+            width: 100%;
+        }
+
+        .situation-icon-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .situation-icon-bg {
+            font-size: 5rem;
+            color: rgba(201, 169, 110, 0.08);
+            position: absolute;
+            top: -1rem;
+            left: -0.5rem;
+        }
+
+        .situation-icon-primary {
+            font-size: 2.5rem;
+            color: var(--gold);
+            position: relative;
+            z-index: 1;
+        }
+
+        .situation-item h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 500;
             color: var(--navy);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
         }
-        
-        .expertise-description {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: var(--grey-mid);
-            margin-bottom: 0;
-        }
-        
-        .credentials-banner {
-            background: var(--navy);
-            padding: 3rem;
-            border-radius: 4px;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 2rem;
-            text-align: center;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-        }
-        
-        .credential-item {
-            padding: 1.5rem 1rem;
-            border-right: 1px solid rgba(250, 248, 245, 0.1);
-        }
-        
-        .credential-item:last-child {
-            border-right: none;
-        }
-        
-        .credential-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.3rem;
-            border: 1px solid rgba(201, 169, 110, 0.25);
-            margin: 0 auto 1rem;
-        }
-        
-        .credential-label {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .credential-value {
-            font-size: 1rem;
-            font-weight: 400;
-            color: rgba(250, 248, 245, 0.8);
-            line-height: 1.5;
-        }
-        
-        /* Services Section */
-        .work-section {
-            background: var(--cream);
-        }
-        
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3.5rem;
-        }
-        
-        .work-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 2px;
-            border: 1px solid var(--grey-light);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .work-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
-        }
-        
-        .work-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(26, 35, 50, 0.12);
-            border-color: rgba(201, 169, 110, 0.3);
-        }
-        
-        .work-card:hover::before {
-            height: 100%;
-        }
-        
-        .work-card-icon {
-            width: 65px;
-            height: 65px;
-            background: rgba(201, 169, 110, 0.1);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.6rem;
-            margin-bottom: 1.75rem;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-        }
-        
-        .work-card h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.25rem;
-            color: var(--navy);
-        }
-        
-        .work-card p {
+
+        .situation-item > p {
             font-size: 1.05rem;
             line-height: 1.75;
-            margin-bottom: 0;
             color: var(--grey-dark);
+            margin-bottom: 1.25rem;
         }
-        
-        /* Profile Section */
-        .profile-section {
+
+        .situation-bullets {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .situation-bullets li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--grey-mid);
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .situation-bullets li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Engagement Types - Side-by-Side Split */
+        .engagement-section {
             background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
             position: relative;
         }
-        
-        .profile-section::before {
+
+        .engagement-section::before {
             content: '';
             position: absolute;
             bottom: 0;
@@ -1095,118 +974,273 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
         }
-        
-        .profile-section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .profile-intro {
+
+        .engagement-intro {
             max-width: 850px;
             margin: 0 auto 4rem;
             text-align: center;
         }
-        
-        .profile-intro p {
+
+        .engagement-intro p {
             font-size: 1.2rem;
             line-height: 1.8;
             color: var(--grey-dark);
+        }
+
+        .engagement-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .engagement-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--grey-light);
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .engagement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.4s ease;
+        }
+
+        .engagement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.1);
+            border-color: rgba(201, 169, 110, 0.3);
+        }
+
+        .engagement-card:hover::before {
+            height: 100%;
+        }
+
+        .engagement-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .engagement-card h3 i {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .engagement-card > p {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--grey-dark);
             margin-bottom: 1.5rem;
         }
-        
-        .profile-intro p:last-child {
-            margin-bottom: 0;
+
+        .engagement-bullets {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
-        
-        .experience-timeline {
+
+        .engagement-bullets li {
+            font-size: 0.975rem;
+            line-height: 1.6;
+            color: var(--grey-mid);
+            padding-left: 1.5rem;
             position: relative;
         }
-        
-        .timeline-line {
+
+        .engagement-bullets li::before {
+            content: '\f0da';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
             position: absolute;
-            left: 50%;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Investment Section - Multi-Layer Icons */
+        .investment-section {
+            background: var(--navy);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .investment-section::before {
+            content: '';
+            position: absolute;
             top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--gold) 0%, rgba(201, 169, 110, 0.2) 100%);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
         }
-        
-        .timeline-item {
+
+        .investment-section::after {
+            content: '\f0eb';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            bottom: -5%;
+            left: -5%;
+            font-size: 25rem;
+            color: rgba(201, 169, 110, 0.03);
+            z-index: 0;
+        }
+
+        .investment-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .investment-section h2 {
+            color: var(--cream);
+        }
+
+        .investment-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 4rem;
+        }
+
+        .investment-intro p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
+        }
+
+        .investment-grid {
             display: grid;
-            grid-template-columns: 1fr 80px 1fr;
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .investment-card {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(250, 248, 245, 0.1);
+            text-align: center;
             position: relative;
+            transition: all 0.4s ease;
         }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
+
+        .investment-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: width 0.4s ease;
         }
-        
-        .timeline-content-left {
-            text-align: right;
+
+        .investment-card:hover {
+            background: rgba(250, 248, 245, 0.08);
+            border-color: rgba(201, 169, 110, 0.3);
+            transform: translateY(-5px);
         }
-        
-        .timeline-content-right {
-            text-align: left;
+
+        .investment-card:hover::after {
+            width: 80%;
         }
-        
-        .timeline-marker {
-            position: relative;
+
+        .investment-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2;
-        }
-        
-        .timeline-dot {
-            width: 20px;
-            height: 20px;
-            background: var(--gold);
-            border-radius: 50%;
-            border: 4px solid var(--white);
-            box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.2);
-        }
-        
-        .timeline-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 4px;
-            border: 1px solid var(--grey-light);
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-card:hover {
-            border-color: rgba(201, 169, 110, 0.4);
-            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
-            transform: translateY(-3px);
-        }
-        
-        .timeline-label {
-            font-size: 0.85rem;
-            font-weight: 600;
+            margin: 0 auto 1.5rem;
             color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.75rem;
+            font-size: 1.75rem;
+            border: 2px solid rgba(201, 169, 110, 0.25);
+            position: relative;
+            transition: all 0.4s ease;
         }
-        
-        .timeline-title {
+
+        .investment-card:hover .investment-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .investment-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.01em;
+            color: var(--gold);
+            margin-bottom: 1rem;
         }
-        
-        .timeline-description {
-            font-size: 1.05rem;
+
+        .investment-card p {
+            font-size: 1rem;
             line-height: 1.7;
-            color: var(--grey-mid);
+            color: rgba(250, 248, 245, 0.8);
             margin-bottom: 0;
         }
-        
+
+        .investment-philosophy {
+            background: rgba(250, 248, 245, 0.05);
+            padding: 3.5rem 3rem;
+            border-radius: 4px;
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .philosophy-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 2rem;
+            flex-shrink: 0;
+            border: 2px solid rgba(201, 169, 110, 0.3);
+        }
+
+        .philosophy-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(250, 248, 245, 0.85);
+            margin-bottom: 1.25rem;
+        }
+
+        .philosophy-content p:last-child {
+            margin-bottom: 0;
+        }
+
         /* Contact Section */
         .contact-section {
             background: var(--navy);
@@ -1215,7 +1249,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .contact-section > * {
             max-width: 1320px;
             margin-left: auto;
@@ -1223,7 +1257,7 @@
             padding-left: 4rem;
             padding-right: 4rem;
         }
-        
+
         .contact-section::before {
             content: '';
             position: absolute;
@@ -1234,14 +1268,14 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
         }
-        
+
         .contact-section h2 {
             color: var(--cream);
             font-weight: 500;
             font-size: 3rem;
             margin-bottom: 1.75rem;
         }
-        
+
         .contact-section p {
             color: rgba(250, 248, 245, 0.85);
             font-size: 1.25rem;
@@ -1249,7 +1283,7 @@
             margin: 0 auto 3rem;
             line-height: 1.8;
         }
-        
+
         .cta-button-outline {
             display: inline-block;
             padding: 1.2rem 3.5rem;
@@ -1263,21 +1297,21 @@
             transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             border: 2px solid var(--gold);
         }
-        
+
         .cta-button-outline:hover {
             transform: translateY(-2px);
             background: var(--gold);
             color: var(--navy);
             box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
         }
-        
+
         /* Footer */
         footer {
             background: #151b26;
             color: rgba(250, 248, 245, 0.7);
             padding: 5rem 0 2.5rem;
         }
-        
+
         .footer-container {
             max-width: 1320px;
             margin: 0 auto;
@@ -1287,7 +1321,7 @@
             gap: 5rem;
             margin-bottom: 3.5rem;
         }
-        
+
         .footer-about h3 {
             font-family: 'Playfair Display', serif;
             color: var(--cream);
@@ -1295,13 +1329,13 @@
             margin-bottom: 1.25rem;
             font-size: 1.5rem;
         }
-        
+
         .footer-about p {
             font-size: 1rem;
             line-height: 1.8;
             color: rgba(250, 248, 245, 0.65);
         }
-        
+
         .footer-links h4 {
             color: var(--gold);
             font-weight: 600;
@@ -1310,11 +1344,11 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .footer-links ul {
             list-style: none;
         }
-        
+
         .footer-links a {
             color: rgba(250, 248, 245, 0.7);
             text-decoration: none;
@@ -1323,12 +1357,12 @@
             margin-bottom: 0.9rem;
             transition: all 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: var(--gold);
             padding-left: 8px;
         }
-        
+
         .footer-contact h4 {
             color: var(--gold);
             font-weight: 600;
@@ -1337,29 +1371,29 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .footer-contact p {
             font-size: 0.95rem;
             margin-bottom: 1rem;
             color: rgba(250, 248, 245, 0.7);
         }
-        
+
         .footer-contact a {
             color: var(--gold);
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         .footer-contact a:hover {
             color: var(--gold-light);
         }
-        
+
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
         }
-        
+
         .social-links a {
             width: 42px;
             height: 42px;
@@ -1372,14 +1406,14 @@
             transition: all 0.35s ease;
             border: 1px solid rgba(201, 169, 110, 0.2);
         }
-        
+
         .social-links a:hover {
             background: var(--gold);
             color: var(--navy);
             transform: translateY(-3px);
             border-color: var(--gold);
         }
-        
+
         .footer-bottom {
             text-align: center;
             padding-top: 2.5rem;
@@ -1387,7 +1421,7 @@
             color: rgba(250, 248, 245, 0.45);
             font-size: 0.9rem;
         }
-        
+
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -1399,149 +1433,79 @@
                 transform: translateY(0);
             }
         }
-        
+
         .fade-in {
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
         }
-        
+
         .fade-in-delay-1 {
             animation-delay: 0.2s;
         }
-        
+
         .fade-in-delay-2 {
             animation-delay: 0.4s;
         }
-        
+
         .fade-in-delay-3 {
             animation-delay: 0.6s;
         }
-        
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive Design */
         @media (max-width: 1200px) {
-            .hero-grid {
+            .core-service-bullets {
+                grid-template-columns: 1fr;
+            }
+
+            .specialized-timeline {
+                gap: 1.5rem;
+            }
+
+            .specialized-item {
+                gap: 2rem;
+            }
+
+            .difference-grid {
                 grid-template-columns: 1fr;
                 gap: 4rem;
             }
-            
-            .hero-image-wrapper {
-                order: -1;
-                display: flex;
-                justify-content: center;
-                max-width: 400px;
-                margin: 0 auto;
+
+            .situations-list {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
-            .hero-content {
-                text-align: center;
-                margin: 0 auto;
-            }
-            
-            .hero-label {
-                display: inline-block;
-            }
-            
-            .hero-intro {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .hero-meta {
-                justify-content: center;
-            }
-            
-            .hero-cta-group {
-                justify-content: center;
-            }
-            
-            .expertise-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .nature-grid {
+
+            .engagement-split {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
-            .challenge-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .stakes-list {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .who-profiles {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .experience-timeline {
-                padding-left: 2rem;
-            }
-            
-            .timeline-line {
-                left: 0;
-            }
-            
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-            
-            .timeline-content-left,
-            .timeline-content-right {
-                text-align: left;
-            }
-            
-            .timeline-content-left .timeline-card {
-                margin-left: 3rem;
-            }
-            
-            .timeline-content-right .timeline-card {
-                margin-left: 3rem;
-            }
-            
-            .timeline-marker {
-                position: absolute;
-                left: -2rem;
-                justify-content: flex-start;
-            }
-            
-            .credentials-banner {
+
+            .investment-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-            
-            .credential-item {
-                border-right: none;
-                border-bottom: 1px solid rgba(250, 248, 245, 0.1);
-                padding: 1.5rem 1rem;
-            }
-            
-            .credential-item:nth-child(2n) {
-                border-right: 1px solid rgba(250, 248, 245, 0.1);
-            }
-            
-            .credential-item:nth-last-child(-n+2) {
-                border-bottom: none;
             }
         }
-        
+
         @media (max-width: 1024px) {
             .footer-container {
                 grid-template-columns: 1fr 1fr;
                 gap: 3rem;
             }
-            
+
             .footer-about {
                 grid-column: 1 / -1;
             }
         }
-        
+
         @media (max-width: 768px) {
             html {
                 font-size: 15px;
@@ -1556,12 +1520,10 @@
                 padding-right: 2rem;
             }
 
-            /* Show Hamburger Menu */
             .hamburger {
                 display: flex;
             }
 
-            /* Hide and Transform Nav Links for Mobile */
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -1628,965 +1590,144 @@
             .nav-links a::after {
                 bottom: 0.5rem;
             }
-            
+
             .hero {
-                min-height: auto;
                 padding: 6rem 0 5rem;
             }
-            
-            .hero-grid {
-                gap: 3rem;
-            }
-            
-            .hero-label {
-                font-size: 0.75rem;
-                margin-bottom: 1.5rem;
-            }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
-                margin-bottom: 1.5rem;
             }
-            
+
             .hero-intro {
                 font-size: 1.05rem;
-                margin-bottom: 2rem;
             }
-            
-            .hero-image-wrapper {
-                max-width: 300px;
-            }
-            
-            .hero-badge {
-                bottom: -15px;
-                right: -15px;
-                padding: 1rem 1.25rem;
-            }
-            
-            .hero-badge-number {
-                font-size: 1.75rem;
-            }
-            
-            .hero-badge-text {
-                font-size: 0.7rem;
-            }
-            
-            .hero-meta {
-                gap: 2rem;
-                padding-top: 1.5rem;
-                margin-bottom: 2rem;
-            }
-            
-            .hero-meta-number {
-                font-size: 1.5rem;
-            }
-            
-            .hero-meta-label {
-                font-size: 0.8rem;
-            }
-            
+
             .hero-cta-group {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .cta-button,
             .cta-button-secondary {
                 width: 100%;
                 text-align: center;
                 padding: 1rem 2rem;
             }
-            
-            .partnership-intro p {
-                font-size: 1.1rem;
-            }
-            
-            .expertise-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .expertise-number {
-                font-size: 2.5rem;
-            }
-            
-            .expertise-title {
-                font-size: 1.3rem;
-            }
-            
-            .nature-grid {
-                gap: 1.5rem;
-            }
-            
-            .nature-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .nature-card h3 {
-                font-size: 1.5rem;
-            }
-            
-            .nature-card p {
-                font-size: 1rem;
-            }
-            
-            .who-intro p {
-                font-size: 1.1rem;
-            }
-            
-            .who-profile {
-                padding: 2rem 1.5rem;
-            }
-            
-            .who-profile h3 {
-                font-size: 1.3rem;
-            }
-            
-            .who-profile p {
-                font-size: 0.95rem;
-            }
-            
-            .who-context p {
-                font-size: 1.05rem;
-            }
-            
-            .challenge-intro p {
-                font-size: 1.1rem;
-            }
-            
-            .challenge-item {
-                padding: 2rem 1.5rem;
-            }
-            
-            .challenge-item h3 {
-                font-size: 1.3rem;
-            }
-            
-            .stakes-quote {
-                font-size: 1.3rem;
-                padding: 0 1rem;
-            }
-            
-            .stakes-quote::before {
-                font-size: 3rem;
-            }
-            
-            .stakes-text h3 {
-                font-size: 1.1rem;
-            }
-            
-            .stakes-text p {
-                font-size: 0.95rem;
-            }
-            
-            .profile-intro p {
-                font-size: 1.05rem;
-            }
-            
-            .experience-timeline {
-                padding-left: 1.5rem;
-            }
-            
-            .timeline-card {
-                padding: 1.5rem;
-            }
-            
-            .timeline-title {
-                font-size: 1.3rem;
-            }
-            
-            .timeline-description {
-                font-size: 0.95rem;
-            }
-            
-            .credentials-banner {
-                grid-template-columns: 1fr;
-                padding: 2rem 1.5rem;
-                gap: 0;
-            }
-            
-            .credential-item {
-                border-right: none;
-                border-bottom: 1px solid rgba(250, 248, 245, 0.1);
-                padding: 1.5rem 1rem;
-            }
-            
-            .credential-item:last-child {
-                border-bottom: none;
-            }
-            
-            .credential-item:nth-child(2n) {
-                border-right: none;
-            }
-            
+
             section {
                 padding: 4rem 0;
             }
-            
-            .challenge-section,
-            .stakes-section {
-                padding: 5rem 0;
-            }
-            
-            .stats-section {
-                padding: 3.5rem 0;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            
-            .stat-number {
-                font-size: 3rem;
-            }
-            
+
             h2 {
                 font-size: 2.25rem;
                 margin-bottom: 2.5rem;
             }
-            
-            .work-grid {
+
+            .core-intro p {
+                font-size: 1.1rem;
+            }
+
+            .core-service-item {
+                grid-template-columns: 100px 1fr;
+                gap: 1.5rem;
+                padding: 2rem 0;
+            }
+
+            .core-service-item:hover {
+                padding-left: 0;
+            }
+
+            .core-service-number {
+                font-size: 4rem;
+            }
+
+            .core-service-icon {
+                font-size: 1.75rem;
+            }
+
+            .core-service-content {
+                padding-right: 0;
+            }
+
+            .core-service-content h3 {
+                font-size: 1.4rem;
+            }
+
+            .core-service-bullets {
                 grid-template-columns: 1fr;
             }
-            
-            .contact-section {
-                padding: 4.5rem 2rem;
+
+            .specialized-intro {
+                font-size: 1.3rem;
+                padding: 0 1rem;
             }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
+
+            .specialized-item {
+                grid-template-columns: 80px 1fr;
+                gap: 1.5rem;
             }
-            
-            footer {
-                padding: 4rem 2rem 2rem;
+
+            .specialized-item:hover {
+                transform: translateX(5px);
             }
-        }
-        
-        /* Smooth Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+            .specialized-number {
+                font-size: 2.5rem;
+            }
 
-        /* Services Page Specific Styles */
-        .services-hero {
-            min-height: 65vh;
-            padding: 8rem 0 6rem;
-        }
-
-        .services-hero .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .services-hero h1 {
-            font-size: 4rem;
-            max-width: 800px;
-            margin: 0 auto 1.75rem;
-        }
-
-        .services-hero .hero-intro {
-            margin: 0 auto 3rem;
-        }
-
-        .services-hero .hero-cta-group {
-            justify-content: center;
-        }
-
-        /* Core Services Grid Enhancement */
-        .core-services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .core-service-card {
-            background: var(--cream);
-            padding: 3rem 2.5rem;
-            border-radius: 4px;
-            border-left: 4px solid var(--gold);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .core-service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -4px;
-            width: 4px;
-            height: 0;
-            background: var(--navy);
-            transition: height 0.4s ease;
-        }
-
-        .core-service-card:hover {
-            transform: translateX(8px);
-            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.1);
-        }
-
-        .core-service-card:hover::before {
-            height: 100%;
-        }
-
-        .core-service-card h3 {
-            font-size: 1.75rem;
-            color: var(--navy);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .core-service-card h3 i {
-            color: var(--gold);
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .core-service-card > p:first-of-type {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--grey-dark);
-            margin-bottom: 0;
-        }
-
-        .service-bullets {
-            margin-top: 1.25rem;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .service-bullets li {
-            font-size: 0.975rem;
-            line-height: 1.7;
-            color: var(--grey-mid);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .service-bullets li::before {
-            content: '\f0a4';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.85rem;
-            top: 0.25rem;
-        }
-
-        /* Specialized Areas Enhancement - Complete Rework */
-        .specialized-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .specialized-card {
-            background: rgba(250, 248, 245, 0.03);
-            padding: 0;
-            border-radius: 6px;
-            border: 1px solid rgba(250, 248, 245, 0.12);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .specialized-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .specialized-card:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.35);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .specialized-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .specialized-header {
-            background: rgba(201, 169, 110, 0.08);
-            padding: 2rem 2.5rem 1.5rem;
-            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .specialized-icon-large {
-            width: 65px;
-            height: 65px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.8rem;
-            border: 2px solid rgba(201, 169, 110, 0.3);
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-
-        .specialized-card:hover .specialized-icon-large {
-            background: var(--gold);
-            color: var(--navy);
-            border-color: var(--gold);
-            transform: rotate(5deg) scale(1.05);
-        }
-
-        .specialized-title-area h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.25rem;
-            color: var(--grey-dark);
-            line-height: 1.3;
-        }
-
-        .specialized-subtitle {
-            font-size: 0.8rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .specialized-content {
-            padding: 1.75rem 2rem 2rem;
-        }
-
-        .specialized-content > p:first-child {
-            font-size: 0.975rem;
-            line-height: 1.65;
-            color: var(--grey-dark);
-            margin-bottom: 1.25rem;
-            opacity: 0.9;
-        }
-
-        .specialized-bullets {
-            padding-left: 0;
-            list-style: none;
-            display: grid;
-            gap: 0.6rem;
-        }
-
-        .specialized-bullets li {
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color: var(--grey-dark);
-            opacity: 0.85;
-            padding-left: 1.75rem;
-            position: relative;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .specialized-bullets li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.8rem;
-            top: 0.2rem;
-        }
-
-        /* How We Work Enhancement */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .process-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid var(--grey-light);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .process-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 4px 4px 0 0;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .process-card:hover {
-            border-color: rgba(201, 169, 110, 0.4);
-            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
-            transform: translateY(-5px);
-        }
-
-        .process-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .process-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: rgba(201, 169, 110, 0.25);
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .process-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .process-card > p:first-of-type {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        .process-bullets {
-            margin-top: 1rem;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .process-bullets li {
-            font-size: 0.925rem;
-            line-height: 1.6;
-            color: var(--grey-mid);
-            margin-bottom: 0.45rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .process-bullets li::before {
-            content: '\f058';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.85rem;
-            top: 0.15rem;
-        }
-
-        /* Common Situations Enhancement */
-        .situations-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3.5rem;
-        }
-
-        .situation-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid var(--grey-light);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .situation-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
-        }
-
-        .situation-card:hover {
-            border-color: rgba(201, 169, 110, 0.35);
-            box-shadow: 0 12px 35px rgba(26, 35, 50, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .situation-card:hover::before {
-            height: 100%;
-        }
-
-        .situation-icon {
-            width: 55px;
-            height: 55px;
-            background: rgba(201, 169, 110, 0.1);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-        }
-
-        .situation-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .situation-card > p:first-of-type {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        .situation-bullets {
-            margin-top: 1rem;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .situation-bullets li {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            color: var(--grey-dark);
-            margin-bottom: 0.4rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .situation-bullets li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.75rem;
-            top: 0.3rem;
-        }
-
-        /* Engagement Types Enhancement */
-        .engagement-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-
-        .engagement-card {
-            background: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 4px;
-            border: 2px solid var(--grey-light);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .engagement-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-dark) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .engagement-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 20px 50px rgba(26, 35, 50, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .engagement-card:hover::after {
-            transform: scaleX(1);
-        }
-
-        .engagement-card h3 {
-            font-size: 1.65rem;
-            margin-bottom: 1.25rem;
-            color: var(--navy);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .engagement-card h3 i {
-            color: var(--gold);
-            font-size: 1.4rem;
-            flex-shrink: 0;
-        }
-
-        .engagement-card > p:first-of-type {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            margin-bottom: 0;
-        }
-
-        .engagement-bullets {
-            margin-top: 1.25rem;
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .engagement-bullets li {
-            font-size: 0.95rem;
-            line-height: 1.65;
-            color: var(--grey-dark);
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .engagement-bullets li::before {
-            content: '\f138';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.8rem;
-            top: 0.25rem;
-        }
-
-        /* Investment Section Styling */
-        .investment-intro {
-            max-width: 850px;
-            margin: 0 auto 4rem;
-            text-align: center;
-        }
-
-        .investment-intro p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.85);
-        }
-
-        .investment-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .investment-card {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .investment-card::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform 0.4s ease;
-        }
-
-        .investment-card:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .investment-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .investment-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 2px solid rgba(201, 169, 110, 0.25);
-            transition: all 0.3s ease;
-        }
-
-        .investment-card:hover .investment-icon {
-            background: var(--gold);
-            color: var(--navy);
-            border-color: var(--gold);
-            transform: scale(1.1);
-        }
-
-        .investment-card h3 {
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .investment-card p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: rgba(250, 248, 245, 0.8);
-            margin-bottom: 0;
-        }
-
-        .investment-philosophy {
-            background: rgba(201, 169, 110, 0.08);
-            padding: 3rem;
-            border-radius: 4px;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-
-        .philosophy-icon {
-            width: 70px;
-            height: 70px;
-            min-width: 70px;
-            background: var(--gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--navy);
-            font-size: 1.8rem;
-            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
-        }
-
-        .philosophy-content h3 {
-            font-size: 1.75rem;
-            color: var(--gold);
-            margin-bottom: 1.25rem;
-            font-weight: 500;
-        }
-
-        .philosophy-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.85);
-            margin-bottom: 1.25rem;
-        }
-
-        .philosophy-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 1200px) {
-            .core-services-grid,
-            .specialized-grid,
-            .engagement-grid,
-            .investment-grid {
+            .process-staggered {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .situations-grid,
-            .process-grid {
+            .process-card:nth-child(2) {
+                margin-top: 0;
+            }
+
+            .process-card {
+                padding: 2.5rem 2rem;
+            }
+
+            .difference-grid {
+                gap: 3rem;
+            }
+
+            .difference-icon-bg {
+                font-size: 8rem;
+            }
+
+            .situations-list {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .investment-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
             .investment-philosophy {
                 flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .services-hero {
-                min-height: auto;
-                padding: 5rem 0 4rem;
-            }
-
-            .services-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .core-service-card,
-            .engagement-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .specialized-card {
-                padding: 0;
-            }
-
-            .specialized-header {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem;
-            }
-
-            .specialized-icon-large {
-                margin: 0 auto;
-            }
-
-            .specialized-content {
-                padding: 1.5rem;
-            }
-
-            .process-card,
-            .situation-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .investment-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .investment-philosophy {
-                padding: 2rem 1.5rem;
+                gap: 2rem;
+                padding: 2.5rem 2rem;
             }
 
             .philosophy-icon {
-                width: 60px;
-                height: 60px;
-                min-width: 60px;
-                font-size: 1.5rem;
+                margin: 0 auto;
             }
 
-            .philosophy-content h3 {
-                font-size: 1.5rem;
+            .contact-section {
+                padding: 4.5rem 2rem;
             }
 
-            .philosophy-content p {
-                font-size: 1rem;
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            footer {
+                padding: 4rem 2rem 2rem;
             }
         }
     </style>
@@ -2595,15 +1736,12 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="#" class="logo"><span class="logo-accent">CAH</span> Advisory</a>
-
-            <!-- Hamburger Menu Button -->
+            <a href="index.html" class="logo">C<span class="logo-accent">A</span>H Advisory</a>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -2615,7 +1753,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero services-hero" id="home">
+    <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-label fade-in">Services & Approach</div>
@@ -2630,170 +1768,192 @@
         </div>
     </section>
 
-    <!-- Core Services Section -->
-    <section class="challenge-section reveal">
+    <!-- Core Services Section - Alternating Asymmetric Layout -->
+    <section class="core-services-section reveal">
         <div class="section-container">
             <h2>Core <span class="accent">Services</span></h2>
 
-            <div class="challenge-intro">
+            <div class="core-intro">
                 <p>The work takes different forms depending on what you're navigating. Some leaders engage for specific high-stakes decisions. Others find value in ongoing partnership as they build organizations, develop teams, and make choices that shape trajectory over time.</p>
             </div>
 
-            <div class="core-services-grid">
-                <div class="core-service-card">
-                    <h3><i class="fas fa-user-tie"></i> Executive Coaching</h3>
-                    <p>One-on-one partnership focused on the challenges in front of you right now. We work through what matters, without preset methodology determining the conversation.</p>
-                    <ul class="service-bullets">
-                        <li>Navigating restructuring that carries political complexity</li>
-                        <li>Working through team dynamics affecting execution</li>
-                        <li>Thinking through career decisions across multiple timeframes</li>
-                        <li>Examining patterns you're seeing but haven't fully articulated</li>
-                    </ul>
+            <div class="core-services-list">
+                <div class="core-service-item">
+                    <div class="core-service-number-area">
+                        <div class="core-service-number">01</div>
+                        <i class="fas fa-user-tie core-service-icon"></i>
+                    </div>
+                    <div class="core-service-content">
+                        <h3>Executive Coaching</h3>
+                        <p>One-on-one partnership focused on the challenges in front of you right now. We work through what matters, without preset methodology determining the conversation.</p>
+                        <ul class="core-service-bullets">
+                            <li>Navigating restructuring that carries political complexity</li>
+                            <li>Working through team dynamics affecting execution</li>
+                            <li>Thinking through career decisions across multiple timeframes</li>
+                            <li>Examining patterns you're seeing but haven't fully articulated</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="core-service-card">
-                    <h3><i class="fas fa-chess-knight"></i> Strategic Advisory</h3>
-                    <p>Thinking through organizational and business challenges that require both analytical rigor and understanding of human systems.</p>
-                    <ul class="service-bullets">
-                        <li>Assessing market entry where timing and approach determine outcomes</li>
-                        <li>Designing organizations that enable strategy while remaining sustainable</li>
-                        <li>Integrating acquisitions where culture shapes financial performance</li>
-                        <li>Building capabilities that create competitive advantage over time</li>
-                    </ul>
+                <div class="core-service-item">
+                    <div class="core-service-number-area">
+                        <div class="core-service-number">02</div>
+                        <i class="fas fa-chess-knight core-service-icon"></i>
+                    </div>
+                    <div class="core-service-content">
+                        <h3>Strategic Advisory</h3>
+                        <p>Thinking through organizational and business challenges that require both analytical rigor and understanding of human systems.</p>
+                        <ul class="core-service-bullets">
+                            <li>Assessing market entry where timing and approach determine outcomes</li>
+                            <li>Designing organizations that enable strategy while remaining sustainable</li>
+                            <li>Integrating acquisitions where culture shapes financial performance</li>
+                            <li>Building capabilities that create competitive advantage over time</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="core-service-card">
-                    <h3><i class="fas fa-rocket"></i> Leadership Transition Support</h3>
-                    <p>The first 90 days in a senior role often determine what becomes possible over the following years. We work through what this specific position requires and how to be effective from the outset.</p>
-                    <ul class="service-bullets">
-                        <li>Establishing credibility while learning organizational dynamics</li>
-                        <li>Making early decisions that shape future possibilities</li>
-                        <li>Building relationships that enable execution</li>
-                        <li>Reading signals that reveal what this role truly demands</li>
-                    </ul>
+                <div class="core-service-item">
+                    <div class="core-service-number-area">
+                        <div class="core-service-number">03</div>
+                        <i class="fas fa-rocket core-service-icon"></i>
+                    </div>
+                    <div class="core-service-content">
+                        <h3>Leadership Transition Support</h3>
+                        <p>The first 90 days in a senior role often determine what becomes possible over the following years. We work through what this specific position requires and how to be effective from the outset.</p>
+                        <ul class="core-service-bullets">
+                            <li>Establishing credibility while learning organizational dynamics</li>
+                            <li>Making early decisions that shape future possibilities</li>
+                            <li>Building relationships that enable execution</li>
+                            <li>Reading signals that reveal what this role truly demands</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="core-service-card">
-                    <h3><i class="fas fa-landmark"></i> Board Preparation & Development</h3>
-                    <p>Preparing for board service or navigating the unique demands of effective board membership. Understanding what distinguishes governance from executive leadership.</p>
-                    <ul class="service-bullets">
-                        <li>Providing strategic counsel without executive authority</li>
-                        <li>Influencing across different backgrounds and mental models</li>
-                        <li>Navigating board dynamics that shape decision quality</li>
-                        <li>Developing judgment about when to push and when to listen</li>
-                    </ul>
+                <div class="core-service-item">
+                    <div class="core-service-number-area">
+                        <div class="core-service-number">04</div>
+                        <i class="fas fa-landmark core-service-icon"></i>
+                    </div>
+                    <div class="core-service-content">
+                        <h3>Board Preparation & Development</h3>
+                        <p>Preparing for board service or navigating the unique demands of effective board membership. Understanding what distinguishes governance from executive leadership.</p>
+                        <ul class="core-service-bullets">
+                            <li>Providing strategic counsel without executive authority</li>
+                            <li>Influencing across different backgrounds and mental models</li>
+                            <li>Navigating board dynamics that shape decision quality</li>
+                            <li>Developing judgment about when to push and when to listen</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specialized Areas Section -->
-    <section class="stakes-section reveal">
+    <!-- Specialized Areas - Horizontal Timeline Pattern -->
+    <section class="specialized-section reveal">
         <div class="section-container">
-            <div class="stakes-content">
-                <h2>Specialized <span class="accent">Areas</span></h2>
+            <h2>Specialized <span class="accent">Areas</span></h2>
 
-                <p class="stakes-quote">Beyond the core services, certain types of challenges benefit from specific expertise—situations where having navigated similar terrain yourself changes what you can see and how you can help.</p>
+            <p class="specialized-intro">Beyond the core services, certain types of challenges benefit from specific expertise—situations where having navigated similar terrain yourself changes what you can see and how you can help.</p>
 
-                <div class="specialized-grid">
-                    <div class="specialized-card">
-                        <div class="specialized-header">
-                            <div class="specialized-icon-large">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            <div class="specialized-title-area">
-                                <h3>Organizational Transformation</h3>
-                                <div class="specialized-subtitle">Change Leadership</div>
-                            </div>
-                        </div>
-                        <div class="specialized-content">
-                            <p>Leading change across organizations means understanding that the rational case rarely determines outcomes. Twenty years leading global transformation taught me where resistance emerges and how to create genuine conditions for change.</p>
-                            <ul class="specialized-bullets">
-                                <li>Reading where resistance will emerge and why</li>
-                                <li>Creating conditions for genuine change rather than compliance</li>
-                                <li>Timing interventions based on organizational readiness</li>
-                                <li>Working with informal networks that shape what's feasible</li>
-                            </ul>
-                        </div>
+            <div class="specialized-timeline">
+                <div class="specialized-item">
+                    <div class="specialized-number-box">
+                        <div class="specialized-number">01</div>
+                        <i class="fas fa-exchange-alt specialized-icon-inline"></i>
+                        <div class="specialized-underline"></div>
                     </div>
-
-                    <div class="specialized-card">
-                        <div class="specialized-header">
-                            <div class="specialized-icon-large">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <div class="specialized-title-area">
-                                <h3>Building New Capabilities</h3>
-                                <div class="specialized-subtitle">Innovation & Scale</div>
-                            </div>
+                    <div class="specialized-content-area">
+                        <div class="specialized-header-inline">
+                            <h3>Organizational Transformation</h3>
+                            <div class="specialized-subtitle">Change Leadership</div>
                         </div>
-                        <div class="specialized-content">
-                            <p>Launching what doesn't yet exist requires managing the tension between speed and sustainability. The experience of creating BCG's analytics practice from concept to scaled global capability provides specific insight.</p>
-                            <ul class="specialized-bullets">
-                                <li>Hiring for roles you've never defined</li>
-                                <li>Building credibility in markets where you're unproven</li>
-                                <li>Scaling capabilities across geographies and cultures</li>
-                                <li>Integrating new ways of working into established organizations</li>
-                            </ul>
-                        </div>
+                        <p>Leading change across organizations means understanding that the rational case rarely determines outcomes. Twenty years leading global transformation taught me where resistance emerges and how to create genuine conditions for change.</p>
+                        <ul class="specialized-bullets">
+                            <li>Reading where resistance will emerge and why</li>
+                            <li>Creating conditions for genuine change rather than compliance</li>
+                            <li>Timing interventions based on organizational readiness</li>
+                            <li>Working with informal networks that shape what's feasible</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="specialized-card">
-                        <div class="specialized-header">
-                            <div class="specialized-icon-large">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="specialized-title-area">
-                                <h3>P&L Leadership</h3>
-                                <div class="specialized-subtitle">Business Building</div>
-                            </div>
-                        </div>
-                        <div class="specialized-content">
-                            <p>Full accountability changes how you see decisions. Twenty years building businesses with P&L responsibility means understanding not just strategy but the operational realities that determine whether strategy translates to results.</p>
-                            <ul class="specialized-bullets">
-                                <li>Allocating resources when investment cases compete</li>
-                                <li>Building teams when talent is scarce and expensive</li>
-                                <li>Balancing short-term performance with long-term capability</li>
-                                <li>Making decisions when you bear full accountability for outcomes</li>
-                            </ul>
-                        </div>
+                <div class="specialized-item">
+                    <div class="specialized-number-box">
+                        <div class="specialized-number">02</div>
+                        <i class="fas fa-lightbulb specialized-icon-inline"></i>
+                        <div class="specialized-underline"></div>
                     </div>
+                    <div class="specialized-content-area">
+                        <div class="specialized-header-inline">
+                            <h3>Building New Capabilities</h3>
+                            <div class="specialized-subtitle">Innovation & Scale</div>
+                        </div>
+                        <p>Launching what doesn't yet exist requires managing the tension between speed and sustainability. The experience of creating BCG's analytics practice from concept to scaled global capability provides specific insight.</p>
+                        <ul class="specialized-bullets">
+                            <li>Hiring for roles you've never defined</li>
+                            <li>Building credibility in markets where you're unproven</li>
+                            <li>Scaling capabilities across geographies and cultures</li>
+                            <li>Integrating new ways of working into established organizations</li>
+                        </ul>
+                    </div>
+                </div>
 
-                    <div class="specialized-card">
-                        <div class="specialized-header">
-                            <div class="specialized-icon-large">
-                                <i class="fas fa-users-cog"></i>
-                            </div>
-                            <div class="specialized-title-area">
-                                <h3>Executive Team Dynamics</h3>
-                                <div class="specialized-subtitle">Leadership Teams</div>
-                            </div>
+                <div class="specialized-item">
+                    <div class="specialized-number-box">
+                        <div class="specialized-number">03</div>
+                        <i class="fas fa-chart-line specialized-icon-inline"></i>
+                        <div class="specialized-underline"></div>
+                    </div>
+                    <div class="specialized-content-area">
+                        <div class="specialized-header-inline">
+                            <h3>P&L Leadership</h3>
+                            <div class="specialized-subtitle">Business Building</div>
                         </div>
-                        <div class="specialized-content">
-                            <p>Senior teams rarely fail for lack of individual capability. Having led and participated in numerous executive teams provides perspective on what distinguishes the exceptional from the adequate.</p>
-                            <ul class="specialized-bullets">
-                                <li>Deciding when members have legitimate competing priorities</li>
-                                <li>Managing tension between functional excellence and enterprise optimization</li>
-                                <li>Building trust when performance pressure is high</li>
-                                <li>Navigating power dynamics that shape what gets discussed</li>
-                            </ul>
+                        <p>Full accountability changes how you see decisions. Twenty years building businesses with P&L responsibility means understanding not just strategy but the operational realities that determine whether strategy translates to results.</p>
+                        <ul class="specialized-bullets">
+                            <li>Allocating resources when investment cases compete</li>
+                            <li>Building teams when talent is scarce and expensive</li>
+                            <li>Balancing short-term performance with long-term capability</li>
+                            <li>Making decisions when you bear full accountability for outcomes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="specialized-item">
+                    <div class="specialized-number-box">
+                        <div class="specialized-number">04</div>
+                        <i class="fas fa-users-cog specialized-icon-inline"></i>
+                        <div class="specialized-underline"></div>
+                    </div>
+                    <div class="specialized-content-area">
+                        <div class="specialized-header-inline">
+                            <h3>Executive Team Dynamics</h3>
+                            <div class="specialized-subtitle">Leadership Teams</div>
                         </div>
+                        <p>Senior teams rarely fail for lack of individual capability. Having led and participated in numerous executive teams provides perspective on what distinguishes the exceptional from the adequate.</p>
+                        <ul class="specialized-bullets">
+                            <li>Deciding when members have legitimate competing priorities</li>
+                            <li>Managing tension between functional excellence and enterprise optimization</li>
+                            <li>Building trust when performance pressure is high</li>
+                            <li>Navigating power dynamics that shape what gets discussed</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How We Work Section -->
-    <section class="bring-section reveal" id="about">
+    <!-- How We Work Together - Staggered Grid -->
+    <section class="process-section reveal">
         <div class="section-container">
             <h2>How We <span class="accent">Work Together</span></h2>
 
-            <div class="partnership-intro">
+            <div class="process-intro">
                 <p>The engagement structure varies based on what you're navigating and what type of partnership proves most valuable. Some situations call for intensive focus over defined periods. Others benefit from sustained partnership as challenges evolve over time.</p>
             </div>
 
-            <div class="process-grid">
+            <div class="process-staggered">
                 <div class="process-card">
                     <div class="process-number">01</div>
                     <h3>Initial Conversation</h3>
@@ -2833,54 +1993,60 @@
         </div>
     </section>
 
-    <!-- What Makes This Different Section -->
-    <section class="section-alternate reveal">
+    <!-- What Makes This Different - Navy Background -->
+    <section class="difference-section reveal">
         <div class="section-container">
             <h2>What Makes This <span class="accent">Different</span></h2>
 
-            <div class="nature-grid">
-                <div class="nature-card">
-                    <div class="nature-icon">
-                        <i class="fas fa-mountain"></i>
-                    </div>
-                    <h3>Experience-Informed Perspective</h3>
-                    <div class="nature-divider"></div>
-                    <p>Having built businesses, led transformations, launched new capabilities, and served on boards for over a decade provides specific insight into the challenges you're navigating. This isn't coaching from theory or frameworks—it's partnership informed by having been responsible for outcomes in similar terrain.</p>
-                    <div style="margin-top: 1.5rem; display: grid; gap: 0.75rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
-                            <i class="fas fa-briefcase" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
-                            <span>20 years building and scaling businesses</span>
+            <div class="difference-grid">
+                <div class="difference-item">
+                    <i class="fas fa-mountain difference-icon-bg"></i>
+                    <div class="difference-content">
+                        <div class="difference-icon-primary">
+                            <i class="fas fa-mountain"></i>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
-                            <i class="fas fa-landmark" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
-                            <span>14+ years active board service</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
-                            <i class="fas fa-globe" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
-                            <span>Global transformation leadership</span>
+                        <h3>Experience-Informed Perspective</h3>
+                        <div class="difference-divider"></div>
+                        <p>Having built businesses, led transformations, launched new capabilities, and served on boards for over a decade provides specific insight into the challenges you're navigating. This isn't coaching from theory or frameworks—it's partnership informed by having been responsible for outcomes in similar terrain.</p>
+                        <div class="difference-features">
+                            <div class="difference-feature">
+                                <i class="fas fa-briefcase"></i>
+                                <span>20 years building and scaling businesses</span>
+                            </div>
+                            <div class="difference-feature">
+                                <i class="fas fa-landmark"></i>
+                                <span>14+ years active board service</span>
+                            </div>
+                            <div class="difference-feature">
+                                <i class="fas fa-globe"></i>
+                                <span>Global transformation leadership</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="nature-card">
-                    <div class="nature-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Both Strategic and Human</h3>
-                    <div class="nature-divider"></div>
-                    <p>Effective work at senior levels requires holding both dimensions simultaneously. The analytical rigor to think through strategic implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact in specific situations. Most advisors bring one. Sustained effectiveness requires both.</p>
-                    <div style="margin-top: 1.5rem; display: grid; gap: 0.75rem;">
-                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
-                            <i class="fas fa-chart-bar" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
-                            <span>Strategic and analytical depth</span>
+                <div class="difference-item">
+                    <i class="fas fa-brain difference-icon-bg"></i>
+                    <div class="difference-content">
+                        <div class="difference-icon-primary">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
-                            <i class="fas fa-users" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
-                            <span>Understanding of human systems</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 1rem; color: rgba(250, 248, 245, 0.75); font-size: 0.95rem;">
-                            <i class="fas fa-link" style="color: var(--gold); font-size: 1rem; width: 20px;"></i>
-                            <span>Integration of both dimensions</span>
+                        <h3>Both Strategic and Human</h3>
+                        <div class="difference-divider"></div>
+                        <p>Effective work at senior levels requires holding both dimensions simultaneously. The analytical rigor to think through strategic implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact in specific situations. Most advisors bring one. Sustained effectiveness requires both.</p>
+                        <div class="difference-features">
+                            <div class="difference-feature">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Strategic and analytical depth</span>
+                            </div>
+                            <div class="difference-feature">
+                                <i class="fas fa-users"></i>
+                                <span>Understanding of human systems</span>
+                            </div>
+                            <div class="difference-feature">
+                                <i class="fas fa-link"></i>
+                                <span>Integration of both dimensions</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2888,15 +2054,16 @@
         </div>
     </section>
 
-    <!-- Common Situations Section -->
-    <section class="work-section reveal" id="services">
+    <!-- Common Situations - Vertical Clean List -->
+    <section class="situations-section reveal">
         <div class="section-container">
             <h2>Common <span class="accent">Situations</span></h2>
 
-            <div class="situations-grid">
-                <div class="situation-card">
-                    <div class="situation-icon">
-                        <i class="fas fa-chess-knight"></i>
+            <div class="situations-list">
+                <div class="situation-item">
+                    <div class="situation-icon-wrapper">
+                        <i class="fas fa-chess-knight situation-icon-bg"></i>
+                        <i class="fas fa-chess-knight situation-icon-primary"></i>
                     </div>
                     <h3>High-Stakes Decisions</h3>
                     <p>Decisions where the analytical answer seems clear but organizational reality requires navigation you haven't encountered before. We think through implications, stress-test assumptions, and examine what successful execution actually requires.</p>
@@ -2908,9 +2075,10 @@
                     </ul>
                 </div>
 
-                <div class="situation-card">
-                    <div class="situation-icon">
-                        <i class="fas fa-users"></i>
+                <div class="situation-item">
+                    <div class="situation-icon-wrapper">
+                        <i class="fas fa-users situation-icon-bg"></i>
+                        <i class="fas fa-users situation-icon-primary"></i>
                     </div>
                     <h3>Team Effectiveness</h3>
                     <p>These situations resist simple interventions. We work through the human dynamics and organizational factors that determine whether teams perform or underperform their potential.</p>
@@ -2922,9 +2090,10 @@
                     </ul>
                 </div>
 
-                <div class="situation-card">
-                    <div class="situation-icon">
-                        <i class="fas fa-sitemap"></i>
+                <div class="situation-item">
+                    <div class="situation-icon-wrapper">
+                        <i class="fas fa-sitemap situation-icon-bg"></i>
+                        <i class="fas fa-sitemap situation-icon-primary"></i>
                     </div>
                     <h3>Organizational Design</h3>
                     <p>Design choices that account for both strategic logic and human realities of how work actually gets done.</p>
@@ -2936,9 +2105,10 @@
                     </ul>
                 </div>
 
-                <div class="situation-card">
-                    <div class="situation-icon">
-                        <i class="fas fa-sync-alt"></i>
+                <div class="situation-item">
+                    <div class="situation-icon-wrapper">
+                        <i class="fas fa-sync-alt situation-icon-bg"></i>
+                        <i class="fas fa-sync-alt situation-icon-primary"></i>
                     </div>
                     <h3>Leading Change</h3>
                     <p>Transformation that requires more than communication plans and project management. Creating conditions where change becomes possible rather than mandating compliance that looks like commitment.</p>
@@ -2950,9 +2120,10 @@
                     </ul>
                 </div>
 
-                <div class="situation-card">
-                    <div class="situation-icon">
-                        <i class="fas fa-route"></i>
+                <div class="situation-item">
+                    <div class="situation-icon-wrapper">
+                        <i class="fas fa-route situation-icon-bg"></i>
+                        <i class="fas fa-route situation-icon-primary"></i>
                     </div>
                     <h3>Career Navigation</h3>
                     <p>Career decisions at senior levels have long time horizons and limited room for course correction.</p>
@@ -2964,9 +2135,10 @@
                     </ul>
                 </div>
 
-                <div class="situation-card">
-                    <div class="situation-icon">
-                        <i class="fas fa-compass"></i>
+                <div class="situation-item">
+                    <div class="situation-icon-wrapper">
+                        <i class="fas fa-compass situation-icon-bg"></i>
+                        <i class="fas fa-compass situation-icon-primary"></i>
                     </div>
                     <h3>Strategy Development</h3>
                     <p>Strategy work that remains grounded in implementation reality throughout. Moving beyond planning cycles that produce documents no one references three months later.</p>
@@ -2981,16 +2153,16 @@
         </div>
     </section>
 
-    <!-- Engagement Types Section -->
-    <section class="profile-section reveal">
+    <!-- Engagement Types - Side-by-Side Split -->
+    <section class="engagement-section reveal">
         <div class="section-container">
             <h2>Engagement <span class="accent">Types</span></h2>
 
-            <div class="profile-intro">
+            <div class="engagement-intro">
                 <p>The structure we create depends on what you're navigating and what type of partnership proves most valuable. Each approach brings different benefits and serves different situations.</p>
             </div>
 
-            <div class="engagement-grid">
+            <div class="engagement-split">
                 <div class="engagement-card">
                     <h3><i class="fas fa-handshake"></i> Ongoing Coaching Partnership</h3>
                     <p>Regular sessions—typically bi-weekly or monthly—provide sustained thinking partnership as you navigate evolving challenges. The relationship deepens over time as we develop shared language and understanding.</p>
@@ -3012,7 +2184,9 @@
                         <li>Returning for additional intensive work as new challenges emerge</li>
                     </ul>
                 </div>
+            </div>
 
+            <div class="engagement-split">
                 <div class="engagement-card">
                     <h3><i class="fas fa-arrow-up"></i> Leadership Transition Support</h3>
                     <p>The first 90-120 days in a new senior role benefit from structured support. This typically involves more frequent initial sessions that taper as you gain traction.</p>
@@ -3038,8 +2212,8 @@
         </div>
     </section>
 
-    <!-- Investment Section -->
-    <section class="section-alternate reveal">
+    <!-- Investment Section - Multi-Layer Icons -->
+    <section class="investment-section reveal">
         <div class="section-container">
             <h2>Working <span class="accent">Together</span></h2>
 
@@ -3112,7 +2286,7 @@
                     <a href="mailto:cahowe1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-            
+
             <div class="footer-links">
                 <h4>Navigate</h4>
                 <ul>
@@ -3123,7 +2297,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-contact">
                 <h4>Connect</h4>
                 <p><strong>Email</strong><br><a href="mailto:cahowe1@gmail.com">cahowe1@gmail.com</a></p>
@@ -3131,7 +2305,7 @@
                 <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank">chris-howe-ny</a></p>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2024 CAH Advisory Services. All rights reserved.</p>
         </div>

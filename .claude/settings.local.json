@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nTransform work.html into comprehensive project showcase page\n\n- Replace homepage content with detailed project portfolio\n- Add 5 major project sections: GCC India, EVP Development, Analytics & Product Business, Executive Coaching, NGO Restructuring\n- Update hero section to match services.html design (centered, no image)\n- Add \"What This Work Taught Me\" philosophy section\n- Maintain Chris Howe''s distinctive brand voice and thought leadership style\n- Update page title and meta description for SEO\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
