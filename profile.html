@@ -543,42 +543,63 @@
         }
         
         .who-content {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .who-intro {
             max-width: 850px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5rem;
             text-align: center;
         }
-        
+
         .who-intro p {
             font-size: 1.25rem;
             line-height: 1.8;
             margin-bottom: 0;
         }
-        
+
         .who-profiles {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 0;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            padding: 4rem 0;
+            position: relative;
         }
-        
+
+        .who-profiles::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 33.33%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, rgba(250, 248, 245, 0.2) 20%, rgba(250, 248, 245, 0.2) 80%, transparent 100%);
+        }
+
+        .who-profiles::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 66.66%;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, rgba(250, 248, 245, 0.2) 20%, rgba(250, 248, 245, 0.2) 80%, transparent 100%);
+        }
+
         .who-profile {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
+            padding: 0 3rem;
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
         }
-        
-        .who-profile::after {
+
+        .who-profile::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: -4rem;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
@@ -586,39 +607,46 @@
             background: var(--gold);
             transition: width 0.4s ease;
         }
-        
+
+        .who-profile:hover::before {
+            width: 60%;
+        }
+
         .who-profile:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
-        
-        .who-profile:hover::after {
-            width: 80%;
-        }
-        
+
         .who-profile-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             background: rgba(201, 169, 110, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 2rem;
             color: var(--gold);
-            font-size: 1.8rem;
+            font-size: 2rem;
             border: 2px solid rgba(201, 169, 110, 0.25);
+            transition: all 0.4s ease;
         }
-        
+
+        .who-profile:hover .who-profile-icon {
+            background: var(--gold);
+            color: var(--navy);
+            transform: scale(1.15);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.4);
+        }
+
         .who-profile h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 500;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
         }
-        
+
         .who-profile p {
             font-size: 1.05rem;
             line-height: 1.7;
@@ -641,58 +669,119 @@
             margin: 0 auto;
         }
         
-        /* Challenge Section */
+        /* Challenge Section - Diagonal Staggered Layout */
         .challenge-section {
             background: var(--white);
             padding: 7rem 0;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .challenge-section::after {
+            content: '\f0eb';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 15%;
+            right: -5%;
+            font-size: 18rem;
+            color: rgba(201, 169, 110, 0.04);
+            z-index: 0;
+            transform: rotate(15deg);
+        }
+
+        .challenge-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
         .challenge-section h2 {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .challenge-intro {
             max-width: 850px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5rem;
             text-align: center;
         }
-        
+
         .challenge-intro p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--grey-dark);
         }
-        
+
         .challenge-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             max-width: 1100px;
             margin: 0 auto;
         }
-        
+
         .challenge-item {
-            background: var(--cream);
-            padding: 2.5rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--gold);
-            transition: all 0.3s ease;
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0;
+            position: relative;
+            transition: all 0.4s ease;
         }
-        
+
+        .challenge-item:not(:last-child) {
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+        }
+
+        .challenge-item:nth-child(odd) {
+            padding-left: 0;
+        }
+
+        .challenge-item:nth-child(even) {
+            padding-left: 4rem;
+        }
+
+        .challenge-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--gold);
+            line-height: 1;
+            position: relative;
+        }
+
+        .challenge-number::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.4s ease;
+        }
+
+        .challenge-content {
+            padding-top: 0.5rem;
+        }
+
+        .challenge-item:hover .challenge-number::after {
+            width: 80px;
+        }
+
         .challenge-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(26, 35, 50, 0.08);
+            transform: translateX(10px);
         }
-        
+
         .challenge-item h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 500;
             color: var(--navy);
             margin-bottom: 1rem;
+            letter-spacing: -0.01em;
         }
-        
+
         .challenge-item p {
             font-size: 1.05rem;
             line-height: 1.75;
@@ -700,13 +789,13 @@
             margin-bottom: 0;
         }
         
-        /* Stakes Section */
+        /* Stakes Section - Asymmetric Split Layout */
         .stakes-section {
             background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
             padding: 7rem 0;
             position: relative;
         }
-        
+
         .stakes-section::before {
             content: '';
             position: absolute;
@@ -718,17 +807,17 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
         }
-        
+
         .stakes-content {
-            max-width: 950px;
+            max-width: 1150px;
             margin: 0 auto;
         }
-        
+
         .stakes-content h2 {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
-        
+
         .stakes-quote {
             font-family: 'Playfair Display', serif;
             font-size: 1.75rem;
@@ -736,12 +825,12 @@
             line-height: 1.6;
             color: var(--navy);
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
             font-style: italic;
             position: relative;
             padding: 0 3rem;
         }
-        
+
         .stakes-quote::before {
             content: '"';
             position: absolute;
@@ -752,45 +841,78 @@
             opacity: 0.3;
             font-family: Georgia, serif;
         }
-        
+
         .stakes-list {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 4rem 3rem;
             margin-top: 3rem;
         }
-        
+
         .stakes-point {
-            display: flex;
-            gap: 1.25rem;
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 2rem;
             align-items: start;
+            position: relative;
+            transition: all 0.4s ease;
         }
-        
+
+        .stakes-point::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stakes-point:hover::before {
+            opacity: 1;
+        }
+
+        .stakes-point:hover {
+            transform: translateX(15px);
+        }
+
         .stakes-icon {
-            width: 40px;
-            height: 40px;
-            min-width: 40px;
-            background: var(--gold);
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1.1rem;
-            margin-top: 0.25rem;
+            color: var(--gold);
+            font-size: 1.75rem;
+            border: 2px solid rgba(201, 169, 110, 0.25);
+            transition: all 0.4s ease;
         }
-        
+
+        .stakes-point:hover .stakes-icon {
+            background: var(--gold);
+            color: var(--white);
+            transform: rotate(10deg) scale(1.05);
+        }
+
         .stakes-text {
             flex: 1;
+            padding-top: 0.25rem;
         }
-        
+
         .stakes-text h3 {
-            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
             font-weight: 500;
             color: var(--navy);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
         }
-        
+
         .stakes-text p {
             font-size: 1.05rem;
             line-height: 1.7;
@@ -871,12 +993,12 @@
             max-width: 900px;
         }
         
-        /* Partnership Section */
+        /* Partnership Section - Cascading Vertical Flow */
         .bring-section {
             background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
             position: relative;
         }
-        
+
         .bring-section::before {
             content: '';
             position: absolute;
@@ -888,85 +1010,109 @@
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
         }
-        
+
         .bring-section h2 {
             text-align: center;
         }
-        
+
         .partnership-intro {
             text-align: center;
             max-width: 800px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5rem;
         }
-        
+
         .partnership-intro p {
             font-size: 1.3rem;
             line-height: 1.8;
             color: var(--grey-dark);
             margin-bottom: 0;
         }
-        
+
         .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
             margin-bottom: 4rem;
         }
-        
+
         .expertise-card {
-            background: var(--white);
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--grey-light);
-            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
             transition: all 0.4s ease;
             position: relative;
-            overflow: hidden;
+            background: transparent;
         }
-        
-        .expertise-card::before {
+
+        .expertise-card:nth-child(1) {
+            padding-left: 0;
+        }
+
+        .expertise-card:nth-child(2) {
+            padding-left: 3rem;
+        }
+
+        .expertise-card:nth-child(3) {
+            padding-left: 6rem;
+        }
+
+        .expertise-card::after {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
+            top: 0;
+            width: 4px;
+            height: 0;
             background: var(--gold);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+            transition: height 0.4s ease;
         }
-        
+
         .expertise-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
+            background: rgba(250, 248, 245, 0.6);
         }
-        
-        .expertise-card:hover::before {
-            transform: scaleX(1);
+
+        .expertise-card:hover::after {
+            height: 100%;
         }
-        
+
         .expertise-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 7rem;
             font-weight: 600;
-            color: rgba(201, 169, 110, 0.2);
+            color: rgba(201, 169, 110, 0.15);
             line-height: 1;
-            margin-bottom: 1rem;
+            position: relative;
         }
-        
+
+        .expertise-number::after {
+            content: attr(data-number);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .expertise-content {
+            padding-top: 1rem;
+        }
+
         .expertise-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 500;
             color: var(--navy);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
             letter-spacing: -0.01em;
         }
-        
+
         .expertise-description {
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            line-height: 1.75;
             color: var(--grey-mid);
             margin-bottom: 0;
         }
@@ -1021,49 +1167,80 @@
             line-height: 1.5;
         }
         
-        /* Services Section */
+        /* Services Section - Two-Column Alternating Icons */
         .work-section {
             background: var(--cream);
+            position: relative;
         }
-        
+
+        .work-section::before {
+            content: '\f0b1';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            bottom: -5%;
+            left: -3%;
+            font-size: 22rem;
+            color: rgba(201, 169, 110, 0.03);
+            z-index: 0;
+        }
+
+        .work-section .section-container {
+            position: relative;
+            z-index: 1;
+        }
+
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
             margin-top: 3.5rem;
-        }
-        
-        .work-card {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 2px;
-            border: 1px solid var(--grey-light);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            border-radius: 4px;
             overflow: hidden;
+            background: var(--white);
         }
-        
+
+        .work-card {
+            padding: 3rem 2.5rem;
+            border-right: 1px solid rgba(201, 169, 110, 0.15);
+            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            background: var(--white);
+        }
+
+        .work-card:nth-child(2n) {
+            border-right: none;
+        }
+
+        .work-card:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
         .work-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(201, 169, 110, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
-        
+
         .work-card:hover {
-            transform: translateY(-6px);
+            background: rgba(250, 248, 245, 0.5);
+            transform: scale(1.02);
+            z-index: 2;
             box-shadow: 0 20px 50px rgba(26, 35, 50, 0.12);
-            border-color: rgba(201, 169, 110, 0.3);
         }
-        
+
         .work-card:hover::before {
-            height: 100%;
+            opacity: 1;
         }
-        
+
         .work-card-icon {
             width: 65px;
             height: 65px;
@@ -1076,20 +1253,34 @@
             font-size: 1.6rem;
             margin-bottom: 1.75rem;
             border: 1px solid rgba(201, 169, 110, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
         }
-        
+
+        .work-card:hover .work-card-icon {
+            background: var(--gold);
+            color: var(--white);
+            transform: rotate(-10deg) scale(1.1);
+        }
+
         .work-card h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 500;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
             color: var(--navy);
+            position: relative;
+            z-index: 1;
         }
-        
+
         .work-card p {
             font-size: 1.05rem;
             line-height: 1.75;
             margin-bottom: 0;
             color: var(--grey-dark);
+            position: relative;
+            z-index: 1;
         }
         
         /* Profile Section */
@@ -1462,28 +1653,67 @@
             }
             
             .expertise-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 0;
             }
-            
+
+            .expertise-card {
+                grid-template-columns: 120px 1fr;
+                gap: 2rem;
+                padding: 2.5rem 1rem !important;
+            }
+
+            .expertise-number {
+                font-size: 5rem;
+            }
+
             .nature-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             .challenge-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 0;
             }
-            
+
+            .challenge-item {
+                grid-template-columns: 80px 1fr;
+                gap: 1.5rem;
+                padding: 2.5rem 0 !important;
+            }
+
+            .challenge-number {
+                font-size: 3rem;
+            }
+
             .stakes-list {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2.5rem;
             }
-            
+
             .who-profiles {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 3rem;
+                border-top: none;
+                border-bottom: none;
+                padding: 0;
+            }
+
+            .who-profiles::before,
+            .who-profiles::after {
+                display: none;
+            }
+
+            .who-profile {
+                padding: 2.5rem 1.5rem;
+                border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+            }
+
+            .who-profile:last-child {
+                border-bottom: none;
+            }
+
+            .who-profile::before {
+                display: none;
             }
             
             .experience-timeline {
@@ -1852,6 +2082,10 @@
             .work-grid {
                 grid-template-columns: 1fr;
             }
+
+            .work-card {
+                border-right: none !important;
+            }
             
             .contact-section {
                 padding: 4.5rem 2rem;
@@ -1956,23 +2190,35 @@
 
             <div class="challenge-grid">
                 <div class="challenge-item">
-                    <h3>The Distance Between Strategy and Reality</h3>
-                    <p>Twenty years carrying P&L responsibility teaches what frameworks alone cannot: understanding the organizational dynamics that determine whether plans translate into outcomes. The space between strategic logic and implementation reality is where most initiatives fail.</p>
+                    <div class="challenge-number">01</div>
+                    <div class="challenge-content">
+                        <h3>The Distance Between Strategy and Reality</h3>
+                        <p>Twenty years carrying P&L responsibility teaches what frameworks alone cannot: understanding the organizational dynamics that determine whether plans translate into outcomes. The space between strategic logic and implementation reality is where most initiatives fail.</p>
+                    </div>
                 </div>
 
                 <div class="challenge-item">
-                    <h3>How Organizations Actually Change</h3>
-                    <p>Leading transformation across 25,000+ professionals reveals that change is fundamentally about human systems. How informal power works. Where resistance emerges. What creates genuine conditions for change versus compelling presentations.</p>
+                    <div class="challenge-number">02</div>
+                    <div class="challenge-content">
+                        <h3>How Organizations Actually Change</h3>
+                        <p>Leading transformation across 25,000+ professionals reveals that change is fundamentally about human systems. How informal power works. Where resistance emerges. What creates genuine conditions for change versus compelling presentations.</p>
+                    </div>
                 </div>
 
                 <div class="challenge-item">
-                    <h3>Building What Doesn't Yet Exist</h3>
-                    <p>Launching new capabilities—hiring for undefined roles, integrating new ways of working into established culture—requires judgment about when to push and when to work with organizational patterns. Experience with uncertainty shapes engagement when the path forward isn't clear.</p>
+                    <div class="challenge-number">03</div>
+                    <div class="challenge-content">
+                        <h3>Building What Doesn't Yet Exist</h3>
+                        <p>Launching new capabilities—hiring for undefined roles, integrating new ways of working into established culture—requires judgment about when to push and when to work with organizational patterns. Experience with uncertainty shapes engagement when the path forward isn't clear.</p>
+                    </div>
                 </div>
 
                 <div class="challenge-item">
-                    <h3>The Board-Level View</h3>
-                    <p>Fourteen years of board service reveals governance patterns: dynamics between boards and management, effective oversight versus compliance theater, how fiduciary responsibility shapes decisions. This matters when preparing for or navigating board-level engagement.</p>
+                    <div class="challenge-number">04</div>
+                    <div class="challenge-content">
+                        <h3>The Board-Level View</h3>
+                        <p>Fourteen years of board service reveals governance patterns: dynamics between boards and management, effective oversight versus compliance theater, how fiduciary responsibility shapes decisions. This matters when preparing for or navigating board-level engagement.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2042,21 +2288,27 @@
 
             <div class="expertise-grid">
                 <div class="expertise-card">
-                    <div class="expertise-number">01</div>
-                    <h3 class="expertise-title">Two Decades Building</h3>
-                    <p class="expertise-description">Twenty years at BCG in roles requiring building, not just advising. P&L responsibility for global businesses. Leading transformation across 25,000+ professionals. Launching new capabilities. Each taught the distance between strategic logic and implementation reality—where initiatives fail, what moves from plan to sustainable outcome.</p>
+                    <div class="expertise-number" data-number="01"></div>
+                    <div class="expertise-content">
+                        <h3 class="expertise-title">Two Decades Building</h3>
+                        <p class="expertise-description">Twenty years at BCG in roles requiring building, not just advising. P&L responsibility for global businesses. Leading transformation across 25,000+ professionals. Launching new capabilities. Each taught the distance between strategic logic and implementation reality—where initiatives fail, what moves from plan to sustainable outcome.</p>
+                    </div>
                 </div>
 
                 <div class="expertise-card">
-                    <div class="expertise-number">02</div>
-                    <h3 class="expertise-title">Training Grounded in Practice</h3>
-                    <p class="expertise-description">Formal credentials—MBA from Darden, coaching certification through ICF and CEC—provide frameworks. Their value comes from integration with direct experience: making sense of complexity actually encountered, refined through application to organizational challenges where stakes were consequential.</p>
+                    <div class="expertise-number" data-number="02"></div>
+                    <div class="expertise-content">
+                        <h3 class="expertise-title">Training Grounded in Practice</h3>
+                        <p class="expertise-description">Formal credentials—MBA from Darden, coaching certification through ICF and CEC—provide frameworks. Their value comes from integration with direct experience: making sense of complexity actually encountered, refined through application to organizational challenges where stakes were consequential.</p>
+                    </div>
                 </div>
 
                 <div class="expertise-card">
-                    <div class="expertise-number">03</div>
-                    <h3 class="expertise-title">The Governance Lens</h3>
-                    <p class="expertise-description">Fourteen years on DreamYard Project's board, currently Executive Committee and People & Culture lead. Sustained engagement reveals governance patterns: how boards and management interact, effective oversight versus compliance theater, where fiduciary responsibility shapes decisions.</p>
+                    <div class="expertise-number" data-number="03"></div>
+                    <div class="expertise-content">
+                        <h3 class="expertise-title">The Governance Lens</h3>
+                        <p class="expertise-description">Fourteen years on DreamYard Project's board, currently Executive Committee and People & Culture lead. Sustained engagement reveals governance patterns: how boards and management interact, effective oversight versus compliance theater, where fiduciary responsibility shapes decisions.</p>
+                    </div>
                 </div>
             </div>
             
