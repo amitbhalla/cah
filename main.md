@@ -1,201 +1,326 @@
-I'll research executive coaching and consulting websites first to understand how they communicate with senior executives, then create detailed copy for Chris's CAH Advisory website.Based on my research of executive coaching and consulting sites, I can see the best ones speak plainly, avoid buzzwords, and communicate authority through experience rather than marketing language. Let me create detailed copy for Chris's CAH Advisory website.
+# CAH Advisory Website Copy
 
 ---
 
-## **PAGE 1: HOME**
+## HOME
 
-**`<h1>`** You didn't get here by following the script.
+### Hero Section
 
-**`<p class="intro">`** Most executives reach the C-suite by mastering what's in front of them. The role itself demands something different: seeing around corners, building organizations that outlast your tenure, making decisions when the data is incomplete and the stakes are high.
+**Executive Coaching & Strategic Advisory**
 
-**`<p>`** I work with senior executives who recognize that getting better at this work requires a different kind of partnership—someone who has built businesses, led transformations, and wrestled with the same questions you're facing now.
+The questions change when you reach the top.
 
-**`<h2>`** What I bring
+Most executives reach senior leadership by mastering execution. The work at this level asks for something different: pattern recognition across complexity, building organizations that outlast individual tenure, making consequential decisions when the full picture remains uncertain.
 
-**`<p>`** Twenty years at Boston Consulting Group, where I built new businesses from the ground up, led global HR transformation, ran P&L operations, and helped launch BCG's analytics and digital capabilities. I've been the person in the room when the strategy looks good on paper but the organization isn't ready. I've led teams through changes they didn't ask for. I've made the decision to kill projects that weren't working.
+**Credentials Bar:**
+- 20 Years at BCG
+- C-Suite Focus
+- 14+ Years Board Service
+- NYC Based
 
-**`<p>`** Before starting my own practice, I served as Executive Director of Global HR Transformation and Change at BCG, and as Global Product Business Senior Director, where I had full P&L responsibility and built business units that generated meaningful revenue. I understand what it means to be accountable for both results and people.
-
-**`<p>`** I'm a certified executive coach (ICF ACC, CEC) because the technical tools matter, but I also know that coaching at this level isn't about frameworks. It's about creating space to think clearly when everyone wants your answer immediately.
-
-**`<h2>`** How we work together
-
-**`<p>`** This isn't coaching that focuses on your "leadership presence" or finding your authentic voice. You already have those. This is about the specific challenges in front of you: the organizational move that everyone says can't be done, the dynamic on your executive team that's slowing everything down, the next phase of your career that doesn't have a clear playbook.
-
-**`<p>`** We work through:
-
-**`<ul>`**
-- **`<li>`** Strategic decisions where the technical answer is clear but the organizational reality is complicated
-- **`<li>`** Building and restructuring teams when you need both the analytical rigor and the human judgment
-- **`<li>`** Transitions—new role, new company, new set of expectations that come with a seat you've never held before
-- **`<li>`** Culture and change work that needs to be more than a communications plan
-- **`<li>`** Board readiness and governance questions as you prepare for or navigate board service
-
-**`</ul>`**
-
-**`<h2>`** Who this is for
-
-**`<p>`** I work with executives who are one or two levels from the top, sitting CEOs, and board members. You're dealing with questions that don't have obvious answers. You're managing complexity that most people in your organization can't see. You know that getting outside perspective matters, but you don't have time for someone who needs to learn your business from scratch.
-
-**`<p>`** You've probably already worked with consultants who delivered a deck. You might have worked with a coach who asked good questions but didn't understand the business context. What you need now is both: someone who can think through the strategic implications and help you navigate the organizational and personal dimensions at the same time.
-
-**`<h2>`** Start here
-
-**`<p>`** Most engagements begin with a conversation about what you're working on and whether this partnership makes sense. No questionnaires, no intake forms—just a direct discussion about whether I can be useful to you right now.
-
-**`<p>`** **`<a href="/contact">`** Get in touch **`</a>`** to set up a time to talk.
+[Begin a Conversation] [Learn More]
 
 ---
 
-## **PAGE 2: SERVICES**
+### The Questions You're Holding
 
-**`<h1>`** Services
+**Fewer Thinking Partners**
+As you move up, the number of people who can genuinely engage with what you're navigating decreases. Your team needs direction. Your board expects confidence. The space to simply think through complexity—without pressure to have immediate answers—becomes scarce.
 
-**`<p class="intro">`** I work in two modes: as an executive coach for individual leaders, and as a strategic advisor for organizational challenges that require both analytical rigor and implementation support.
+**Decisions Beyond Frameworks**
+The situations you're working through often resist standard approaches. The acquisition where strategic logic is compelling but integration risks substantial. The restructuring where personal relationships create invisible constraints. These require judgment, not just analysis.
 
-**`<h2>`** Executive Coaching
+**Seeing System Dynamics**
+You recognize patterns others don't yet see—how organizational changes will interact with informal power dynamics, how strategic shifts will encounter cultural resistance in predictable but hard-to-articulate ways. This pattern recognition is valuable but can be isolating.
 
-**`<p>`** Executive coaching at this level isn't about developing skills you don't have. You already know how to lead, make decisions, and drive results. This work is about the specific challenges you're facing right now—challenges that require thinking differently, acting with more precision, or navigating dynamics that are more complex than anything in your background prepared you for.
-
-**`<p>`** We work together over time, typically in monthly or bi-weekly sessions. The work is confidential, focused on your agenda, and designed to help you move forward on the things that matter most. Between sessions, you're operating with whatever we've worked through. The goal is for you to make progress on real problems, not to have interesting conversations.
-
-**`<h3>`** What we focus on:
-
-**`<p>`** **New executive transitions:** You've taken on a bigger role—CEO, COO, division president, board seat. The job is different from what you've done before, and you're figuring out how to be effective in it. We work through questions like: What does this role actually require? Where should you be spending your time? How do you build the relationships that matter? What needs to change in how you operate?
-
-**`<p>`** **Team and organizational challenges:** Something isn't working on your executive team or in your organization, and fixing it requires more than a reorganization or a new hire. The dynamics are complex, the stakes are high, and you need to think through what's really going on and how to address it. We work on understanding the patterns, making sense of what you're seeing, and designing interventions that might actually work.
-
-**`<p>`** **Strategic decisions with organizational implications:** You're facing a decision where the analytical answer is clear but the organizational reality makes it complicated. You need to think through not just what to do, but how to do it, who needs to be involved, what will break if you move forward, and how to set things up for success.
-
-**`<p>`** **Building and restructuring organizations:** You're scaling, integrating an acquisition, restructuring for a new strategy, or building a function from scratch. The work requires both the strategic logic and the organizational design—how the pieces fit together, what roles need to exist, how the work flows, what you're optimizing for.
-
-**`<p>`** **Change and culture:** You need to move the organization in a direction it hasn't gone before. Not a "change management plan," but the actual work of figuring out what needs to be different, how to create the conditions for it to happen, and how to lead through the resistance and confusion that comes with real change.
-
-**`<p>`** **Career and board considerations:** You're thinking about what comes next. That might mean preparing for a CEO role, considering a board seat, evaluating an offer, or figuring out what you want your next chapter to look like. We work through the decision-making, the positioning, and the preparation required to move in the direction you want.
-
-**`<h3>`** How it works:
-
-**`<p>`** Engagements are typically 6 to 12 months, though some clients work with me longer as their priorities evolve. We meet virtually, usually for 90 minutes per session. The frequency depends on what you're working on—monthly for ongoing development, more frequent when you're in the middle of something complex.
-
-**`<p>`** Between sessions, you're working on what we've discussed. The coaching isn't separate from your work; it's integrated into how you're thinking about and approaching the challenges in front of you.
-
-**`<h2>`** Strategic Consulting
-
-**`<p>`** Some situations require more than coaching. You need someone who can analyze the problem, develop the strategy, and work alongside your team to implement it. This is consulting work, but not the kind where a team shows up, studies your organization, and hands you a deck. This is partnership on specific challenges where both the thinking and the execution matter.
-
-**`<h3>`** Where I add value:
-
-**`<p>`** **Strategic planning and execution:** You're setting strategy for your organization or business unit. You need help with the analytical work—market assessment, competitive positioning, scenario planning—but you also need to ensure the strategy can actually be executed. I bring the consulting toolkit: structured problem-solving, rigorous analysis, clear recommendations. But I also bring the operational experience to help you think through the implementation: what needs to be true organizationally, what's realistic given your constraints, how to sequence the work.
-
-**`<p>`** **HR transformation and people strategy:** Your HR function or people strategy needs to evolve. Maybe you're scaling, dealing with a new business model, or recognizing that how you attract, develop, and retain talent isn't working anymore. I've led global HR transformation at a professional services firm with thousands of people. I know what good looks like, where most organizations get stuck, and how to design people strategies that connect to business priorities.
-
-**`<p>`** **Organizational design and operating model:** You're restructuring, combining organizations, or setting up a new business unit. You need to figure out the right design: roles, reporting lines, decision rights, governance. But you also need to think through the transitions, the communication, the risks. I help you design the end state and plan the path to get there.
-
-**`<p>`** **Change and transformation programs:** You're leading a significant change—digital transformation, integration, turnaround, culture shift. You need someone who can help shape the approach, work with your leadership team, and provide counsel as you navigate the complexity. I don't run your change program, but I work alongside you to make sure the strategy is sound and you're seeing around the corners.
-
-**`<p>`** **Board and governance advisory:** You're building a board, improving board effectiveness, or working through a governance challenge. I've served on a nonprofit board for over 14 years, including executive committee and officer roles. I understand board dynamics, what makes boards effective, and how to work through common board challenges.
-
-**`<h3>`** How it works:
-
-**`<p>`** Projects are scoped based on the specific need. Some are short-term—a few weeks to develop a strategy or solve a particular problem. Others are ongoing, where I serve as an advisor over several months as you implement something complex.
-
-**`<p>`** I work directly with you and your team. No junior consultants, no large teams that add cost without adding value. You get me, my experience, and my judgment.
-
-**`<h2>`** Approach
-
-**`<p>`** Whether I'm working as a coach or consultant, the approach is the same: clarity about the problem, rigor in the thinking, pragmatism about what will actually work in your context.
-
-**`<p>`** I don't have a methodology I'm trying to sell you. I have experience building businesses, leading change, and helping organizations work through complex challenges. I bring that experience, and we figure out together what makes sense for your situation.
-
-**`<p>`** The work is confidential, direct, and focused on helping you make progress on what matters most.
+**The Extended Time Horizon**
+Your decisions shape organizational reality over years, not quarters. Developing the leadership bench for challenges that don't exist yet. Shifting culture in ways that enable strategies not yet imagined. Knowing when to invest in capabilities before the market signals become obvious.
 
 ---
 
-## **PAGE 3: PROFILE**
+### Why This Matters
 
-**`<h1>`** Profile
+The decisions you're making now have consequences that compound over time—not just in financial results, but in organizational capability, in the leaders you develop, in the strategic options that remain available years from now.
 
-**`<p class="intro">`** I'm Chris Howe. I spent 20 years at Boston Consulting Group, where I built businesses, led transformations, and worked with companies across industries on their most complex challenges. I now work with senior executives as a coach and strategic advisor.
+What you're building—the organizations you shape, the leaders you develop, the decision-making cultures you establish—outlasts individual tenures. Today's choices about capabilities, partnerships, and positioning create the set of scenarios your organization can pursue tomorrow. Some paths remain open. Others quietly foreclose.
 
-**`<h2>`** Background
-
-**`<p>`** My career at BCG wasn't linear. I started as a consultant working on strategy projects, became a principal and then a case team leader, and eventually moved into building and running businesses within the firm.
-
-**`<p>`** As Global Product Business Senior Director, I built a business unit from scratch focused on software and data products. I had full P&L responsibility for a services business line and the ONE data platform. That meant making investment decisions, building teams, figuring out go-to-market strategy, and being accountable for revenue and growth. It wasn't theoretical strategy work—it was line management with all the complexity that comes with it.
-
-**`<p>`** Before that, I launched BCG's analytics solutions business, which required hiring at scale, building capabilities in new markets including India, and creating the foundation for what became a significant part of BCG's digital practice. We brought in data scientists, engineers, and product managers—roles that didn't exist in the firm before—and built something that changed how BCG worked with clients.
-
-**`<p>`** I also served as Executive Director of Global HR Transformation and Change, leading how BCG thought about its people strategy, talent development, and organizational effectiveness. That role gave me insight into how professional services firms really work, where HR functions break down, and what it takes to align people strategy with business priorities.
-
-**`<p>`** Earlier in my career, I was Chief of Staff to the head of BCG's global practice areas, which meant seeing how the firm actually ran—not the public-facing strategy work, but the internal decision-making, resource allocation, and organizational dynamics that determined what got done and what didn't.
-
-**`<p>`** I left BCG in 2024 to start my own practice. After two decades of working within one organization, I wanted to work more directly with leaders and organizations on the challenges they're facing, without the infrastructure and methodology of a large firm.
-
-**`<h2>`** Before BCG
-
-**`<p>`** I spent three years at A.T. Kearney as an associate, working primarily in New York and Washington, D.C. That experience gave me the foundation in consulting—how to structure problems, work with clients, and deliver under pressure.
-
-**`<p>`** I have an MBA from the University of Virginia's Darden School of Business and a B.S. in Commerce from the University of Virginia.
-
-**`<h2>`** Board service
-
-**`<p>`** I've served on the board of DreamYard Project since 2011. DreamYard is the largest arts education provider in the Bronx and one of the largest in New York City, working with thousands of K-12 students each year. I'm a member of the Executive Committee and serve as Head of the People and Culture Committee, which oversees HR strategy, organizational development, and the employee value proposition.
-
-**`<p>`** Board service at DreamYard has been a significant part of my work over the past 14 years. It's given me experience with governance, fiduciary responsibility, strategic planning for nonprofits, and the particular challenges of scaling a mission-driven organization.
-
-**`<h2>`** Coaching credentials
-
-**`<p>`** I'm a certified executive coach with credentials from two organizations: the International Coaching Federation (ACC) and the Center for Executive Coaching. I completed training in strategic planning and execution, culture change, perceptual shift coaching, and data and digital platforms.
-
-**`<p>`** The credentials matter because they reflect a commitment to the discipline and practice of coaching. But what matters more is the work I've done—building businesses, leading teams, making difficult decisions—which gives me the context to coach at the executive level.
-
-**`<h2>`** How I think about this work
-
-**`<p>`** Most of my career was spent inside organizations, dealing with the reality that strategy is only useful if it can be implemented, and implementation only works if you understand the people, culture, and organizational dynamics involved.
-
-**`<p>`** That's the perspective I bring as a coach and advisor. I'm not an academic who studies leadership. I'm someone who has led people, built businesses, managed P&Ls, and worked through the same kinds of challenges my clients are facing.
-
-**`<p>`** I know what it's like to be accountable for results when the path forward isn't obvious. I know the isolation that comes with senior roles, where the decisions are yours to make and the consequences are yours to live with. I know that getting better at this work requires more than new skills—it requires different thinking, clearer judgment, and the discipline to focus on what actually matters.
-
-**`<p>`** That's what I help executives develop.
+At senior levels, the difference between good and slightly better judgment—repeated across dozens of consequential decisions—creates divergent trajectories over time.
 
 ---
 
-## **PAGE 4: CONTACT**
+### Working Together
 
-**`<h1>`** Contact
+I work with senior leaders who understand that sustained effectiveness at this level benefits from thinking partners who have navigated similar terrain—who can engage with both the strategic complexities and the human dynamics that shape how decisions actually unfold.
 
-**`<p class="intro">`** If you're interested in working together, let's start with a conversation.
+[Begin a Conversation]
 
-**`<h2>`** How to reach me
+---
 
-**`<p>`** **Email:** [cahowe1@gmail.com](mailto:cahowe1@gmail.com)
+## SERVICES
 
-**`<p>`** **LinkedIn:** [linkedin.com/in/chris-howe-ny](https://www.linkedin.com/in/chris-howe-ny)
+### Partnership for the Long Game
 
-**`<h2>`** What to expect
+The work we do together focuses on challenges that don't fit established frameworks—organizational decisions with human complexity, strategic choices that unfold over years, leadership transitions that reshape what's possible.
 
-**`<p>`** Most engagements begin with a direct conversation—typically 30 to 45 minutes—where we discuss what you're working on and whether I can be useful to you.
+[Begin a Conversation]
 
-**`<p>`** There's no formal intake process, no questionnaires to fill out. Just a straightforward discussion about your situation, what you're trying to accomplish, and whether this partnership makes sense.
+---
 
-**`<p>`** If it seems like a fit, we talk about how to structure the work—coaching, consulting, or some combination—and what that would look like in terms of time commitment and fee structure.
+### Core Services
 
-**`<p>`** If it's not a fit, I'll tell you that directly and, if possible, point you toward other resources that might be more useful.
+**Executive Coaching**
+One-on-one partnership focused on the challenges in front of you right now. We work through what matters, without preset methodology determining the conversation.
 
-**`<h2>`** Who I work with
+- Navigating restructuring that carries political complexity
+- Working through team dynamics affecting execution
+- Thinking through career decisions across multiple timeframes
+- Examining patterns you're seeing but haven't fully articulated
 
-**`<p>`** My clients are senior executives—C-suite, one level below the C-suite, and board members. They're typically leading organizations or business units with significant complexity: multiple stakeholders, ambiguous problems, high stakes.
+**Strategic Advisory**
+Thinking through organizational and business challenges that require both analytical rigor and understanding of human systems.
 
-**`<p>`** Some are in role and dealing with specific challenges. Others are in transition—new position, new company, preparing for a board seat. All of them are facing questions that don't have obvious answers and recognize that working through those questions with someone who has relevant experience can be valuable.
+- Assessing market entry where timing and approach determine outcomes
+- Designing organizations that enable strategy while remaining sustainable
+- Integrating acquisitions where culture shapes financial performance
+- Building capabilities that create competitive advantage over time
 
-**`<p>`** I work with executives across industries—technology, financial services, healthcare, professional services, nonprofits. What matters isn't the industry; it's the nature of the work and whether my experience is relevant to what you're dealing with.
+**Leadership Transition Support**
+The first 90 days in a senior role often determine what becomes possible over the following years. We work through what this specific position requires and how to be effective from the outset.
 
-**`<h2>`** Location
+- Establishing credibility while learning organizational dynamics
+- Making early decisions that shape future possibilities
+- Building relationships that enable execution
+- Reading signals that reveal what this role truly demands
 
-**`<p>`** I'm based in New York City. All coaching and advisory work is conducted virtually, though I can work on-site for specific consulting projects when that makes sense.
+**Board Preparation & Development**
+Preparing for board service or navigating the unique demands of effective board membership. Understanding what distinguishes governance from executive leadership.
 
-**`<h2>`** Get in touch
+- Providing strategic counsel without executive authority
+- Influencing across different backgrounds and mental models
+- Navigating board dynamics that shape decision quality
+- Developing judgment about when to push and when to listen
 
-**`<p>`** Send me an email at cahowe1@gmail.com with a brief description of what you're working on. I'll respond within 48 hours to set up a time to talk.
+---
 
+### Specialized Areas
+
+**Organizational Transformation**
+Leading change across organizations means understanding that the rational case rarely determines outcomes. Twenty years leading global transformation taught me where resistance emerges and how to create genuine conditions for change—not just compliance that looks like commitment.
+
+**Building New Capabilities**
+Launching what doesn't yet exist requires managing the tension between speed and sustainability. Hiring for roles you've never defined. Building credibility in markets where you're unproven. Scaling capabilities across geographies and cultures.
+
+**P&L Leadership**
+Full accountability changes how you see decisions. Understanding not just strategy but the operational realities that determine whether strategy translates to results—allocating resources when investment cases compete, building teams when talent is scarce, balancing short-term performance with long-term capability.
+
+**Executive Team Dynamics**
+Senior teams rarely fail for lack of individual capability. The work involves understanding what distinguishes the exceptional from the adequate—managing tension between functional excellence and enterprise optimization, building trust when performance pressure is high, navigating power dynamics that shape what gets discussed.
+
+---
+
+### How We Work Together
+
+**Initial Conversation**
+We begin with a straightforward discussion about what you're navigating and whether working together makes sense. No formal intake process—simply a thoughtful conversation about whether my experience matches your needs and whether the working relationship feels right.
+
+**Engagement Design**
+If we decide to work together, we design an approach that fits your situation. Regular coaching sessions (typically bi-weekly or monthly), intensive advisory on specific decisions, or structured transition support for new roles. The structure serves the work, not the other way around.
+
+**The Work Itself**
+Sessions focus on what matters right now. We think through implications, examine assumptions, and consider approaches with both analytical rigor and understanding of human systems.
+
+---
+
+### What Makes This Different
+
+**Experience-Informed Perspective**
+This isn't coaching from theory or frameworks—it's partnership informed by having been responsible for outcomes in similar terrain. Having built businesses, led transformations, launched new capabilities, and served on boards provides specific insight into the challenges you're navigating.
+
+**Both Strategic and Human**
+Effective work at senior levels requires holding both dimensions simultaneously. The analytical rigor to think through strategic implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact. Most advisors bring one. Sustained effectiveness requires both.
+
+---
+
+### Investment
+
+Fee structure matters less than whether this partnership will genuinely serve what you're trying to accomplish. Executive coaching typically involves monthly retainers. Strategic advisory is usually project-scoped. Transition support combines intensive initial engagement with tapering frequency.
+
+I work with a limited number of leaders at any given time. This allows depth of engagement rather than surface-level advice.
+
+[Start a Conversation]
+
+---
+
+## PROFILE
+
+### The Path That Shapes How I Work
+
+Understanding what senior leaders navigate comes from having walked similar terrain. Twenty years building businesses, leading transformations, making consequential decisions—not advising from the outside, but carrying P&L responsibility and living with the outcomes.
+
+In 2024, I stepped away from BCG to work more directly with leaders, without the structure and methodology of a large firm mediating those relationships. What matters isn't the positions held, but what accumulated experience teaches about how organizations actually work, where initiatives fail, what distinguishes sustainable outcomes from surface-level change.
+
+---
+
+### What Experience Teaches
+
+**The Distance Between Strategy and Reality**
+Carrying P&L responsibility teaches what frameworks alone cannot: understanding the organizational dynamics that determine whether plans translate into outcomes. The space between strategic logic and implementation reality is where most initiatives fail.
+
+**How Organizations Actually Change**
+Leading transformation across 25,000+ professionals reveals that change is fundamentally about human systems. How informal power works. Where resistance emerges. What creates genuine conditions for change versus compelling presentations.
+
+**Building What Doesn't Yet Exist**
+Launching new capabilities—hiring for undefined roles, integrating new ways of working into established culture—requires judgment about when to push and when to work with organizational patterns.
+
+**The Board-Level View**
+Fourteen years of board service reveals governance patterns: dynamics between boards and management, effective oversight versus compliance theater, how fiduciary responsibility shapes decisions.
+
+---
+
+### Career
+
+**Boston Consulting Group** | 2004–2024
+Twenty years building businesses, leading transformations, and launching new capabilities.
+
+- Global Product Business Senior Director with full P&L responsibility
+- Executive Director, Global HR Transformation
+- Launched BCG's analytics solutions practice
+
+**DreamYard Project** | Board Member since 2011
+Currently serving on Executive Committee and leading the People & Culture Committee. New York City's largest arts education provider, working with thousands of K-12 students annually.
+
+**Education & Credentials**
+- MBA, UVA Darden School of Business
+- B.S. Commerce, University of Virginia
+- ICF Associate Certified Coach (ACC)
+- Center for Executive Coaching (CEC) Certified
+
+**Foundation**
+A.T. Kearney | Three years as an associate in New York and Washington, D.C.
+
+---
+
+### Who I Work With
+
+My practice focuses on senior executives navigating the specific challenges that come with leading at the highest organizational levels. The common thread isn't title—it's the nature of the questions you're holding.
+
+**C-Suite Leaders**
+CEOs, COOs, CFOs, and other C-level executives managing enterprise-wide complexity and making decisions that shape organizational trajectory.
+
+**Senior Executives**
+Leaders one or two levels from the top, running divisions or functions with significant autonomy and preparing for broader enterprise roles.
+
+**Board Members**
+Directors navigating governance challenges, board dynamics, and the unique demands of providing strategic counsel at the highest level.
+
+What brings people to this work is less about their position and more about what they're navigating: decisions without clear precedents, complexity that remains largely invisible, consequences that unfold over years.
+
+[Begin a Conversation]
+
+---
+
+## WORK
+
+### Selected Work
+
+Twenty years building businesses, transforming global operations, and creating capabilities that didn't previously exist. The work below represents initiatives where strategy met implementation reality—where understanding both organizational systems and human dynamics determined what actually became possible.
+
+---
+
+### Establishing BCG's Global Capability Center
+
+Leading the establishment and growth of BCG's India-based Global Capability Center—building an operation from inception to serve the firm's worldwide client work.
+
+The challenge wasn't simply operational setup. It was creating an integrated capability that maintained BCG's quality standards while building an entirely new talent model and operating approach.
+
+**Building from Zero:** Defining new role profiles, hiring criteria that balanced technical capability with cultural fit, operational processes that integrated with global teams across time zones. Each decision set precedents for permanent organizational infrastructure.
+
+**Cultural Integration:** The GCC needed to function as an integrated part of BCG's global system—understanding firm culture, building relationships across geographies, establishing trust with senior stakeholders who initially questioned whether this model could maintain quality standards.
+
+---
+
+### Developing BCG's Employee Value Proposition
+
+Leading the development and implementation of BCG's global Employee Value Proposition—articulating what the firm offers its 30,000 professionals and why someone would choose to build their career here.
+
+**Stakeholder Complexity:** Engaging senior leaders across regions, practice areas, and functions—each with legitimate but often competing perspectives. Creating space for genuine dialogue while moving toward decisions.
+
+**Global, Yet Local:** An EVP that worked globally while respecting regional realities. What resonates in New York differs from what matters in Singapore or São Paulo.
+
+**From Articulation to Practice:** The greater challenge wasn't articulating the EVP—it was embedding it in how the organization actually operated. Ensuring the gap between stated values and lived experience didn't quietly undermine credibility.
+
+---
+
+### Leading BCG's Analytics & Product Business
+
+Building and leading a global team of 300+ analytics and product professionals—creating a new capability that didn't exist when I started. The work combined P&L accountability with the challenge of integrating a fundamentally different talent model into BCG's established consulting culture.
+
+**Building a New Practice:** Defining role profiles for data scientists and product managers in a consulting context, building hiring processes, establishing career paths. Each decision set precedents for how this capability would develop.
+
+**Cultural Integration:** Analytics professionals think differently than traditional consultants. They value different things, work at different rhythms, define success through different measures. Building a team that maintained its distinct identity while integrating seamlessly with case teams worldwide.
+
+**P&L Accountability:** Full responsibility for business performance—revenue, profitability, resource allocation, investment decisions. Managing the tension between building long-term capability and delivering quarterly results.
+
+---
+
+### Executive Coaching Practice
+
+Providing executive coaching to senior leaders navigating challenges that resist standard frameworks. What makes this effective is the combination of coaching methodology with direct experience leading similar initiatives.
+
+Most engagements center on specific challenges: organizational restructuring with political complexity, strategic decisions where multiple valid paths exist, leadership transitions requiring different capabilities than what brought them to this level.
+
+The work requires engaging with both the analytical substance and the human dynamics—the strategic logic of a decision, the organizational politics that shape feasibility, how to navigate stakeholder relationships while maintaining forward movement.
+
+---
+
+### Leading Organizational Restructuring
+
+Serving as Head of People for a nonprofit organization navigating fundamental restructuring—rethinking organizational design, reporting relationships, and how work gets done.
+
+**Structural Redesign:** Understanding current state, identifying inefficiencies, designing new operating models. Making decisions about spans of control, reporting relationships, role definitions.
+
+**The Human Dimension:** Restructuring affects people's lives—job security, career trajectory, daily working relationships, sense of purpose. Holding space for legitimate anxiety while maintaining forward momentum.
+
+**Nonprofit Complexity:** Board governance structures, mission-driven cultures, resource limitations, stakeholder complexity. Solutions that work in corporate contexts often need significant adaptation.
+
+---
+
+[Start a Conversation]
+
+---
+
+## CONTACT
+
+### Begin a Conversation
+
+If you're navigating complexity that benefits from sustained partnership with someone who has walked similar terrain—where challenges resist standard frameworks and consequences unfold over years—a conversation might be valuable.
+
+**Email:** cahowe1@gmail.com
+**LinkedIn:** chris-howe-ny
+**Location:** New York City
+
+---
+
+### How Engagements Begin
+
+Most partnerships begin with a straightforward conversation about what you're navigating and whether working together makes sense. No formal intake process—simply a thoughtful discussion to understand your situation.
+
+The focus is on the nature of what you're holding: decisions where the path isn't clear, organizational dynamics that shape outcomes, challenges that resist reduction to frameworks.
+
+Expect a response within 48 hours.
+
+---
+
+## FOOTER (All Pages)
+
+**CAH Advisory**
+Working with senior executives who are building organizations, navigating complexity, and making consequential decisions.
+
+**Navigate:** Home | Services | Profile | Work | Contact
+
+**Connect:**
+- Email: cahowe1@gmail.com
+- Location: New York City
+- LinkedIn: chris-howe-ny
+
+© 2024 CAH Advisory Services. All rights reserved.

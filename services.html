@@ -3,1748 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAH Advisory | Executive Coaching & Strategic Consulting for C-Suite Leaders</title>
-    <meta name="description" content="Strategic advisory and executive coaching for senior leaders navigating complexity, building organizations, and making high-stakes decisions.">
-
+    <title>Services | CAH Advisory - Executive Coaching & Strategic Advisory</title>
+    <meta name="description" content="Executive coaching, strategic advisory, leadership transition support, and board preparation for C-suite leaders and senior executives.">
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-
+    
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --navy: #1a2332;
-            --gold: #c9a96e;
-            --gold-light: #d4b883;
-            --gold-dark: #b89555;
-            --cream: #faf8f5;
-            --grey-light: #e8e6e3;
-            --grey-mid: #6b6b6b;
-            --grey-dark: #2d2d2d;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--navy);
-            line-height: 1.7;
-            background-color: var(--white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-        }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: transparent;
-            backdrop-filter: blur(12px);
-            z-index: 1000;
-            padding: 1.75rem 0;
-            border-bottom: 1px solid rgba(250, 248, 245, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav .logo,
-        .nav .nav-links a {
-            color: var(--cream);
-        }
-
-        .nav .logo-accent {
-            color: var(--gold);
-        }
-
-        .nav.scrolled {
-            padding: 1.25rem 0;
-            background: rgba(26, 35, 50, 0.97);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
-            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
-        }
-
-        .nav-container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: var(--navy);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            transition: all 0.4s ease;
-        }
-
-        .logo-accent {
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--navy);
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold);
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 32px;
-            height: 32px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            z-index: 1001;
-            position: relative;
-        }
-
-        .hamburger-line {
-            width: 100%;
-            height: 2px;
-            background: var(--cream);
-            border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: center;
-        }
-
-        .nav.scrolled .hamburger-line {
-            background: var(--cream);
-        }
-
-        .hamburger.active .hamburger-line:nth-child(1) {
-            transform: translateY(10px) rotate(45deg);
-        }
-
-        .hamburger.active .hamburger-line:nth-child(2) {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-
-        .hamburger.active .hamburger-line:nth-child(3) {
-            transform: translateY(-10px) rotate(-45deg);
-        }
-
-        .nav-links.mobile-menu-open {
-            transform: translateX(0) !important;
-            visibility: visible !important;
-        }
-
-        body.menu-open {
-            overflow: hidden;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 0;
-            min-height: 65vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--navy);
-            position: relative;
-            overflow: hidden;
-            padding: 8rem 0 6rem;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-            opacity: 0.3;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: -10%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 4rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-label {
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 2rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 500;
-            line-height: 1.1;
-            margin: 0 auto 1.75rem;
-            color: var(--cream);
-            letter-spacing: -0.03em;
-            max-width: 800px;
-        }
-
-        .hero h1 .highlight {
-            color: var(--gold);
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-intro {
-            font-size: 1.25rem;
-            font-weight: 300;
-            line-height: 1.7;
-            color: rgba(250, 248, 245, 0.8);
-            margin: 0 auto 3rem;
-            max-width: 650px;
-        }
-
-        .hero-cta-group {
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.1rem 2.8rem;
-            background: var(--gold);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            border-radius: 2px;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 6px 20px rgba(201, 169, 110, 0.25);
-            border: 1px solid var(--gold);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 35px rgba(201, 169, 110, 0.35);
-            background: var(--gold-dark);
-            border-color: var(--gold-dark);
-        }
-
-        .cta-button-secondary {
-            display: inline-block;
-            padding: 1.1rem 2.8rem;
-            background: transparent;
-            color: var(--cream);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            border-radius: 2px;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(250, 248, 245, 0.3);
-        }
-
-        .cta-button-secondary:hover {
-            transform: translateY(-2px);
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-
-        /* Section Styling */
-        section {
-            padding: 7rem 0;
-        }
-
-        .section-container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 4rem;
-        }
-
-        h2 {
-            font-size: 3rem;
-            font-weight: 500;
-            margin-bottom: 3rem;
-            color: var(--navy);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            text-align: center;
-        }
-
-        h2 .accent {
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        /* Core Services Section - Alternating Asymmetric Layout */
-        .core-services-section {
-            background: var(--white);
-        }
-
-        .core-intro {
-            max-width: 850px;
-            margin: 0 auto 5rem;
-            text-align: center;
-        }
-
-        .core-intro p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--grey-dark);
-        }
-
-        .core-services-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .core-service-item {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 0;
-            padding: 3rem 0;
-            border-bottom: 1px solid rgba(201, 169, 110, 0.15);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .core-service-item:hover {
-            padding-left: 2rem;
-        }
-
-        .core-service-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0;
-            height: 60%;
-            background: linear-gradient(180deg, transparent 0%, rgba(201, 169, 110, 0.1) 50%, transparent 100%);
-            transition: width 0.4s ease;
-        }
-
-        .core-service-item:hover::before {
-            width: 100%;
-        }
-
-        .core-service-number-area {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .core-service-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 6rem;
-            font-weight: 600;
-            color: rgba(201, 169, 110, 0.12);
-            line-height: 1;
-            position: relative;
-        }
-
-        .core-service-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2.5rem;
-            color: var(--gold);
-            transition: all 0.4s ease;
-        }
-
-        .core-service-item:hover .core-service-icon {
-            transform: translate(-50%, -50%) scale(1.15) rotate(10deg);
-        }
-
-        .core-service-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-right: 4rem;
-        }
-
-        .core-service-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .core-service-content > p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--grey-dark);
-            margin-bottom: 1.25rem;
-        }
-
-        .core-service-bullets {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem 2rem;
-        }
-
-        .core-service-bullets li {
-            font-size: 0.975rem;
-            line-height: 1.6;
-            color: var(--grey-mid);
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .core-service-bullets li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.6rem;
-            width: 6px;
-            height: 6px;
-            background: var(--gold);
-            border-radius: 50%;
-        }
-
-        /* Specialized Areas - Horizontal Timeline Pattern */
-        .specialized-section {
-            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
-            position: relative;
-        }
-
-        .specialized-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
-        }
-
-        .specialized-intro {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 400;
-            line-height: 1.6;
-            color: var(--navy);
-            text-align: center;
-            margin-bottom: 4rem;
-            font-style: italic;
-            position: relative;
-            padding: 0 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .specialized-intro::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -10px;
-            font-size: 4rem;
-            color: var(--gold);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-        }
-
-        .specialized-timeline {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .specialized-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(201, 169, 110, 0.2);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .specialized-item:last-child {
-            border-bottom: none;
-        }
-
-        .specialized-item:hover {
-            transform: translateX(10px);
-        }
-
-        .specialized-number-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding-top: 0.5rem;
-        }
-
-        .specialized-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 0.75rem;
-            position: relative;
-        }
-
-        .specialized-icon-inline {
-            font-size: 1.5rem;
-            color: rgba(201, 169, 110, 0.4);
-        }
-
-        .specialized-underline {
-            width: 60px;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.4s ease;
-        }
-
-        .specialized-item:hover .specialized-underline {
-            width: 80px;
-        }
-
-        .specialized-content-area {
-            padding-top: 0.5rem;
-        }
-
-        .specialized-header-inline {
-            margin-bottom: 1rem;
-        }
-
-        .specialized-header-inline h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 0.25rem;
-        }
-
-        .specialized-subtitle {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .specialized-content-area > p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--grey-dark);
-            margin-bottom: 1.25rem;
-        }
-
-        .specialized-bullets {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .specialized-bullets li {
-            font-size: 0.975rem;
-            line-height: 1.6;
-            color: var(--grey-mid);
-            padding-left: 1.75rem;
-            position: relative;
-        }
-
-        .specialized-bullets li::before {
-            content: '\f105';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
-        /* How We Work - Staggered Grid */
-        .process-section {
-            background: var(--white);
-        }
-
-        .process-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .process-intro p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: var(--grey-dark);
-        }
-
-        .process-staggered {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-        }
-
-        .process-card {
-            background: var(--cream);
-            padding: 3rem 2.5rem;
-            border-radius: 4px;
-            position: relative;
-            transition: all 0.4s ease;
-            overflow: hidden;
-        }
-
-        .process-card:nth-child(2) {
-            margin-top: 3rem;
-        }
-
-        .process-card::before {
-            content: '';
-            position: absolute;
-            top: -100%;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(201, 169, 110, 0.08) 0%, rgba(26, 35, 50, 0.05) 100%);
-            transform: skewY(-5deg);
-            transition: top 0.5s ease;
-        }
-
-        .process-card:hover::before {
-            top: 0;
-        }
-
-        .process-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .process-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
-            font-weight: 600;
-            color: rgba(201, 169, 110, 0.15);
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .process-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.65rem;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .process-card > p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--grey-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .process-bullets {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .process-bullets li {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--grey-mid);
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .process-bullets li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-size: 0.75rem;
-        }
-
-        /* What Makes This Different - Navy Section */
-        .difference-section {
-            background: var(--navy);
-            color: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .difference-section::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -15%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .difference-section .section-container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .difference-section h2 {
-            color: var(--cream);
-        }
-
-        .difference-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8rem;
-        }
-
-        .difference-item {
-            position: relative;
-        }
-
-        .difference-icon-bg {
-            position: absolute;
-            top: -2rem;
-            right: 0;
-            font-size: 12rem;
-            color: rgba(201, 169, 110, 0.05);
-            z-index: 0;
-        }
-
-        .difference-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .difference-icon-primary {
-            width: 70px;
-            height: 70px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.75rem;
-            margin-bottom: 2rem;
-            border: 2px solid rgba(201, 169, 110, 0.25);
-        }
-
-        .difference-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 500;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .difference-divider {
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
-            margin: 1.25rem 0 1.5rem;
-        }
-
-        .difference-content > p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.85);
-            margin-bottom: 2rem;
-        }
-
-        .difference-features {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .difference-feature {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: rgba(250, 248, 245, 0.75);
-            font-size: 0.975rem;
-        }
-
-        .difference-feature i {
-            color: var(--gold);
-            font-size: 1rem;
-            width: 20px;
-            flex-shrink: 0;
-        }
-
-        /* Common Situations - Vertical Clean List */
-        .situations-section {
-            background: var(--cream);
-        }
-
-        .situations-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .situation-item {
-            background: transparent;
-            padding: 0;
-            border: none;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .situation-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.4s ease;
-        }
-
-        .situation-item:hover::after {
-            width: 100%;
-        }
-
-        .situation-icon-wrapper {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-
-        .situation-icon-bg {
-            font-size: 5rem;
-            color: rgba(201, 169, 110, 0.08);
-            position: absolute;
-            top: -1rem;
-            left: -0.5rem;
-        }
-
-        .situation-icon-primary {
-            font-size: 2.5rem;
-            color: var(--gold);
-            position: relative;
-            z-index: 1;
-        }
-
-        .situation-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 1rem;
-        }
-
-        .situation-item > p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--grey-dark);
-            margin-bottom: 1.25rem;
-        }
-
-        .situation-bullets {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .situation-bullets li {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--grey-mid);
-            padding-left: 1.25rem;
-            position: relative;
-        }
-
-        .situation-bullets li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        /* Engagement Types - Side-by-Side Split */
-        .engagement-section {
-            background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
-            position: relative;
-        }
-
-        .engagement-section::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, rgba(201, 169, 110, 0.3) 50%, transparent 100%);
-        }
-
-        .engagement-intro {
-            max-width: 850px;
-            margin: 0 auto 4rem;
-            text-align: center;
-        }
-
-        .engagement-intro p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--grey-dark);
-        }
-
-        .engagement-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .engagement-card {
-            background: var(--white);
-            padding: 3rem 2.5rem;
-            border-radius: 4px;
-            border: 1px solid var(--grey-light);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .engagement-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--gold);
-            transition: height 0.4s ease;
-        }
-
-        .engagement-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(26, 35, 50, 0.1);
-            border-color: rgba(201, 169, 110, 0.3);
-        }
-
-        .engagement-card:hover::before {
-            height: 100%;
-        }
-
-        .engagement-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: var(--navy);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .engagement-card h3 i {
-            color: var(--gold);
-            font-size: 1.5rem;
-        }
-
-        .engagement-card > p {
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: var(--grey-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .engagement-bullets {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .engagement-bullets li {
-            font-size: 0.975rem;
-            line-height: 1.6;
-            color: var(--grey-mid);
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .engagement-bullets li::before {
-            content: '\f0da';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--gold);
-        }
-
-        /* Investment Section - Multi-Layer Icons */
-        .investment-section {
-            background: var(--navy);
-            color: var(--cream);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .investment-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-        }
-
-        .investment-section::after {
-            content: '\f0eb';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-            position: absolute;
-            bottom: -5%;
-            left: -5%;
-            font-size: 25rem;
-            color: rgba(201, 169, 110, 0.03);
-            z-index: 0;
-        }
-
-        .investment-section .section-container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .investment-section h2 {
-            color: var(--cream);
-        }
-
-        .investment-intro {
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto 4rem;
-        }
-
-        .investment-intro p {
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.85);
-        }
-
-        .investment-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .investment-card {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 2.5rem 2rem;
-            border-radius: 4px;
-            border: 1px solid rgba(250, 248, 245, 0.1);
-            text-align: center;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .investment-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 3px;
-            background: var(--gold);
-            transition: width 0.4s ease;
-        }
-
-        .investment-card:hover {
-            background: rgba(250, 248, 245, 0.08);
-            border-color: rgba(201, 169, 110, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .investment-card:hover::after {
-            width: 80%;
-        }
-
-        .investment-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(201, 169, 110, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: var(--gold);
-            font-size: 1.75rem;
-            border: 2px solid rgba(201, 169, 110, 0.25);
-            position: relative;
-            transition: all 0.4s ease;
-        }
-
-        .investment-card:hover .investment-icon {
-            transform: scale(1.1) rotate(10deg);
-        }
-
-        .investment-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .investment-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: rgba(250, 248, 245, 0.8);
-            margin-bottom: 0;
-        }
-
-        .investment-philosophy {
-            background: rgba(250, 248, 245, 0.05);
-            padding: 3.5rem 3rem;
-            border-radius: 4px;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-            display: flex;
-            gap: 3rem;
-            align-items: flex-start;
-        }
-
-        .philosophy-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(201, 169, 110, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 2rem;
-            flex-shrink: 0;
-            border: 2px solid rgba(201, 169, 110, 0.3);
-        }
-
-        .philosophy-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            font-weight: 500;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .philosophy-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.85);
-            margin-bottom: 1.25rem;
-        }
-
-        .philosophy-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--navy);
-            text-align: center;
-            padding: 8rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section > * {
-            max-width: 1320px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 4rem;
-            padding-right: 4rem;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
-        }
-
-        .contact-section h2 {
-            color: var(--cream);
-            font-weight: 500;
-            font-size: 3rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .contact-section p {
-            color: rgba(250, 248, 245, 0.85);
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-
-        .cta-button-outline {
-            display: inline-block;
-            padding: 1.2rem 3.5rem;
-            background: transparent;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-            border-radius: 2px;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid var(--gold);
-        }
-
-        .cta-button-outline:hover {
-            transform: translateY(-2px);
-            background: var(--gold);
-            color: var(--navy);
-            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: #151b26;
-            color: rgba(250, 248, 245, 0.7);
-            padding: 5rem 0 2.5rem;
-        }
-
-        .footer-container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 4rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 5rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .footer-about h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--cream);
-            font-weight: 500;
-            margin-bottom: 1.25rem;
-            font-size: 1.5rem;
-        }
-
-        .footer-about p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: rgba(250, 248, 245, 0.65);
-        }
-
-        .footer-links h4 {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1.75rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: rgba(250, 248, 245, 0.7);
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: block;
-            margin-bottom: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-            padding-left: 8px;
-        }
-
-        .footer-contact h4 {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 1.75rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-contact p {
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            color: rgba(250, 248, 245, 0.7);
-        }
-
-        .footer-contact a {
-            color: var(--gold);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .footer-contact a:hover {
-            color: var(--gold-light);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            background: rgba(201, 169, 110, 0.1);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            transition: all 0.35s ease;
-            border: 1px solid rgba(201, 169, 110, 0.2);
-        }
-
-        .social-links a:hover {
-            background: var(--gold);
-            color: var(--navy);
-            transform: translateY(-3px);
-            border-color: var(--gold);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2.5rem;
-            border-top: 1px solid rgba(250, 248, 245, 0.1);
-            color: rgba(250, 248, 245, 0.45);
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        .fade-in-delay-1 {
-            animation-delay: 0.2s;
-        }
-
-        .fade-in-delay-2 {
-            animation-delay: 0.4s;
-        }
-
-        .fade-in-delay-3 {
-            animation-delay: 0.6s;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .core-service-bullets {
-                grid-template-columns: 1fr;
-            }
-
-            .specialized-timeline {
-                gap: 1.5rem;
-            }
-
-            .specialized-item {
-                gap: 2rem;
-            }
-
-            .difference-grid {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-
-            .situations-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .engagement-split {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .investment-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-            }
-
-            .footer-about {
-                grid-column: 1 / -1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            html {
-                font-size: 15px;
-            }
-
-            .nav-container,
-            .hero-container,
-            .section-container,
-            .footer-container,
-            .contact-section > * {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: 0;
-                height: 100vh;
-                width: 280px;
-                background: rgba(26, 35, 50, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2.5rem;
-                transform: translateX(100%);
-                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
-                border-left: 1px solid rgba(201, 169, 110, 0.2);
-                z-index: 1000;
-                visibility: hidden;
-            }
-
-            .nav-links.mobile-menu-open {
-                visibility: visible;
-            }
-
-            .nav-links li {
-                opacity: 0;
-                transform: translateX(50px);
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-
-            .nav-links.mobile-menu-open li {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            .nav-links.mobile-menu-open li:nth-child(1) {
-                transition-delay: 0.1s;
-            }
-
-            .nav-links.mobile-menu-open li:nth-child(2) {
-                transition-delay: 0.15s;
-            }
-
-            .nav-links.mobile-menu-open li:nth-child(3) {
-                transition-delay: 0.2s;
-            }
-
-            .nav-links.mobile-menu-open li:nth-child(4) {
-                transition-delay: 0.25s;
-            }
-
-            .nav-links.mobile-menu-open li:nth-child(5) {
-                transition-delay: 0.3s;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-                color: var(--cream);
-                padding: 0.75rem 1.5rem;
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-links a::after {
-                bottom: 0.5rem;
-            }
-
-            .hero {
-                padding: 6rem 0 5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-intro {
-                font-size: 1.05rem;
-            }
-
-            .hero-cta-group {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .cta-button,
-            .cta-button-secondary {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 2rem;
-            }
-
-            section {
-                padding: 4rem 0;
-            }
-
-            h2 {
-                font-size: 2.25rem;
-                margin-bottom: 2.5rem;
-            }
-
-            .core-intro p {
-                font-size: 1.1rem;
-            }
-
-            .core-service-item {
-                grid-template-columns: 100px 1fr;
-                gap: 1.5rem;
-                padding: 2rem 0;
-            }
-
-            .core-service-item:hover {
-                padding-left: 0;
-            }
-
-            .core-service-number {
-                font-size: 4rem;
-            }
-
-            .core-service-icon {
-                font-size: 1.75rem;
-            }
-
-            .core-service-content {
-                padding-right: 0;
-            }
-
-            .core-service-content h3 {
-                font-size: 1.4rem;
-            }
-
-            .core-service-bullets {
-                grid-template-columns: 1fr;
-            }
-
-            .specialized-intro {
-                font-size: 1.3rem;
-                padding: 0 1rem;
-            }
-
-            .specialized-item {
-                grid-template-columns: 80px 1fr;
-                gap: 1.5rem;
-            }
-
-            .specialized-item:hover {
-                transform: translateX(5px);
-            }
-
-            .specialized-number {
-                font-size: 2.5rem;
-            }
-
-            .process-staggered {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .process-card:nth-child(2) {
-                margin-top: 0;
-            }
-
-            .process-card {
-                padding: 2.5rem 2rem;
-            }
-
-            .difference-grid {
-                gap: 3rem;
-            }
-
-            .difference-icon-bg {
-                font-size: 8rem;
-            }
-
-            .situations-list {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            .investment-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .investment-philosophy {
-                flex-direction: column;
-                gap: 2rem;
-                padding: 2.5rem 2rem;
-            }
-
-            .philosophy-icon {
-                margin: 0 auto;
-            }
-
-            .contact-section {
-                padding: 4.5rem 2rem;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-
-            footer {
-                padding: 4rem 2rem 2rem;
-            }
-        }
-    </style>
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="index.html" class="logo">C<span class="logo-accent">A</span>H Advisory</a>
+            <a href="index.html" class="logo"><span class="logo-accent">CAH</span> Advisory</a>
+
+            <!-- Hamburger Menu Button -->
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
                 <li><a href="profile.html">Profile</a></li>
                 <li><a href="work.html">Work</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -1753,526 +40,195 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="page-hero">
         <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-label fade-in">Services & Approach</div>
-                <h1 class="fade-in fade-in-delay-1">Partnership for the <span class="highlight">long game</span>.</h1>
-                <p class="hero-intro fade-in fade-in-delay-2">The work we do together focuses on the challenges that don't fit established frameworks—organizational decisions with human complexity, strategic choices that unfold over years, leadership transitions that reshape what's possible. This is thinking partnership for executives navigating consequential terrain.</p>
-
+            <div class="page-hero-content">
+                <div class="hero-label fade-in">Services</div>
+                <h1 class="fade-in fade-in-delay-1">Partnership for the <span class="highlight">Long Game</span></h1>
+                <p class="hero-intro fade-in fade-in-delay-2">The work we do together focuses on challenges that don't fit established frameworks—organizational decisions with human complexity, strategic choices that unfold over years, leadership transitions that reshape what's possible.</p>
                 <div class="hero-cta-group fade-in fade-in-delay-3">
                     <a href="contact.html" class="cta-button">Begin a Conversation</a>
-                    <a href="index.html" class="cta-button-secondary">About</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Services Section - Alternating Asymmetric Layout -->
-    <section class="core-services-section reveal">
+    <!-- Core Services Section -->
+    <section class="services-section reveal">
         <div class="section-container">
             <h2>Core <span class="accent">Services</span></h2>
-
-            <div class="core-intro">
-                <p>The work takes different forms depending on what you're navigating. Some leaders engage for specific high-stakes decisions. Others find value in ongoing partnership as they build organizations, develop teams, and make choices that shape trajectory over time.</p>
-            </div>
-
-            <div class="core-services-list">
-                <div class="core-service-item">
-                    <div class="core-service-number-area">
-                        <div class="core-service-number">01</div>
-                        <i class="fas fa-user-tie core-service-icon"></i>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <div class="core-service-content">
-                        <h3>Executive Coaching</h3>
-                        <p>One-on-one partnership focused on the challenges in front of you right now. We work through what matters, without preset methodology determining the conversation.</p>
-                        <ul class="core-service-bullets">
-                            <li>Navigating restructuring that carries political complexity</li>
-                            <li>Working through team dynamics affecting execution</li>
-                            <li>Thinking through career decisions across multiple timeframes</li>
-                            <li>Examining patterns you're seeing but haven't fully articulated</li>
-                        </ul>
-                    </div>
+                    <h3>Executive Coaching</h3>
+                    <p class="service-description">One-on-one partnership focused on the challenges in front of you right now. We work through what matters, without preset methodology determining the conversation.</p>
+                    <ul class="service-list">
+                        <li>Navigating restructuring that carries political complexity</li>
+                        <li>Working through team dynamics affecting execution</li>
+                        <li>Thinking through career decisions across multiple timeframes</li>
+                        <li>Examining patterns you're seeing but haven't fully articulated</li>
+                    </ul>
                 </div>
 
-                <div class="core-service-item">
-                    <div class="core-service-number-area">
-                        <div class="core-service-number">02</div>
-                        <i class="fas fa-chess-knight core-service-icon"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chess"></i>
                     </div>
-                    <div class="core-service-content">
-                        <h3>Strategic Advisory</h3>
-                        <p>Thinking through organizational and business challenges that require both analytical rigor and understanding of human systems.</p>
-                        <ul class="core-service-bullets">
-                            <li>Assessing market entry where timing and approach determine outcomes</li>
-                            <li>Designing organizations that enable strategy while remaining sustainable</li>
-                            <li>Integrating acquisitions where culture shapes financial performance</li>
-                            <li>Building capabilities that create competitive advantage over time</li>
-                        </ul>
-                    </div>
+                    <h3>Strategic Advisory</h3>
+                    <p class="service-description">Thinking through organizational and business challenges that require both analytical rigor and understanding of human systems.</p>
+                    <ul class="service-list">
+                        <li>Assessing market entry where timing and approach determine outcomes</li>
+                        <li>Designing organizations that enable strategy while remaining sustainable</li>
+                        <li>Integrating acquisitions where culture shapes financial performance</li>
+                        <li>Building capabilities that create competitive advantage over time</li>
+                    </ul>
                 </div>
 
-                <div class="core-service-item">
-                    <div class="core-service-number-area">
-                        <div class="core-service-number">03</div>
-                        <i class="fas fa-rocket core-service-icon"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-arrow-up-right-dots"></i>
                     </div>
-                    <div class="core-service-content">
-                        <h3>Leadership Transition Support</h3>
-                        <p>The first 90 days in a senior role often determine what becomes possible over the following years. We work through what this specific position requires and how to be effective from the outset.</p>
-                        <ul class="core-service-bullets">
-                            <li>Establishing credibility while learning organizational dynamics</li>
-                            <li>Making early decisions that shape future possibilities</li>
-                            <li>Building relationships that enable execution</li>
-                            <li>Reading signals that reveal what this role truly demands</li>
-                        </ul>
-                    </div>
+                    <h3>Leadership Transition Support</h3>
+                    <p class="service-description">The first 90 days in a senior role often determine what becomes possible over the following years. We work through what this specific position requires and how to be effective from the outset.</p>
+                    <ul class="service-list">
+                        <li>Establishing credibility while learning organizational dynamics</li>
+                        <li>Making early decisions that shape future possibilities</li>
+                        <li>Building relationships that enable execution</li>
+                        <li>Reading signals that reveal what this role truly demands</li>
+                    </ul>
                 </div>
 
-                <div class="core-service-item">
-                    <div class="core-service-number-area">
-                        <div class="core-service-number">04</div>
-                        <i class="fas fa-landmark core-service-icon"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
                     </div>
-                    <div class="core-service-content">
-                        <h3>Board Preparation & Development</h3>
-                        <p>Preparing for board service or navigating the unique demands of effective board membership. Understanding what distinguishes governance from executive leadership.</p>
-                        <ul class="core-service-bullets">
-                            <li>Providing strategic counsel without executive authority</li>
-                            <li>Influencing across different backgrounds and mental models</li>
-                            <li>Navigating board dynamics that shape decision quality</li>
-                            <li>Developing judgment about when to push and when to listen</li>
-                        </ul>
-                    </div>
+                    <h3>Board Preparation & Development</h3>
+                    <p class="service-description">Preparing for board service or navigating the unique demands of effective board membership. Understanding what distinguishes governance from executive leadership.</p>
+                    <ul class="service-list">
+                        <li>Providing strategic counsel without executive authority</li>
+                        <li>Influencing across different backgrounds and mental models</li>
+                        <li>Navigating board dynamics that shape decision quality</li>
+                        <li>Developing judgment about when to push and when to listen</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specialized Areas - Horizontal Timeline Pattern -->
-    <section class="specialized-section reveal">
+    <!-- Specialized Areas Section -->
+    <section class="section-alternate reveal">
         <div class="section-container">
             <h2>Specialized <span class="accent">Areas</span></h2>
-
-            <p class="specialized-intro">Beyond the core services, certain types of challenges benefit from specific expertise—situations where having navigated similar terrain yourself changes what you can see and how you can help.</p>
-
-            <div class="specialized-timeline">
-                <div class="specialized-item">
-                    <div class="specialized-number-box">
-                        <div class="specialized-number">01</div>
-                        <i class="fas fa-exchange-alt specialized-icon-inline"></i>
-                        <div class="specialized-underline"></div>
-                    </div>
-                    <div class="specialized-content-area">
-                        <div class="specialized-header-inline">
-                            <h3>Organizational Transformation</h3>
-                            <div class="specialized-subtitle">Change Leadership</div>
-                        </div>
-                        <p>Leading change across organizations means understanding that the rational case rarely determines outcomes. Twenty years leading global transformation taught me where resistance emerges and how to create genuine conditions for change.</p>
-                        <ul class="specialized-bullets">
-                            <li>Reading where resistance will emerge and why</li>
-                            <li>Creating conditions for genuine change rather than compliance</li>
-                            <li>Timing interventions based on organizational readiness</li>
-                            <li>Working with informal networks that shape what's feasible</li>
-                        </ul>
+            
+            <div class="specialized-grid">
+                <div class="specialized-card">
+                    <div class="specialized-number">01</div>
+                    <div class="specialized-content">
+                        <h3>Organizational Transformation</h3>
+                        <p>Leading change across organizations means understanding that the rational case rarely determines outcomes. Twenty years leading global transformation taught me where resistance emerges and how to create genuine conditions for change—not just compliance that looks like commitment.</p>
                     </div>
                 </div>
 
-                <div class="specialized-item">
-                    <div class="specialized-number-box">
-                        <div class="specialized-number">02</div>
-                        <i class="fas fa-lightbulb specialized-icon-inline"></i>
-                        <div class="specialized-underline"></div>
-                    </div>
-                    <div class="specialized-content-area">
-                        <div class="specialized-header-inline">
-                            <h3>Building New Capabilities</h3>
-                            <div class="specialized-subtitle">Innovation & Scale</div>
-                        </div>
-                        <p>Launching what doesn't yet exist requires managing the tension between speed and sustainability. The experience of creating BCG's analytics practice from concept to scaled global capability provides specific insight.</p>
-                        <ul class="specialized-bullets">
-                            <li>Hiring for roles you've never defined</li>
-                            <li>Building credibility in markets where you're unproven</li>
-                            <li>Scaling capabilities across geographies and cultures</li>
-                            <li>Integrating new ways of working into established organizations</li>
-                        </ul>
+                <div class="specialized-card">
+                    <div class="specialized-number">02</div>
+                    <div class="specialized-content">
+                        <h3>Building New Capabilities</h3>
+                        <p>Launching what doesn't yet exist requires managing the tension between speed and sustainability. Hiring for roles you've never defined. Building credibility in markets where you're unproven. Scaling capabilities across geographies and cultures.</p>
                     </div>
                 </div>
 
-                <div class="specialized-item">
-                    <div class="specialized-number-box">
-                        <div class="specialized-number">03</div>
-                        <i class="fas fa-chart-line specialized-icon-inline"></i>
-                        <div class="specialized-underline"></div>
-                    </div>
-                    <div class="specialized-content-area">
-                        <div class="specialized-header-inline">
-                            <h3>P&L Leadership</h3>
-                            <div class="specialized-subtitle">Business Building</div>
-                        </div>
-                        <p>Full accountability changes how you see decisions. Twenty years building businesses with P&L responsibility means understanding not just strategy but the operational realities that determine whether strategy translates to results.</p>
-                        <ul class="specialized-bullets">
-                            <li>Allocating resources when investment cases compete</li>
-                            <li>Building teams when talent is scarce and expensive</li>
-                            <li>Balancing short-term performance with long-term capability</li>
-                            <li>Making decisions when you bear full accountability for outcomes</li>
-                        </ul>
+                <div class="specialized-card">
+                    <div class="specialized-number">03</div>
+                    <div class="specialized-content">
+                        <h3>P&L Leadership</h3>
+                        <p>Full accountability changes how you see decisions. Understanding not just strategy but the operational realities that determine whether strategy translates to results—allocating resources when investment cases compete, building teams when talent is scarce, balancing short-term performance with long-term capability.</p>
                     </div>
                 </div>
 
-                <div class="specialized-item">
-                    <div class="specialized-number-box">
-                        <div class="specialized-number">04</div>
-                        <i class="fas fa-users-cog specialized-icon-inline"></i>
-                        <div class="specialized-underline"></div>
-                    </div>
-                    <div class="specialized-content-area">
-                        <div class="specialized-header-inline">
-                            <h3>Executive Team Dynamics</h3>
-                            <div class="specialized-subtitle">Leadership Teams</div>
-                        </div>
-                        <p>Senior teams rarely fail for lack of individual capability. Having led and participated in numerous executive teams provides perspective on what distinguishes the exceptional from the adequate.</p>
-                        <ul class="specialized-bullets">
-                            <li>Deciding when members have legitimate competing priorities</li>
-                            <li>Managing tension between functional excellence and enterprise optimization</li>
-                            <li>Building trust when performance pressure is high</li>
-                            <li>Navigating power dynamics that shape what gets discussed</li>
-                        </ul>
+                <div class="specialized-card">
+                    <div class="specialized-number">04</div>
+                    <div class="specialized-content">
+                        <h3>Executive Team Dynamics</h3>
+                        <p>Senior teams rarely fail for lack of individual capability. The work involves understanding what distinguishes the exceptional from the adequate—managing tension between functional excellence and enterprise optimization, building trust when performance pressure is high, navigating power dynamics that shape what gets discussed.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How We Work Together - Staggered Grid -->
+    <!-- How We Work Together Section -->
     <section class="process-section reveal">
         <div class="section-container">
             <h2>How We <span class="accent">Work Together</span></h2>
-
-            <div class="process-intro">
-                <p>The engagement structure varies based on what you're navigating and what type of partnership proves most valuable. Some situations call for intensive focus over defined periods. Others benefit from sustained partnership as challenges evolve over time.</p>
-            </div>
-
-            <div class="process-staggered">
-                <div class="process-card">
-                    <div class="process-number">01</div>
-                    <h3>Initial Conversation</h3>
-                    <p>We begin with a straightforward discussion about what you're navigating and whether working together makes sense. No formal intake process—simply a thoughtful conversation.</p>
-                    <ul class="process-bullets">
-                        <li>Understanding the challenges you're facing</li>
-                        <li>Exploring whether my experience matches your needs</li>
-                        <li>Assessing whether the working relationship feels right</li>
-                        <li>Determining if this partnership serves what you're trying to accomplish</li>
-                    </ul>
-                </div>
-
-                <div class="process-card">
-                    <div class="process-number">02</div>
-                    <h3>Engagement Design</h3>
-                    <p>If we decide to work together, we design an approach that fits your situation. The structure serves the work, not the other way around.</p>
-                    <ul class="process-bullets">
-                        <li>Regular coaching sessions (typically bi-weekly or monthly)</li>
-                        <li>Intensive advisory on specific decisions or challenges</li>
-                        <li>Structured transition support for new roles</li>
-                        <li>Flexible arrangements that adapt as your needs evolve</li>
-                    </ul>
-                </div>
-
-                <div class="process-card">
-                    <div class="process-number">03</div>
-                    <h3>The Work Itself</h3>
-                    <p>Sessions focus on what matters right now. We think through implications, examine assumptions, and consider approaches with both analytical rigor and understanding of human systems.</p>
-                    <ul class="process-bullets">
-                        <li>Working through the decision in front of you</li>
-                        <li>Examining team dynamics affecting execution</li>
-                        <li>Articulating patterns you're seeing but haven't named</li>
-                        <li>Stress-testing your thinking on consequential choices</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What Makes This Different - Navy Background -->
-    <section class="difference-section reveal">
-        <div class="section-container">
-            <h2>What Makes This <span class="accent">Different</span></h2>
-
-            <div class="difference-grid">
-                <div class="difference-item">
-                    <i class="fas fa-mountain difference-icon-bg"></i>
-                    <div class="difference-content">
-                        <div class="difference-icon-primary">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                        <h3>Experience-Informed Perspective</h3>
-                        <div class="difference-divider"></div>
-                        <p>Having built businesses, led transformations, launched new capabilities, and served on boards for over a decade provides specific insight into the challenges you're navigating. This isn't coaching from theory or frameworks—it's partnership informed by having been responsible for outcomes in similar terrain.</p>
-                        <div class="difference-features">
-                            <div class="difference-feature">
-                                <i class="fas fa-briefcase"></i>
-                                <span>20 years building and scaling businesses</span>
-                            </div>
-                            <div class="difference-feature">
-                                <i class="fas fa-landmark"></i>
-                                <span>14+ years active board service</span>
-                            </div>
-                            <div class="difference-feature">
-                                <i class="fas fa-globe"></i>
-                                <span>Global transformation leadership</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="difference-item">
-                    <i class="fas fa-brain difference-icon-bg"></i>
-                    <div class="difference-content">
-                        <div class="difference-icon-primary">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Both Strategic and Human</h3>
-                        <div class="difference-divider"></div>
-                        <p>Effective work at senior levels requires holding both dimensions simultaneously. The analytical rigor to think through strategic implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact in specific situations. Most advisors bring one. Sustained effectiveness requires both.</p>
-                        <div class="difference-features">
-                            <div class="difference-feature">
-                                <i class="fas fa-chart-bar"></i>
-                                <span>Strategic and analytical depth</span>
-                            </div>
-                            <div class="difference-feature">
-                                <i class="fas fa-users"></i>
-                                <span>Understanding of human systems</span>
-                            </div>
-                            <div class="difference-feature">
-                                <i class="fas fa-link"></i>
-                                <span>Integration of both dimensions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Common Situations - Vertical Clean List -->
-    <section class="situations-section reveal">
-        <div class="section-container">
-            <h2>Common <span class="accent">Situations</span></h2>
-
-            <div class="situations-list">
-                <div class="situation-item">
-                    <div class="situation-icon-wrapper">
-                        <i class="fas fa-chess-knight situation-icon-bg"></i>
-                        <i class="fas fa-chess-knight situation-icon-primary"></i>
-                    </div>
-                    <h3>High-Stakes Decisions</h3>
-                    <p>Decisions where the analytical answer seems clear but organizational reality requires navigation you haven't encountered before. We think through implications, stress-test assumptions, and examine what successful execution actually requires.</p>
-                    <ul class="situation-bullets">
-                        <li>Acquisitions with compelling logic but substantial integration risk</li>
-                        <li>Restructuring that carries political complexity</li>
-                        <li>Strategic pivots where timing determines outcomes</li>
-                        <li>Investment choices with multi-year implications</li>
-                    </ul>
-                </div>
-
-                <div class="situation-item">
-                    <div class="situation-icon-wrapper">
-                        <i class="fas fa-users situation-icon-bg"></i>
-                        <i class="fas fa-users situation-icon-primary"></i>
-                    </div>
-                    <h3>Team Effectiveness</h3>
-                    <p>These situations resist simple interventions. We work through the human dynamics and organizational factors that determine whether teams perform or underperform their potential.</p>
-                    <ul class="situation-bullets">
-                        <li>Executive teams with strong individuals but misaligned priorities</li>
-                        <li>Talented direct reports who can't translate capability into results</li>
-                        <li>Succession planning when the obvious choice has limitations</li>
-                        <li>Building trust and candor in high-pressure environments</li>
-                    </ul>
-                </div>
-
-                <div class="situation-item">
-                    <div class="situation-icon-wrapper">
-                        <i class="fas fa-sitemap situation-icon-bg"></i>
-                        <i class="fas fa-sitemap situation-icon-primary"></i>
-                    </div>
-                    <h3>Organizational Design</h3>
-                    <p>Design choices that account for both strategic logic and human realities of how work actually gets done.</p>
-                    <ul class="situation-bullets">
-                        <li>Restructuring to enable growth without losing effectiveness</li>
-                        <li>Integrating acquisitions where culture shapes performance</li>
-                        <li>Building matrix structures that work in practice</li>
-                        <li>Designing organizations that scale sustainably</li>
-                    </ul>
-                </div>
-
-                <div class="situation-item">
-                    <div class="situation-icon-wrapper">
-                        <i class="fas fa-sync-alt situation-icon-bg"></i>
-                        <i class="fas fa-sync-alt situation-icon-primary"></i>
-                    </div>
-                    <h3>Leading Change</h3>
-                    <p>Transformation that requires more than communication plans and project management. Creating conditions where change becomes possible rather than mandating compliance that looks like commitment.</p>
-                    <ul class="situation-bullets">
-                        <li>Understanding where resistance will emerge and why</li>
-                        <li>Timing interventions based on organizational readiness</li>
-                        <li>Reading signals that determine pacing and approach</li>
-                        <li>Building coalitions that enable sustained change</li>
-                    </ul>
-                </div>
-
-                <div class="situation-item">
-                    <div class="situation-icon-wrapper">
-                        <i class="fas fa-route situation-icon-bg"></i>
-                        <i class="fas fa-route situation-icon-primary"></i>
-                    </div>
-                    <h3>Career Navigation</h3>
-                    <p>Career decisions at senior levels have long time horizons and limited room for course correction.</p>
-                    <ul class="situation-bullets">
-                        <li>Choosing between operational roles that build capability versus strategic roles that position differently</li>
-                        <li>Assessing CEO readiness and what development you still need</li>
-                        <li>Managing transitions from division to enterprise leadership</li>
-                        <li>Evaluating external opportunities against internal trajectory</li>
-                    </ul>
-                </div>
-
-                <div class="situation-item">
-                    <div class="situation-icon-wrapper">
-                        <i class="fas fa-compass situation-icon-bg"></i>
-                        <i class="fas fa-compass situation-icon-primary"></i>
-                    </div>
-                    <h3>Strategy Development</h3>
-                    <p>Strategy work that remains grounded in implementation reality throughout. Moving beyond planning cycles that produce documents no one references three months later.</p>
-                    <ul class="situation-bullets">
-                        <li>Assessing markets for opportunities and organizational capacity to execute</li>
-                        <li>Developing scenarios that prepare for uncertainty</li>
-                        <li>Testing strategic options against implementation constraints</li>
-                        <li>Building strategies that survive contact with reality</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Engagement Types - Side-by-Side Split -->
-    <section class="engagement-section reveal">
-        <div class="section-container">
-            <h2>Engagement <span class="accent">Types</span></h2>
-
-            <div class="engagement-intro">
-                <p>The structure we create depends on what you're navigating and what type of partnership proves most valuable. Each approach brings different benefits and serves different situations.</p>
-            </div>
-
-            <div class="engagement-split">
-                <div class="engagement-card">
-                    <h3><i class="fas fa-handshake"></i> Ongoing Coaching Partnership</h3>
-                    <p>Regular sessions—typically bi-weekly or monthly—provide sustained thinking partnership as you navigate evolving challenges. The relationship deepens over time as we develop shared language and understanding.</p>
-                    <ul class="engagement-bullets">
-                        <li>Maintaining consistent space to think through complexity</li>
-                        <li>Navigating demanding roles where situations emerge regularly</li>
-                        <li>Leading transformation over extended periods</li>
-                        <li>Building judgment capacity through repeated engagement</li>
-                    </ul>
-                </div>
-
-                <div class="engagement-card">
-                    <h3><i class="fas fa-bolt"></i> Intensive Advisory</h3>
-                    <p>Focused engagement around a specific decision or challenge. The intensity and duration vary based on the situation.</p>
-                    <ul class="engagement-bullets">
-                        <li>Working through major decisions over concentrated periods</li>
-                        <li>Thinking through organizational design or strategic planning</li>
-                        <li>Addressing specific challenges requiring deep focus</li>
-                        <li>Returning for additional intensive work as new challenges emerge</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="engagement-split">
-                <div class="engagement-card">
-                    <h3><i class="fas fa-arrow-up"></i> Leadership Transition Support</h3>
-                    <p>The first 90-120 days in a new senior role benefit from structured support. This typically involves more frequent initial sessions that taper as you gain traction.</p>
-                    <ul class="engagement-bullets">
-                        <li>Understanding what the role truly requires</li>
-                        <li>Building key relationships effectively</li>
-                        <li>Making early decisions that shape future possibilities</li>
-                        <li>Establishing patterns that serve you over the longer term</li>
-                    </ul>
-                </div>
-
-                <div class="engagement-card">
-                    <h3><i class="fas fa-balance-scale"></i> Board Advisory</h3>
-                    <p>Support for leaders preparing for or navigating board service. This work takes different forms depending on where you are in your board journey.</p>
-                    <ul class="engagement-bullets">
-                        <li>Preparing for your first board role</li>
-                        <li>Understanding governance and what distinguishes effective directors</li>
-                        <li>Working through board dynamics that aren't functioning</li>
-                        <li>Developing as a board member over time</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Investment Section - Multi-Layer Icons -->
-    <section class="investment-section reveal">
-        <div class="section-container">
-            <h2>Working <span class="accent">Together</span></h2>
-
-            <div class="investment-intro">
-                <p>Effective partnership at senior levels requires genuine commitment from both sides. The structure we create—and the investment it represents—should match the complexity you're navigating and the outcomes that matter.</p>
-            </div>
-
-            <div class="investment-grid">
-                <div class="investment-card">
-                    <div class="investment-icon">
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <h3>Start with Conversation</h3>
-                    <p>No formal intake process or standardized assessment. We begin with a direct conversation about what you're navigating, whether my experience matches your needs, and if partnership makes sense at this point.</p>
+                    <h3>Initial Conversation</h3>
+                    <p>We begin with a straightforward discussion about what you're navigating and whether working together makes sense. No formal intake process—simply a thoughtful conversation about whether my experience matches your needs and whether the working relationship feels right.</p>
                 </div>
 
-                <div class="investment-card">
-                    <div class="investment-icon">
-                        <i class="fas fa-puzzle-piece"></i>
+                <div class="process-step">
+                    <div class="process-icon">
+                        <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <h3>Structure That Fits</h3>
-                    <p>Engagement design varies—ongoing coaching retainers, project-based advisory, intensive transition support. What matters is creating a structure that serves the work, not fitting your challenges into predetermined packages.</p>
+                    <h3>Engagement Design</h3>
+                    <p>If we decide to work together, we design an approach that fits your situation. Regular coaching sessions (typically bi-weekly or monthly), intensive advisory on specific decisions, or structured transition support for new roles. The structure serves the work, not the other way around.</p>
                 </div>
 
-                <div class="investment-card">
-                    <div class="investment-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="process-step">
+                    <div class="process-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Investment Framework</h3>
-                    <p>Executive coaching typically involves monthly retainers for sustained partnership. Strategic advisory is usually project-scoped. Transition support combines intensive initial engagement with tapering frequency as you gain traction.</p>
-                </div>
-
-                <div class="investment-card">
-                    <div class="investment-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Organizational or Individual</h3>
-                    <p>Some engagements are organization-sponsored as part of leadership development or transition support. Others represent individual investment in your own effectiveness and career trajectory. Both models work.</p>
-                </div>
-            </div>
-
-            <div class="investment-philosophy">
-                <div class="philosophy-icon">
-                    <i class="fas fa-compass"></i>
-                </div>
-                <div class="philosophy-content">
-                    <h3>What Actually Matters</h3>
-                    <p>Fee structure matters less than whether this partnership will genuinely serve what you're trying to accomplish. The initial conversation helps us both assess fit—whether my experience matches what you need, whether the working relationship feels right, whether the time and financial investment makes sense given the complexity you're navigating and the stakes involved.</p>
-                    <p>I work with a limited number of leaders at any given time. This allows depth of engagement rather than surface-level advice. If we decide to work together, you have my sustained attention on the challenges that matter to you.</p>
+                    <h3>The Work Itself</h3>
+                    <p>Sessions focus on what matters right now. We think through implications, examine assumptions, and consider approaches with both analytical rigor and understanding of human systems.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section reveal" id="contact">
-        <h2>Ready to <span class="accent">Explore</span></h2>
-        <p>If what you've read here resonates with challenges you're navigating, let's have a conversation. We'll discuss what you're working through, explore whether partnership makes sense, and if so, design an approach that serves your situation. No pressure, no formal process—simply a thoughtful discussion about whether working together might be valuable at this point in your leadership.</p>
-        <a href="contact.html" class="cta-button-outline">Start a Conversation</a>
+    <!-- What Makes This Different Section -->
+    <section class="differentiation-section reveal">
+        <div class="section-container">
+            <h2>What Makes This <span class="accent">Different</span></h2>
+            
+            <div class="differentiation-grid">
+                <div class="differentiation-card">
+                    <div class="differentiation-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Experience-Informed Perspective</h3>
+                    <p>This isn't coaching from theory or frameworks—it's partnership informed by having been responsible for outcomes in similar terrain. Having built businesses, led transformations, launched new capabilities, and served on boards provides specific insight into the challenges you're navigating.</p>
+                </div>
+
+                <div class="differentiation-card">
+                    <div class="differentiation-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Both Strategic and Human</h3>
+                    <p>Effective work at senior levels requires holding both dimensions simultaneously. The analytical rigor to think through strategic implications. The understanding of organizational dynamics to know what's actually feasible. The capacity to see how they interact. Most advisors bring one. Sustained effectiveness requires both.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section -->
+    <section class="section-alternate reveal">
+        <div class="section-container">
+            <div class="investment-content">
+                <h2><span class="accent">Investment</span></h2>
+                <p>Fee structure matters less than whether this partnership will genuinely serve what you're trying to accomplish. Executive coaching typically involves monthly retainers. Strategic advisory is usually project-scoped. Transition support combines intensive initial engagement with tapering frequency.</p>
+                <p>I work with a limited number of leaders at any given time. This allows depth of engagement rather than surface-level advice.</p>
+                <div class="cta-centered">
+                    <a href="contact.html" class="cta-button">Start a Conversation</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -2280,13 +236,13 @@
         <div class="footer-container">
             <div class="footer-about">
                 <h3>CAH Advisory</h3>
-                <p>Working with senior executives who are building organizations, navigating complexity, and making consequential decisions. Bringing two decades of experience in business building, transformation leadership, and strategic advising to leaders facing challenges that require both analytical rigor and human insight.</p>
+                <p>Working with senior executives who are building organizations, navigating complexity, and making consequential decisions.</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:cahowe1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-
+            
             <div class="footer-links">
                 <h4>Navigate</h4>
                 <ul>
@@ -2297,7 +253,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-
+            
             <div class="footer-contact">
                 <h4>Connect</h4>
                 <p><strong>Email</strong><br><a href="mailto:cahowe1@gmail.com">cahowe1@gmail.com</a></p>
@@ -2305,82 +261,12 @@
                 <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/chris-howe-ny" target="_blank">chris-howe-ny</a></p>
             </div>
         </div>
-
+        
         <div class="footer-bottom">
             <p>&copy; 2024 CAH Advisory Services. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Hamburger Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        const body = document.body;
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('mobile-menu-open');
-            body.classList.toggle('menu-open');
-        });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('mobile-menu-open');
-                body.classList.remove('menu-open');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('mobile-menu-open')) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('mobile-menu-open');
-                body.classList.remove('menu-open');
-            }
-        });
-
-        // Navigation scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll reveal on scroll
-        const reveals = document.querySelectorAll('.reveal');
-
-        const revealOnScroll = () => {
-            reveals.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
